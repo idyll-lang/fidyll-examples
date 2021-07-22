@@ -1,0 +1,1117 @@
+[Header title:"Quantifying Political Ideology" fullWidth:true /]
+[data name:"members" source:"members-clean.json" /]
+[data name:"rollcalls" source:"rollcalls-small.csv" /]
+[data name:"membervotes" source:"member-votes-clean.json" /]
+
+Introduce the problem
+
+Explain DW-Nominate in detail.
+For example, you can change the value of a highlight party by checking this box: {highlightParty}.
+note: Note this is a note.
+
+What is DW-Nominate
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    dimensions:0
+    highlightParty:false /]
+[/Graphic]
+
+Example with Congress
+What the two dimensions are
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    dimensions:1 /]
+[/Graphic]
+
+This is just one dimension!
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    dimensions:1
+    highlightParty:true /]
+[/Graphic]
+
+Example with Congress
+What the two dimensions are
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    dimensions:2 /]
+[/Graphic]
+
+Nope rollnumber rangee 1, 184, 1
+
+Explainer of nominate
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:9 /]
+[/Graphic]
+
+Explainer of DW
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:9
+    showMemberVote:true /]
+[/Graphic]
+
+Caveats
+
+See page 5-6 of ideology and congress
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:9
+    showMemberVote:true
+    transformCoordinates:true /]
+[/Graphic]
+
+Point to other resources
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:5
+    showMemberVote:false
+    transformCoordinates:false /]
+[/Graphic]
+
+Martin-Quinn Scores
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:5
+    showMemberVote:false
+    transformCoordinates:true /]
+[/Graphic]
+
+These positions are highly predictive of the actual score. For example see:
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:5
+    showMemberVote:true
+    transformCoordinates:true /]
+[/Graphic]
+
+This is Nancy Pelosi over time
+
+[Graphic]
+  [MembersOverTime
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    member_id:15448 /]
+[/Graphic]
+
+AOC fam
+
+[Graphic]
+  [MembersOverTime
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    member_id:21949 /]
+[/Graphic]
+[div fullWidth:true]
+  [div]
+## Appendix Scene 2
+    [div className:"appendix-graphic-container"]
+      [div]
+        [h3]
+          [div
+            className:"appendix-graphic-plex"
+            style:`{
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr'
+                          }`]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [DwNominate
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                highlightParty:false
+                dimensions:0 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"highlightParty = false" /][br/]
+                [Equation latex:"dimensions = 0" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [DwNominate
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                highlightParty:false
+                dimensions:1 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"highlightParty = false" /][br/]
+                [Equation latex:"dimensions = 1" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [DwNominate
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                highlightParty:false
+                dimensions:2 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"highlightParty = false" /][br/]
+                [Equation latex:"dimensions = 2" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [DwNominate
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                highlightParty:true
+                dimensions:0 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"highlightParty = true" /][br/]
+                [Equation latex:"dimensions = 0" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [DwNominate
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                highlightParty:true
+                dimensions:1 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"highlightParty = true" /][br/]
+                [Equation latex:"dimensions = 1" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [DwNominate
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                highlightParty:true
+                dimensions:2 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"highlightParty = true" /][br/]
+                [Equation latex:"dimensions = 2" /][br/]
+              [/div]
+            [/div]
+          [/div]
+        [/h3]
+      [/div]
+    [/div]
+  [/div]
+[/div]
+[div fullWidth:true]
+  [div]
+## Appendix Scene 3
+    [div className:"appendix-graphic-container"]
+      [div]
+        [h3]
+          [div
+            className:"appendix-graphic-plex"
+            style:`{
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr'
+                          }`]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:1
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 1" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:1
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 1" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:1
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 1" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:1
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 1" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:2
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 2" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:2
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 2" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:2
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 2" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:2
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 2" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:3
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 3" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:3
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 3" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:3
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 3" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:3
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 3" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:4
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 4" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:4
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 4" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:4
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 4" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:4
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 4" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:5
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 5" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:5
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 5" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:5
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 5" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:5
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 5" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:6
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 6" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:6
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 6" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:6
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 6" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:6
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 6" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:7
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 7" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:7
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 7" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:7
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 7" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:7
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 7" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:8
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 8" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:8
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 8" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:8
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 8" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:8
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 8" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:9
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 9" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:9
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 9" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:9
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 9" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:9
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 9" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:10
+                showMemberVote:true
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 10" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:10
+                showMemberVote:true
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 10" /][br/]
+                [Equation latex:"showMemberVote = true" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:10
+                showMemberVote:false
+                transformCoordinates:true /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 10" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = true" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [VoteExplainer
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                rollnumber:10
+                showMemberVote:false
+                transformCoordinates:false /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"rollnumber = 10" /][br/]
+                [Equation latex:"showMemberVote = false" /][br/]
+                [Equation latex:"transformCoordinates = false" /][br/]
+              [/div]
+            [/div]
+          [/div]
+        [/h3]
+      [/div]
+    [/div]
+  [/div]
+[/div]
+[div fullWidth:true]
+  [div]
+## Appendix Scene 4
+    [div className:"appendix-graphic-container"]
+      [div]
+        [h3]
+          [div
+            className:"appendix-graphic-plex"
+            style:`{
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr'
+                          }`]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [MembersOverTime
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                member_id:15448 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"member_id = 15448" /][br/]
+              [/div]
+            [/div]
+            [div
+              className:"appendix-graphic-holder"
+              style:`{
+                                  margin: '0 auto',
+                                  textAlign: 'center'
+                                }`]
+              [MembersOverTime
+                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+                member_id:21949 /]
+              [div
+                style:`{
+                                    transform: 'scale(0.666)'
+                                  }`]
+                [Equation latex:"member_id = 21949" /][br/]
+              [/div]
+            [/div]
+          [/div]
+        [/h3]
+      [/div]
+    [/div]
+  [/div]
+[/div]

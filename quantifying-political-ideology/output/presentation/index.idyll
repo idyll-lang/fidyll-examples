@@ -1,0 +1,160 @@
+[var name:"scene_0_highlightParty" value:false /]
+[var name:"scene_0_dimensions" value:0 /]
+[var name:"scene_1_rollnumber" value:1 /]
+[var name:"scene_1_showMemberVote" value:false /]
+[var name:"scene_1_transformCoordinates" value:false /]
+[var name:"scene_2_member_id" value:15448 /]
+[data name:"members" source:"members-clean.json" /]
+[data name:"rollcalls" source:"rollcalls-small.csv" /]
+[data name:"membervotes" source:"member-votes-clean.json" /]
+[var name:"__slideshowIndex" value:0 /]
+[var name:"__slideshowLength" value:0 /]
+[Slideshow
+  fullWidth:true
+  currentSlide:__slideshowIndex
+  numSlides:__slideshowLength]
+  [Graphic]
+    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 5`]
+      [DwNominate
+        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+        highlightParty:scene_0_highlightParty
+        dimensions:scene_0_dimensions /]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex >= 5 && __slideshowIndex < 11`]
+      [VoteExplainer
+        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+        rollnumber:scene_1_rollnumber
+        showMemberVote:scene_1_showMemberVote
+        transformCoordinates:scene_1_transformCoordinates /]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex >= 11 && __slideshowIndex < 13`]
+      [MembersOverTime
+        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+        member_id:scene_2_member_id /]
+    [/Conditional]
+  [/Graphic]
+  [Slide]
+    [Header
+      background:"#ffffff"
+      color:"#333333"
+      title:"Quantifying Political Ideology" /]
+  [/Slide]
+  [Slide
+    onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
+    [div]
+      What is DW-Nominate
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_0_dimensions = 1`]
+    [div]
+      Example with Congress
+What the two dimensions are
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
+    [div]
+      This is just one dimension!
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_0_dimensions = 2`]
+    [div]
+      Example with Congress
+What the two dimensions are
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_1_rollnumber = 9`]
+    [div]
+      Explainer of nominate
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true`]
+    [div]
+      Explainer of DW
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
+    [div]
+      Caveats
+    [/div]
+    [div]
+      See page 5-6 of ideology and congress
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+    [div]
+      Point to other resources
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = true`]
+    [div]
+      Martin-Quinn Scores
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
+    [div]
+      These positions are highly predictive of the actual score. For example see:
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_2_member_id = 15448`]
+    [div]
+      This is Nancy Pelosi over time
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_2_member_id = 21949`]
+    [div]
+      AOC fam
+    [/div]
+  [/Slide]
+[/Slideshow]
+[Broadcaster
+  peerkey:"gridyll-presentation-9096"
+  __slideshowIndex:__slideshowIndex
+  __slideshowLength:__slideshowLength
+  scene_0_highlightParty:scene_0_highlightParty
+  scene_0_dimensions:scene_0_dimensions
+  scene_1_rollnumber:scene_1_rollnumber
+  scene_1_showMemberVote:scene_1_showMemberVote
+  scene_1_transformCoordinates:scene_1_transformCoordinates
+  scene_2_member_id:scene_2_member_id
+  fullWidth:true]
+  [div className:"gridyll-control-container"]
+    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 5`]
+      [div]
+        highlightParty
+        [Boolean value:scene_0_highlightParty /]
+      [/div]
+      [div]
+        dimensions
+        [Range value:scene_0_dimensions min:0 max:2 step:1 /]
+      [/div]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex >= 5 && __slideshowIndex < 11`]
+      [div]
+        rollnumber
+        [Range value:scene_1_rollnumber min:1 max:10 step:1 /]
+      [/div]
+      [div]
+        showMemberVote
+        [Boolean value:scene_1_showMemberVote /]
+      [/div]
+      [div]
+        transformCoordinates
+        [Boolean value:scene_1_transformCoordinates /]
+      [/div]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex >= 11 && __slideshowIndex < 13`]
+      [div]
+        member id
+        [Select
+          value:scene_2_member_id
+          options:`[{"label":15448,"value":15448},{"label":21949,"value":21949}]` /]
+      [/div]
+    [/Conditional]
+  [/div]
+[/Broadcaster]

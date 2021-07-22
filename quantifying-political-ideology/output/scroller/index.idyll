@@ -1,0 +1,138 @@
+[Header
+  background:undefined
+  color:undefined
+  title:"Quantifying Political Ideology"
+  fullWidth:true /]
+[data name:"members" source:"members-clean.json" /]
+[data name:"rollcalls" source:"rollcalls-small.csv" /]
+[data name:"membervotes" source:"member-votes-clean.json" /]
+[var name:"scene_0_highlightParty" value:false /]
+[var name:"scene_0_dimensions" value:0 /]
+[var name:"scene_1_rollnumber" value:1 /]
+[var name:"scene_1_showMemberVote" value:false /]
+[var name:"scene_1_transformCoordinates" value:false /]
+[var name:"scene_2_member_id" value:15448 /]
+
+Introduce the problem
+
+[Scroller fullWidth:true]
+  [Graphic]
+    [DwNominate
+      data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+      highlightParty:scene_0_highlightParty
+      dimensions:scene_0_dimensions /]
+    [div className:"gridyll-control-container"]
+      [Boolean value:scene_0_highlightParty /]
+      [Range value:scene_0_dimensions min:0 max:2 step:1 /]
+    [/div]
+  [/Graphic]
+  [Step]
+    [p]
+      Explain DW-Nominate in detail.
+For example, you can change the value of a highlight party by checking this box: undefined.
+note: Note this is a note.
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
+      What is DW-Nominate
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_0_dimensions = 1`]
+      Example with Congress
+What the two dimensions are
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
+      This is just one dimension!
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_0_dimensions = 2`]
+      Example with Congress
+What the two dimensions are
+    [/p]
+  [/Step]
+[/Scroller]
+[Scroller fullWidth:true]
+  [Graphic]
+    [VoteExplainer
+      data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+      rollnumber:scene_1_rollnumber
+      showMemberVote:scene_1_showMemberVote
+      transformCoordinates:scene_1_transformCoordinates /]
+    [div className:"gridyll-control-container"]
+      [Range value:scene_1_rollnumber min:1 max:10 step:1 /]
+      [Boolean value:scene_1_showMemberVote /]
+      [Boolean value:scene_1_transformCoordinates /]
+    [/div]
+  [/Graphic]
+  [Step]
+    [p]
+      Nope rollnumber rangee 1, 184, 1
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_1_rollnumber = 9`]
+      Explainer of nominate
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 9;scene_1_showMemberVote = true`]
+      Explainer of DW
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
+      Caveats
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
+      See page 5-6 of ideology and congress
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      Point to other resources
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = true`]
+      Martin-Quinn Scores
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
+      These positions are highly predictive of the actual score. For example see:
+    [/p]
+  [/Step]
+[/Scroller]
+[Scroller fullWidth:true]
+  [Graphic]
+    [MembersOverTime
+      data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+      member_id:scene_2_member_id /]
+    [div className:"gridyll-control-container"]
+      [Select value:scene_2_member_id options:`[15448,21949]` /]
+    [/div]
+  [/Graphic]
+  [Step]
+    [p onEnterViewFully:`scene_2_member_id = 15448`]
+      This is Nancy Pelosi over time
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_2_member_id = 21949`]
+      AOC fam
+    [/p]
+  [/Step]
+[/Scroller]

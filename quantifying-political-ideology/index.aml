@@ -1,0 +1,170 @@
+---
+title: Quantifying Political Ideology
+targets:
+    - static
+    - scroller
+    - presentation
+    - video
+data:
+   members: members-clean.json
+   rollcalls: rollcalls-small.csv
+   membervotes: member-votes-clean.json
+---
+
+
+Introduce the problem
+
+
+{scene}
+title: 
+summary: 
+graphic: DwNominate
+parameters:
+    highlightParty: false
+    dimensions: 0
+controls:
+    highlightParty:
+        set: [false, true]
+    dimensions: 
+        range: [0, 2, 1]
+options:
+    hideControls: true
+
+
+Explain DW-Nominate in detail.
+For example, you can change the value of a highlight party by checking this box: {highlightParty}.
+
+note: Note this is a note.
+
+
+{stage}
+parameters:
+    dimensions: 0
+    highlightParty: false
+
+What is DW-Nominate
+
+{stage}
+parameters:
+    dimensions: 1
+
+Example with Congress
+What the two dimensions are
+
+
+{stage}
+parameters:
+    dimensions: 1
+    highlightParty: true
+
+This is just one dimension!
+
+
+
+{stage}
+parameters:
+    dimensions: 2
+
+Example with Congress
+What the two dimensions are
+
+{scene}
+title: 
+graphic: VoteExplainer
+parameters:
+    rollnumber: 1
+    showMemberVote: false
+    transformCoordinates: false
+controls:
+    rollnumber:
+        range: [1, 10, 1]
+    showMemberVote:
+        set: [true, false]
+    transformCoordinates:
+        set: [true, false]
+
+
+Nope rollnumber rangee 1, 184, 1
+
+{stage}
+parameters:
+    rollnumber: 9
+
+Explainer of nominate
+
+{stage}
+parameters:
+    rollnumber: 9
+    showMemberVote: true
+
+
+Explainer of DW
+
+{stage}
+parameters:
+    rollnumber: 9
+    showMemberVote: true
+    transformCoordinates: true
+
+
+Caveats
+
+See page 5-6 of ideology and congress
+
+{stage}
+parameters:
+    rollnumber: 5
+    showMemberVote: false
+    transformCoordinates: false
+
+
+Point to other resources    
+
+
+{stage}
+parameters:
+    rollnumber: 5
+    showMemberVote: false
+    transformCoordinates: true
+
+
+Martin-Quinn Scores
+
+
+{stage}
+parameters:
+    rollnumber: 5
+    showMemberVote: true
+    transformCoordinates: true
+
+
+These positions are highly predictive of the actual score. For example see:
+
+
+
+{scene}
+title: 
+graphic: MembersOverTime
+parameters:
+    member_id: 15448
+controls:
+    member_id:
+        set: [15448, 21949]
+    
+
+
+{stage}
+parameters:
+    member_id: 15448
+
+
+This is Nancy Pelosi over time
+
+
+
+{stage}
+parameters:
+    member_id: 21949
+
+AOC fam
+
