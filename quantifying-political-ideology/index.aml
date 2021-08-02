@@ -1,9 +1,6 @@
 ---
 title: Quantifying Political Ideology
 targets:
-    - static
-    - scroller
-    - presentation
     - video
 data:
    members: members-clean.json
