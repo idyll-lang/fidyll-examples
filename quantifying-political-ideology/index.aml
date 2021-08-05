@@ -1,20 +1,25 @@
 ---
 title: Quantifying Political Ideology
+subtitle: Understanding DW-Nominate's Spatial Model
+author: Matthew Conlen
 targets:
-    - video
+    - static
+    - scroller
 data:
    members: members-clean.json
    rollcalls: rollcalls-small.csv
    membervotes: member-votes-clean.json
 ---
 
+At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
 
-Introduce the problem
+In presidential elections political scientists look toward the data collected about the voting public to predict change in the government. On the other hand we might be interested in using data about elected politicians in order to forecast the outcome of, for example, bills coming to vote.
 
+A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
 
 {scene}
-title: 
-summary: 
+title:
+summary:
 graphic: DwNominate
 parameters:
     highlightParty: false
@@ -22,31 +27,41 @@ parameters:
 controls:
     highlightParty:
         set: [false, true]
-    dimensions: 
+    dimensions:
         range: [0, 2, 1]
 options:
     hideControls: true
-
-
-Explain DW-Nominate in detail.
-For example, you can change the value of a highlight party by checking this box: {highlightParty}.
-
-note: Note this is a note.
-
 
 {stage}
 parameters:
     dimensions: 0
     highlightParty: false
 
-What is DW-Nominate
+Let's look at an example.
+
+
+Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
+
+
+{stage}
+parameters:
+    dimensions: 0
+    highlightParty: true
+
+Of course not, because they're positioned randomly on the screen. While there isn't any information contained in the positions,
+this shows the essence of a spacial model: politicians are placed in a position [equation]x, y[/equation] and the euclidian distance
+between points can be interpreted as the magnitude of ideological differences.
 
 {stage}
 parameters:
     dimensions: 1
+    highlightParty: false
 
-Example with Congress
-What the two dimensions are
+The DW-Nominate method uses all of a body's past voting behavior to come up with two numbers that describe each politician. The algorithm doesn't know anything about
+their political party membership, iand nstead only looks at votes.
+
+Let's look at just the first component of the congress members' scores. Plotting using just a single component results in a line, something like a mathematical
+version of traditional left-right spectrum.
 
 
 {stage}
@@ -54,32 +69,38 @@ parameters:
     dimensions: 1
     highlightParty: true
 
-This is just one dimension!
+Using just one dimension, the loyalties of each politician become clear!
 
+Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
 
 
 {stage}
 parameters:
     dimensions: 2
+    highlightParty: true
 
-Example with Congress
-What the two dimensions are
+While compressing the behavior down to a left-right spectrum is pretty usesful, a second dimension is needed to be really accurate.
+
+These two dimensions are typically interpreted as _economic_ and _social_.
 
 {scene}
-title: 
+title:
 graphic: VoteExplainer
 parameters:
     rollnumber: 1
     showMemberVote: false
     transformCoordinates: false
+    colorBg: false
 controls:
     rollnumber:
-        range: [1, 10, 1]
+        set: [5, 9]
+    colorBg:
+        set: [true, false]
     showMemberVote:
         set: [true, false]
-    transformCoordinates:
-        set: [true, false]
 
+
+When it comes to voting on legislation,
 
 Nope rollnumber rangee 1, 184, 1
 
@@ -102,6 +123,7 @@ parameters:
     rollnumber: 9
     showMemberVote: true
     transformCoordinates: true
+    colorBg: true
 
 
 Caveats
@@ -115,7 +137,7 @@ parameters:
     transformCoordinates: false
 
 
-Point to other resources    
+Point to other resources
 
 
 {stage}
@@ -140,14 +162,14 @@ These positions are highly predictive of the actual score. For example see:
 
 
 {scene}
-title: 
+title:
 graphic: MembersOverTime
 parameters:
     member_id: 15448
 controls:
     member_id:
         set: [15448, 21949]
-    
+
 
 
 {stage}

@@ -1,0 +1,16 @@
+{
+  "name": "quantifying-political-ideology",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "framer-motion": "^4.1.17",
+    "idyll": "^5.7.0",
+    "idyll-d3-component": "^2.1.0"
+  }
+}
