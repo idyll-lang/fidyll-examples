@@ -1,9 +1,5 @@
 [var name:"scene_0_highlightParty" value:false /]
 [var name:"scene_0_dimensions" value:0 /]
-[var name:"scene_1_rollnumber" value:1 /]
-[var name:"scene_1_showMemberVote" value:false /]
-[var name:"scene_1_transformCoordinates" value:false /]
-[var name:"scene_2_member_id" value:15448 /]
 [data name:"members" source:"members-clean.json" /]
 [data name:"rollcalls" source:"rollcalls-small.csv" /]
 [data name:"membervotes" source:"member-votes-clean.json" /]
@@ -20,96 +16,52 @@
         highlightParty:scene_0_highlightParty
         dimensions:scene_0_dimensions /]
     [/Conditional]
-    [Conditional if:`__slideshowIndex >= 5 && __slideshowIndex < 11`]
-      [VoteExplainer
-        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-        rollnumber:scene_1_rollnumber
-        showMemberVote:scene_1_showMemberVote
-        transformCoordinates:scene_1_transformCoordinates /]
-    [/Conditional]
-    [Conditional if:`__slideshowIndex >= 11 && __slideshowIndex < 13`]
-      [MembersOverTime
-        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-        member_id:scene_2_member_id /]
-    [/Conditional]
   [/Graphic]
   [Slide]
     [Header
       background:"#ffffff"
       color:"#333333"
-      title:"Quantifying Political Ideology" /]
+      title:"Quantifying Political Ideology"
+      subtitle:"Understanding DW-Nominate's Spatial Model"
+      author:"Matthew Conlen" /]
   [/Slide]
   [Slide
     onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
     [div]
-      What is DW-Nominate
+      Let's look at an example.
+    [/div]
+    [div]
+      Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
     [/div]
   [/Slide]
-  [Slide onEnter:`scene_0_dimensions = 1`]
+  [Slide
+    onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = true`]
     [div]
-      Example with Congress
-What the two dimensions are
+      Of course not, because they're positioned randomly on the screen. While there isn't any information contained in the positions,
+this shows the essence of a spacial model: politicians are placed in a position [equation]x, y[/equation] and the euclidian distance
+between points can be interpreted as the magnitude of ideological differences.
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = false`]
+    [div]
+      The DW-Nominate method uses all of a body's past voting behavior to come up with two numbers that describe each politician. The algorithm doesn't know anything about
+their political party membership, iand nstead only looks at votes.
+    [/div]
+    [div]
+      Let's look at just the first component of the congress members' scores. Plotting using just a single component results in a line, something like a mathematical
+version of traditional left-right spectrum.
     [/div]
   [/Slide]
   [Slide
     onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
     [div]
-      This is just one dimension!
-    [/div]
-  [/Slide]
-  [Slide onEnter:`scene_0_dimensions = 2`]
-    [div]
-      Example with Congress
-What the two dimensions are
-    [/div]
-  [/Slide]
-  [Slide onEnter:`scene_1_rollnumber = 9`]
-    [div]
-      Explainer of nominate
-    [/div]
-  [/Slide]
-  [Slide
-    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true`]
-    [div]
-      Explainer of DW
-    [/div]
-  [/Slide]
-  [Slide
-    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
-    [div]
-      Caveats
+      Using just one dimension, the loyalties of each politician become clear!
     [/div]
     [div]
-      See page 5-6 of ideology and congress
-    [/div]
-  [/Slide]
-  [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
-    [div]
-      Point to other resources
-    [/div]
-  [/Slide]
-  [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = true`]
-    [div]
-      Martin-Quinn Scores
-    [/div]
-  [/Slide]
-  [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
-    [div]
-      These positions are highly predictive of the actual score. For example see:
-    [/div]
-  [/Slide]
-  [Slide onEnter:`scene_2_member_id = 15448`]
-    [div]
-      This is Nancy Pelosi over time
-    [/div]
-  [/Slide]
-  [Slide onEnter:`scene_2_member_id = 21949`]
-    [div]
-      AOC fam
+      Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
     [/div]
   [/Slide]
 [/Slideshow]
-[VideoStepper index:__slideshowIndex length:13 fullWidth:true /]
+[VideoStepper index:__slideshowIndex length:5 fullWidth:true /]
+[SlideIndex index:__slideshowIndex fullWidth:true /]

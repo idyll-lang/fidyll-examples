@@ -27,27 +27,33 @@ class CustomD3Component extends D3Component {
 
     const membersWithHistory = props.data.members;
     const currentMembers = membersWithHistory.filter(d => d.congress === 117);
-    
+
     this.circles = svg
-      .selectAll('image')
+      // .selectAll('image')
+      .selectAll('circle')
       .data(currentMembers)
       .enter()
-      .append('image')
-      .attr('x', d => width / 2 + Math.random() * width / 3 * Math.cos(Math.random() * 2 * Math.PI - Math.PI))
-      .attr('y', d => height / 2 + Math.random() * height / 3 * Math.sin(Math.random() * 2 * Math.PI - Math.PI))
-      .attr('width', 15)
-      .attr('height', 15)
-      .attr('href', d => `static/images/members/${pad(d.icpsr, 6)}.jpg`)
-      // .attr('opacity', 0.6)
-      // .attr('fill', '#33')
+      // .append('image')
+      .append('circle')
+      .attr('cx', d => width / 2 + Math.random() * width / 3 * Math.cos(Math.random() * 2 * Math.PI - Math.PI))
+      .attr('cy', d => height / 2 + Math.random() * height / 3 * Math.sin(Math.random() * 2 * Math.PI - Math.PI))
+      // .attr('height', 15)
+      // .attr('href', d => `static/images/members/${pad(d.icpsr, 6)}.jpg`)
+      .style('opacity', 0.6)
+      .style('fill', '#333')
+      .attr('r', 5);
+      // .transition()
+      // .delay((d, i) => i * 20)
+      // .duration(750)
+      // .attr('r', 5)
 
     this.xScale = d3.scaleLinear().domain([-1, 1]).range([0, width]);
     this.yScale = d3.scaleLinear().domain([-1, 1]).range([height, 0]);
 
     console.log('setting', 'dim', props.dimensions);
-    this.setDimensions(props.dimensions);
+    this.setDimensions(props.dimensions, false);
     console.log('setting', 'color', props.highlightParty);
-    this.setColors(props.highlightParty);
+    this.setColors(props.highlightParty, false);
   }
 
   setDimensions(dimensions, transition) {
@@ -55,10 +61,10 @@ class CustomD3Component extends D3Component {
     if (dimensions === 1) {
       console.log('has one dimension');
       selection
-        .attr('x', d => {
+        .attr('cx', d => {
           return this.xScale(d.nominate_dim1);
         })
-        .attr('y', d => {
+        .attr('cy', d => {
           return height / 2 + height / 10 * (Math.random() - 0.5)
         })
     }
@@ -66,16 +72,16 @@ class CustomD3Component extends D3Component {
     else if (dimensions === 0) {
       this.circles
       selection
-      .attr('x', d => width / 2 + Math.random() * width / 3 * Math.cos(Math.random() * 2 * Math.PI - Math.PI))
-      .attr('y', d => height / 2 + Math.random() * height / 3 * Math.sin(Math.random() * 2 * Math.PI - Math.PI))
+      .attr('cx', d => width / 2 + Math.random() * width / 3 * Math.cos(Math.random() * 2 * Math.PI - Math.PI))
+      .attr('cy', d => height / 2 + Math.random() * height / 3 * Math.sin(Math.random() * 2 * Math.PI - Math.PI))
     }
     else if (dimensions === 2) {
       this.circles
         selection
-        .attr('x', d => {
+        .attr('cx', d => {
           return this.xScale(d.nominate_dim1);
         })
-        .attr('y', d => {
+        .attr('cy', d => {
           return this.yScale(d.nominate_dim2);
         })
     }
@@ -86,25 +92,32 @@ class CustomD3Component extends D3Component {
     let selection = transition ? this.circles.transition() : this.circles;
     if (highlightParty) {
       selection
-        .attr('fill', d => {
+        .style('fill', d => {
           return PARTY_COLORS[d.party_code];
         })
+        .style('opacity', 0.6)
     } else {
       selection
-        .attr('fill', '#333')
+        .style('fill', '#333')
+        .style('opacity', 0.6)
     }
   }
 
   update(props, oldProps) {
 
-    if (props.highlightParty !== oldProps.highlightParty) {
-      this.setColors(props.highlightParty, true);
-    }
-
-    if (props.dimensions !== oldProps.dimensions) {
-      console.log('updating w dim', props.dimensions)
+    if (props.highlightParty !== oldProps.highlightParty && props.dimensions !== oldProps.dimensions) {
+      this.setColors(props.highlightParty, false);
       this.setDimensions(props.dimensions, true);
-    } 
+    } else {
+      if (props.highlightParty !== oldProps.highlightParty) {
+        this.setColors(props.highlightParty, true);
+      }
+
+      if (props.dimensions !== oldProps.dimensions) {
+        console.log('updating w dim', props.dimensions)
+        this.setDimensions(props.dimensions, true);
+      }
+    }
 
     // this.svg
     //   .selectAll('circle')

@@ -3,7 +3,7 @@
 [var name:"scene_1_rollnumber" value:1 /]
 [var name:"scene_1_showMemberVote" value:false /]
 [var name:"scene_1_transformCoordinates" value:false /]
-[var name:"scene_2_member_id" value:15448 /]
+[var name:"scene_1_colorBg" value:false /]
 [data name:"members" source:"members-clean.json" /]
 [data name:"rollcalls" source:"rollcalls-small.csv" /]
 [data name:"membervotes" source:"member-votes-clean.json" /]
@@ -14,68 +14,88 @@
   currentSlide:__slideshowIndex
   numSlides:__slideshowLength]
   [Graphic]
-    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 5`]
+    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 6`]
       [DwNominate
         data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
         highlightParty:scene_0_highlightParty
         dimensions:scene_0_dimensions /]
     [/Conditional]
-    [Conditional if:`__slideshowIndex >= 5 && __slideshowIndex < 11`]
+    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 12`]
       [VoteExplainer
         data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
         rollnumber:scene_1_rollnumber
         showMemberVote:scene_1_showMemberVote
-        transformCoordinates:scene_1_transformCoordinates /]
-    [/Conditional]
-    [Conditional if:`__slideshowIndex >= 11 && __slideshowIndex < 13`]
-      [MembersOverTime
-        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-        member_id:scene_2_member_id /]
+        transformCoordinates:scene_1_transformCoordinates
+        colorBg:scene_1_colorBg /]
     [/Conditional]
   [/Graphic]
   [Slide]
     [Header
       background:"#ffffff"
       color:"#333333"
-      title:"Quantifying Political Ideology" /]
+      title:"Quantifying Political Ideology"
+      subtitle:"Understanding DW-Nominate's Spatial Model"
+      author:"Matthew Conlen" /]
   [/Slide]
   [Slide
     onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
     [div]
-      What is DW-Nominate
+      Let's look at an example.
+    [/div]
+    [div]
+      Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
     [/div]
   [/Slide]
-  [Slide onEnter:`scene_0_dimensions = 1`]
+  [Slide
+    onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = true`]
     [div]
-      Example with Congress
-What the two dimensions are
+      Of course not, because they're positioned randomly on the screen. While there isn't any information contained in the positions,
+this shows the essence of a spacial model: politicians are placed in a position [equation]x, y[/equation] and the euclidian distance
+between points can be interpreted as the magnitude of ideological differences.
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = false`]
+    [div]
+      The DW-Nominate method uses all of a body's past voting behavior to come up with two numbers that describe each politician. The algorithm doesn't know anything about
+their political party membership, iand nstead only looks at votes.
+    [/div]
+    [div]
+      Let's look at just the first component of the congress members' scores. Plotting using just a single component results in a line, something like a mathematical
+version of traditional left-right spectrum.
     [/div]
   [/Slide]
   [Slide
     onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
     [div]
-      This is just one dimension!
+      Using just one dimension, the loyalties of each politician become clear!
     [/div]
-  [/Slide]
-  [Slide onEnter:`scene_0_dimensions = 2`]
     [div]
-      Example with Congress
-What the two dimensions are
+      Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
     [/div]
   [/Slide]
-  [Slide onEnter:`scene_1_rollnumber = 9`]
+  [Slide
+    onEnter:`scene_0_dimensions = 2;scene_0_highlightParty = true`]
+    [div]
+      While compressing the behavior down to a left-right spectrum is pretty usesful, a second dimension is needed to be really accurate.
+    [/div]
+    [div]
+      These two dimensions are typically interpreted as _economic_ and _social_.
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_1_rollnumber = 5`]
     [div]
       Explainer of nominate
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true`]
+    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = true`]
     [div]
       Explainer of DW
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
+    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_colorBg = true`]
     [div]
       Caveats
     [/div]
@@ -84,36 +104,26 @@ What the two dimensions are
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = false;scene_1_colorBg = false`]
     [div]
       Point to other resources
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = false;scene_1_transformCoordinates = true`]
+    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true`]
     [div]
       Martin-Quinn Scores
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_transformCoordinates = true`]
+    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_colorBg = true`]
     [div]
       These positions are highly predictive of the actual score. For example see:
     [/div]
   [/Slide]
-  [Slide onEnter:`scene_2_member_id = 15448`]
-    [div]
-      This is Nancy Pelosi over time
-    [/div]
-  [/Slide]
-  [Slide onEnter:`scene_2_member_id = 21949`]
-    [div]
-      AOC fam
-    [/div]
-  [/Slide]
 [/Slideshow]
 [Broadcaster
-  peerkey:"gridyll-presentation-9353"
+  peerkey:"gridyll-presentation-1708"
   __slideshowIndex:__slideshowIndex
   __slideshowLength:__slideshowLength
   scene_0_highlightParty:scene_0_highlightParty
@@ -121,10 +131,10 @@ What the two dimensions are
   scene_1_rollnumber:scene_1_rollnumber
   scene_1_showMemberVote:scene_1_showMemberVote
   scene_1_transformCoordinates:scene_1_transformCoordinates
-  scene_2_member_id:scene_2_member_id
+  scene_1_colorBg:scene_1_colorBg
   fullWidth:true]
   [div className:"gridyll-control-container"]
-    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 5`]
+    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 6`]
       [div]
         highlightParty
         [Boolean value:scene_0_highlightParty /]
@@ -134,26 +144,20 @@ What the two dimensions are
         [Range value:scene_0_dimensions min:0 max:2 step:1 /]
       [/div]
     [/Conditional]
-    [Conditional if:`__slideshowIndex >= 5 && __slideshowIndex < 11`]
+    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 12`]
       [div]
         rollnumber
-        [Range value:scene_1_rollnumber min:1 max:10 step:1 /]
+        [Select
+          value:scene_1_rollnumber
+          options:`[{"label":5,"value":5},{"label":7,"value":7},{"label":9,"value":9}]` /]
+      [/div]
+      [div]
+        colorBg
+        [Boolean value:scene_1_colorBg /]
       [/div]
       [div]
         showMemberVote
         [Boolean value:scene_1_showMemberVote /]
-      [/div]
-      [div]
-        transformCoordinates
-        [Boolean value:scene_1_transformCoordinates /]
-      [/div]
-    [/Conditional]
-    [Conditional if:`__slideshowIndex >= 11 && __slideshowIndex < 13`]
-      [div]
-        member id
-        [Select
-          value:scene_2_member_id
-          options:`[{"label":15448,"value":15448},{"label":21949,"value":21949}]` /]
       [/div]
     [/Conditional]
   [/div]

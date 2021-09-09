@@ -71,3 +71,89 @@ parameters:
 Using just one dimension, the loyalties of each politician become clear!
 
 Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
+
+
+{stage}
+parameters:
+    dimensions: 2
+    highlightParty: true
+
+While compressing the behavior down to a left-right spectrum is pretty usesful, a second dimension is needed to be really accurate.
+
+These two dimensions are typically interpreted as _economic_ and _social_.
+
+{scene}
+title:
+graphic: VoteExplainer
+parameters:
+    rollnumber: 1
+    showMemberVote: false
+    transformCoordinates: false
+    colorBg: false
+controls:
+    rollnumber:
+        set: [5, 7, 9]
+    colorBg:
+        set: [true, false]
+    showMemberVote:
+        set: [true, false]
+
+
+When it comes to voting on legislation,
+
+Nope rollnumber rangee 1, 184, 1
+
+{stage}
+parameters:
+    rollnumber: 5
+
+Explainer of nominate
+
+{stage}
+parameters:
+    rollnumber: 5
+    showMemberVote: true
+
+
+Explainer of DW
+
+{stage}
+parameters:
+    rollnumber: 5
+    showMemberVote: true
+    colorBg: true
+
+
+Caveats
+
+See page 5-6 of ideology and congress
+
+{stage}
+parameters:
+    rollnumber: 9
+    showMemberVote: false
+    colorBg: false
+
+
+Point to other resources
+
+
+{stage}
+parameters:
+    rollnumber: 9
+    showMemberVote: true
+
+
+Martin-Quinn Scores
+
+
+{stage}
+parameters:
+    rollnumber: 9
+    showMemberVote: true
+    colorBg: true
+
+
+These positions are highly predictive of the actual score. For example see:
+
+

@@ -19,6 +19,15 @@ const radsToDegress = (radians) => {
   return radians * 180 / Math.PI;
 }
 
+
+const pad = (str, len) => {
+  str = '' + str;
+  if (str.length >= len) {
+    return str;
+  }
+  return `${'0'.repeat(len - str.length)}${str}`;
+}
+
 class VoteExplainer extends React.Component {
 
   constructor(props) {
@@ -61,10 +70,10 @@ class VoteExplainer extends React.Component {
         const dimWeightTwo = 0.4158127;
         const cuttingLineSlope = -1 * s1 / (s2 * Math.pow(dimWeightTwo, 2));
 
-        
+
         let theta = 0;
         let cuttingLineAngle = 0;
-        
+
         if (Number.isNaN(cuttingLineSlope)) {
           theta = 0;
         } else if (cuttingLineSlope < 0) {
@@ -74,11 +83,11 @@ class VoteExplainer extends React.Component {
         } else {
           theta = Math.PI / 4;
         }
-        
+
         // const theta = Math.PI / 4 - cuttingLineAngle + Math.PI / 4;
         const c = Math.cos(theta); // compute trig. functions only once
         const s = -1 * Math.sin(theta);
-        
+
         const xr = xt * c - yt * s;
         const yr = xt * s + yt * c;
         return [xr, yr];
@@ -91,7 +100,7 @@ class VoteExplainer extends React.Component {
           width={'100%'}
           height={'auto'}
           viewBox={`0 0 ${width} ${height}`}
-          style={{ display: 'block', margin: '20px auto', background: 'white' }}
+          style={{ display: 'block', margin: '20px auto', background: 'white', maxHeight: '100vh' }}
         >
           {props.data.rollcalls.filter((d, i) => d.rollnumber === this.props.rollnumber).map(rc => {
 
@@ -149,22 +158,26 @@ class VoteExplainer extends React.Component {
             // [ly1t, ly2t] = [Math.max(ly1t, ly2t), Math.max(ly1t, ly2t)];
 
 
-            return (<React.Fragment>
+            return (<React.Fragment key={`${rc.rollnumber}-contain`}>
               {this.members.map((m) => {
                 const mx = m.nominate_dim1;
                 const my = m.nominate_dim2;
-    
+
                 const [mxt, myt] = linearTransform(mx, my, rc.nominate_mid_1, rc.nominate_mid_2, rc.nominate_spread_1, rc.nominate_spread_2);
-    
-                return <React.Fragment>
+
+                return <React.Fragment key={`${m.icpsr}-container`}>
+                  <motion.image  key={`${m.icpsr}-member`} width={15} height={15} href={`static/images/members/${pad(m.icpsr, 6)}.jpg`} animate={{x: this.xScale(mxt) - 15/2, y: this.yScale(myt) - 15/2 }} transition={{ease: "easeInOut", duration: .75}} >
+                  </motion.image>
+                  <motion.rect animate={{x: this.xScale(mxt) - 15/2, y: this.yScale(myt) - 15/2}} width={15} height={15} fill={PARTY_COLORS[m.party_code]} opacity={0.2}  transition={{ease: "easeInOut", duration: .75}} />
+                  <motion.rect animate={{x: this.xScale(mxt) - 15/2, y: this.yScale(myt) + 15/2 - 5, opacity: props.showMemberVote ? 1 : 0}} width={15} height={5} fill={this.getMemberVoteColor(m)}  transition={{ease: "easeInOut", duration: .75}} />
                   {/* <circle key={m.icpsr} r={3} fill={PARTY_COLORS[m.party_code]} cx={this.xScale(m.nominate_dim1)} cy={this.yScale(m.nominate_dim2)}  /> */}
-                  <motion.circle key={`${m.icpsr}-member`} r={3} animate={{fill: props.showMemberVote ? this.getMemberVoteColor(m) : PARTY_COLORS[m.party_code], cx: this.xScale(mxt), cy: this.yScale(myt) }} transition={{ease: "easeInOut", duration: .75}}  />
+                  {/* <motion.circle key={`${m.icpsr}-member`} r={3} animate={{fill: props.showMemberVote ? this.getMemberVoteColor(m) : PARTY_COLORS[m.party_code], cx: , cy:  }} transition={{ease: "easeInOut", duration: .75}}  /> */}
                 </React.Fragment>
               })}
-              <rect  key={`status`}  opacity={0.125} fill={VOTE_STATUS_COLORS[rc.vote_result]} x={0} y={0} width={width} height={height} />
+              {props.colorBg ? <rect  key={`${rc.rollnumber}-status`}  opacity={0.125} fill={VOTE_STATUS_COLORS[rc.vote_result]} x={0} y={0} width={width} height={height} /> : null}
               {/* <rect opacity={0.25} fill={VOTE_STATUS_COLORS[rc.vote_result]} x={this.xScale(x1t)} y={this.yScale(y1t)} width={this.xScale(x2t) - this.xScale(x1t)} height={Math.max(this.yScale(y2t) - this.yScale(y1t)) || 10} /> */}
-              <motion.line  key={`cuttingline`} stroke={'#999'} animate={{x1: this.xScale(lx1t), x2: this.xScale(lx2t), y1: this.yScale(ly1t), y2: this.yScale(ly2t) }} transition={{ease: "easeInOut", duration: .75}} />
-              <motion.rect  key={`votecenter`} fill={VOTE_STATUS_COLORS[rc.vote_result]} animate={{ x: this.xScale(xt) - 5, y: this.yScale(yt) - 5 }} transition={{ease: "easeInOut", duration: .75}} width={10} height={10} />
+              <motion.line  key={`${rc.rollnumber}-cuttingline`} stroke={'#999'} animate={{x1: this.xScale(lx1t), x2: this.xScale(lx2t), y1: this.yScale(ly1t), y2: this.yScale(ly2t) }} transition={{ease: "easeInOut", duration: .75}} />
+              <motion.rect  key={`${rc.rollnumber}-votecenter`} fill={VOTE_STATUS_COLORS[rc.vote_result]} animate={{ x: this.xScale(xt) - 5, y: this.yScale(yt) - 5 }} transition={{ease: "easeInOut", duration: .75}} width={10} height={10} />
             </React.Fragment>)
           })}
         </svg>
