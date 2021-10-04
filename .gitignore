@@ -64,3 +64,8 @@ build
 *.mp4
 
 editly-tmp*
+
+
+output/
+*.zip
+deploy/

@@ -1,12 +1,14 @@
 [var name:"scene_0_highlightParty" value:false /]
 [var name:"scene_0_dimensions" value:0 /]
-[var name:"scene_1_rollnumber" value:1 /]
+[var name:"scene_0_showEconomicAxis" value:false /]
+[var name:"scene_0_showSocialAxis" value:false /]
+[var name:"scene_1_rollnumber" value:-1 /]
 [var name:"scene_1_showMemberVote" value:false /]
 [var name:"scene_1_transformCoordinates" value:false /]
-[var name:"scene_1_colorBg" value:false /]
-[data name:"members" source:"members-clean.json" /]
-[data name:"rollcalls" source:"rollcalls-small.csv" /]
-[data name:"membervotes" source:"member-votes-clean.json" /]
+[var name:"scene_2_optimizeState" value:"initialization" /]
+[data name:"members" source:"members-clean-116.json" /]
+[data name:"rollcalls" source:"rollcalls-small-116.csv" /]
+[data name:"membervotes" source:"member-votes-clean-116.json" /]
 [var name:"__slideshowIndex" value:0 /]
 [var name:"__slideshowLength" value:0 /]
 [Slideshow
@@ -18,15 +20,21 @@
       [DwNominate
         data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
         highlightParty:scene_0_highlightParty
-        dimensions:scene_0_dimensions /]
+        dimensions:scene_0_dimensions
+        showEconomicAxis:scene_0_showEconomicAxis
+        showSocialAxis:scene_0_showSocialAxis /]
     [/Conditional]
-    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 12`]
+    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 13`]
       [VoteExplainer
         data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
         rollnumber:scene_1_rollnumber
         showMemberVote:scene_1_showMemberVote
-        transformCoordinates:scene_1_transformCoordinates
-        colorBg:scene_1_colorBg /]
+        transformCoordinates:scene_1_transformCoordinates /]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex >= 13 && __slideshowIndex < 18`]
+      [OptimizerVis
+        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+        optimizeState:scene_2_optimizeState /]
     [/Conditional]
   [/Graphic]
   [Slide]
@@ -35,130 +43,147 @@
       color:"#333333"
       title:"Quantifying Political Ideology"
       subtitle:"Understanding DW-Nominate's Spatial Model"
-      author:"Matthew Conlen" /]
+      author:"Matthew Conlen"
+      authorLink:"https://mathisonian.com" /]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
+    onEnter:`scene_0_highlightParty = false;scene_0_dimensions = 0;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
     [div]
-      Let's look at an example.
-    [/div]
-    [div]
-      Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
+      Spatial models position politicians in an ideological coordinate space. Can you tell which are Democrats and which are Republicans?
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = true`]
+    onEnter:`scene_0_highlightParty = false;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
     [div]
-      Of course not, because they're positioned randomly on the screen. While there isn't any information contained in the positions,
-this shows the essence of a spacial model: politicians are placed in a position [equation]x, y[/equation] and the euclidian distance
-between points can be interpreted as the magnitude of ideological differences.
+      Here, we use NOMINATE to position members of congress along a horizontal line. Now it's much easier to distinguish the parties.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = false`]
+    onEnter:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
     [div]
-      The DW-Nominate method uses all of a body's past voting behavior to come up with two numbers that describe each politician. The algorithm doesn't know anything about
-their political party membership, iand nstead only looks at votes.
-    [/div]
-    [div]
-      Let's look at just the first component of the congress members' scores. Plotting using just a single component results in a line, something like a mathematical
-version of traditional left-right spectrum.
+      A pattern emerges, based solely on voting behavior. The algorithm doesn't know anything about party affiliation.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
+    onEnter:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = true;scene_0_showSocialAxis = false`]
     [div]
-      Using just one dimension, the loyalties of each politician become clear!
-    [/div]
-    [div]
-      Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
+      NOMINATE is a two-dimensional model. This first dimension is understood to represent a policitian's _economic_ preference.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 2;scene_0_highlightParty = true`]
+    onEnter:`scene_0_highlightParty = true;scene_0_dimensions = 2;scene_0_showEconomicAxis = true;scene_0_showSocialAxis = true`]
     [div]
-      While compressing the behavior down to a left-right spectrum is pretty usesful, a second dimension is needed to be really accurate.
-    [/div]
-    [div]
-      These two dimensions are typically interpreted as _economic_ and _social_.
-    [/div]
-  [/Slide]
-  [Slide onEnter:`scene_1_rollnumber = 5`]
-    [div]
-      Explainer of nominate
+      The second dimension is a social dimension. Notice the variance within each party.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = true`]
+    onEnter:`scene_1_rollnumber = -1;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
     [div]
-      Explainer of DW
+      Each circle represents a member of the House in the 116th U.S. Congress.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_colorBg = true`]
+    onEnter:`scene_1_rollnumber = -1;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
     [div]
-      Caveats
-    [/div]
-    [div]
-      See page 5-6 of ideology and congress
+      The model defines a general ideological space. Not only can politicians be positioned in this space, but so can the bills they vote for!
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = false;scene_1_colorBg = false`]
+    onEnter:`scene_1_rollnumber = 801;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
     [div]
-      Point to other resources
+      A _cutting line_ separates those members that we would expect to vote for the bill from the ones that we expect to vote against.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true`]
+    onEnter:`scene_1_rollnumber = 801;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
     [div]
-      Martin-Quinn Scores
+      Bill 6201 passed the house, leading to increased federal unemployment insurance payments, and more federal money for food aid programs, and more.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_colorBg = true`]
+    onEnter:`scene_1_rollnumber = 93;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
     [div]
-      These positions are highly predictive of the actual score. For example see:
+      U.S. House Joint Resolution 46 which would terminate President Trump's declaration of an emergency at the U.S.-Mexican border.  The slope of the cutting line informs how much the bill splits along economic or social lines.
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 93;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+    [div]
+      The bill ultimately passed the House 245 to 182 and went on to be approved by the Senate.
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 691;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+    [div]
+      This vote, on December 18, 2019, split perfectly along party lines, would have let the House out of session for the remainder of the year. Later that same day the House voted to impeach Donald Trump for the first time.
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_2_optimizeState = "initialization"`]
+    [div]
+      Okay lets kick it offffff....
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_2_optimizeState = "placeVotes"`]
+    [div]
+      Put the votes in a random place!
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_2_optimizeState = "orderMembers"`]
+    [div]
+      Put the members in a sorted place!
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_2_optimizeState = "orderVotes"`]
+    [div]
+      Put the votes in a sorted place!
+    [/div]
+  [/Slide]
+  [Slide onEnter:`scene_2_optimizeState = "results"`]
+    [div]
+      And here we go with results
+    [/div]
+    [div]
+      At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
+    [/div]
+    [div]
+      In presidential elections political scientists look toward the data collected about the voting public to predict change in the government. On the other hand we might be interested in using data about elected politicians in order to forecast the outcome of, for example, bills coming to vote.
+    [/div]
+    [div]
+      A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
     [/div]
   [/Slide]
 [/Slideshow]
 [Broadcaster
-  peerkey:"gridyll-presentation-1708"
+  peerkey:"gridyll-presentation-1795"
   __slideshowIndex:__slideshowIndex
   __slideshowLength:__slideshowLength
   scene_0_highlightParty:scene_0_highlightParty
   scene_0_dimensions:scene_0_dimensions
+  scene_0_showEconomicAxis:scene_0_showEconomicAxis
+  scene_0_showSocialAxis:scene_0_showSocialAxis
   scene_1_rollnumber:scene_1_rollnumber
   scene_1_showMemberVote:scene_1_showMemberVote
   scene_1_transformCoordinates:scene_1_transformCoordinates
-  scene_1_colorBg:scene_1_colorBg
+  scene_2_optimizeState:scene_2_optimizeState
   fullWidth:true]
   [div className:"gridyll-control-container"]
-    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 6`]
-      [div]
-        highlightParty
-        [Boolean value:scene_0_highlightParty /]
-      [/div]
-      [div]
-        dimensions
-        [Range value:scene_0_dimensions min:0 max:2 step:1 /]
-      [/div]
-    [/Conditional]
-    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 12`]
-      [div]
-        rollnumber
-        [Select
-          value:scene_1_rollnumber
-          options:`[{"label":5,"value":5},{"label":7,"value":7},{"label":9,"value":9}]` /]
-      [/div]
-      [div]
-        colorBg
-        [Boolean value:scene_1_colorBg /]
-      [/div]
+    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 6` /]
+    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 13`]
       [div]
         showMemberVote
         [Boolean value:scene_1_showMemberVote /]
       [/div]
+      [div]
+        rollnumber
+        [Select
+          value:scene_1_rollnumber
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
     [/Conditional]
+    [Conditional if:`__slideshowIndex >= 13 && __slideshowIndex < 18` /]
   [/div]
 [/Broadcaster]
+[SlideIndex
+  index:__slideshowIndex
+  length:__slideshowLength
+  fullWidth:true /]

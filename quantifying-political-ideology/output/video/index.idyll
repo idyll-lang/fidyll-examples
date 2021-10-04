@@ -1,8 +1,12 @@
 [var name:"scene_0_highlightParty" value:false /]
 [var name:"scene_0_dimensions" value:0 /]
-[data name:"members" source:"members-clean.json" /]
-[data name:"rollcalls" source:"rollcalls-small.csv" /]
-[data name:"membervotes" source:"member-votes-clean.json" /]
+[var name:"scene_1_rollnumber" value:801 /]
+[var name:"scene_1_showMemberVote" value:false /]
+[var name:"scene_1_transformCoordinates" value:false /]
+[var name:"scene_1_colorBg" value:false /]
+[data name:"members" source:"members-clean-116.json" /]
+[data name:"rollcalls" source:"rollcalls-small-116.csv" /]
+[data name:"membervotes" source:"member-votes-clean-116.json" /]
 [var name:"__slideshowIndex" value:0 /]
 [var name:"__slideshowLength" value:0 /]
 [Slideshow
@@ -10,11 +14,19 @@
   currentSlide:__slideshowIndex
   numSlides:__slideshowLength]
   [Graphic]
-    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 5`]
+    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 6`]
       [DwNominate
         data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
         highlightParty:scene_0_highlightParty
         dimensions:scene_0_dimensions /]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 15`]
+      [VoteExplainer
+        data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+        rollnumber:scene_1_rollnumber
+        showMemberVote:scene_1_showMemberVote
+        transformCoordinates:scene_1_transformCoordinates
+        colorBg:scene_1_colorBg /]
     [/Conditional]
   [/Graphic]
   [Slide]
@@ -26,16 +38,14 @@
       author:"Matthew Conlen" /]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
+    onEnter:`scene_0_highlightParty = false;scene_0_dimensions = 0`]
     [div]
       Let's look at an example.
-    [/div]
-    [div]
-      Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
+Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 0;scene_0_highlightParty = true`]
+    onEnter:`scene_0_highlightParty = true;scene_0_dimensions = 0`]
     [div]
       Of course not, because they're positioned randomly on the screen. While there isn't any information contained in the positions,
 this shows the essence of a spacial model: politicians are placed in a position [equation]x, y[/equation] and the euclidian distance
@@ -43,7 +53,7 @@ between points can be interpreted as the magnitude of ideological differences.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = false`]
+    onEnter:`scene_0_highlightParty = false;scene_0_dimensions = 1`]
     [div]
       The DW-Nominate method uses all of a body's past voting behavior to come up with two numbers that describe each politician. The algorithm doesn't know anything about
 their political party membership, iand nstead only looks at votes.
@@ -54,7 +64,7 @@ version of traditional left-right spectrum.
     [/div]
   [/Slide]
   [Slide
-    onEnter:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
+    onEnter:`scene_0_highlightParty = true;scene_0_dimensions = 1`]
     [div]
       Using just one dimension, the loyalties of each politician become clear!
     [/div]
@@ -62,6 +72,73 @@ version of traditional left-right spectrum.
       Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
     [/div]
   [/Slide]
+  [Slide
+    onEnter:`scene_0_highlightParty = true;scene_0_dimensions = 2`]
+    [div]
+      While compressing the behavior down to a left-right spectrum is pretty usesful, a second dimension is needed to be really accurate.
+    [/div]
+    [div]
+      These two dimensions are typically interpreted as _economic_ and _social_.
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 801;scene_1_showMemberVote = false;scene_1_transformCoordinates = false;scene_1_colorBg = false`]
+    [div]
+      When it comes to voting on legislation,
+Nope rollnumber rangee 1, 184, 1
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 801;scene_1_showMemberVote = false;scene_1_transformCoordinates = false;scene_1_colorBg = false`]
+    [div]
+      Explainer of nominate
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 801;scene_1_showMemberVote = true;scene_1_transformCoordinates = false;scene_1_colorBg = false`]
+    [div]
+      Explainer of DW
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 801;scene_1_showMemberVote = true;scene_1_transformCoordinates = false;scene_1_colorBg = true`]
+    [div]
+      Caveats
+    [/div]
+    [div]
+      See page 5-6 of ideology and congress
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 93;scene_1_showMemberVote = false;scene_1_transformCoordinates = false;scene_1_colorBg = false`]
+    [div]
+      Point to other resources
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 93;scene_1_showMemberVote = true;scene_1_transformCoordinates = false;scene_1_colorBg = false`]
+    [div]
+      Martin-Quinn Scores
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 93;scene_1_showMemberVote = true;scene_1_transformCoordinates = false;scene_1_colorBg = true`]
+    [div]
+      These positions are highly predictive of the actual score. For example see:
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 807;scene_1_showMemberVote = true;scene_1_transformCoordinates = false;scene_1_colorBg = true`]
+    [div]
+      Martin-Quinn Scores.... blah blah
+    [/div]
+  [/Slide]
+  [Slide
+    onEnter:`scene_1_rollnumber = 808;scene_1_showMemberVote = true;scene_1_transformCoordinates = false;scene_1_colorBg = true`]
+    [div]
+      These positions are highly predictive of the actual score. For example see:
+    [/div]
+  [/Slide]
 [/Slideshow]
-[VideoStepper index:__slideshowIndex length:5 fullWidth:true /]
+[VideoStepper index:__slideshowIndex length:15 fullWidth:true /]
 [SlideIndex index:__slideshowIndex fullWidth:true /]

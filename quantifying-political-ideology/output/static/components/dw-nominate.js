@@ -48,12 +48,97 @@ class CustomD3Component extends D3Component {
       // .attr('r', 5)
 
     this.xScale = d3.scaleLinear().domain([-1, 1]).range([0, width]);
-    this.yScale = d3.scaleLinear().domain([-1, 1]).range([height, 0]);
+    this.yScale = d3.scaleLinear().domain([-1, 1]).range([7 * height / 8 - 10, 0]);
 
-    console.log('setting', 'dim', props.dimensions);
+    this.economicAxis = svg.append('g').style('opacity', 0.0);
+    this.socialAxis = svg.append('g').style('opacity', 0.0);
+
+    this.economicAxis.append('line')
+      .attr('x1',  0)
+      .attr('x2', width)
+      .attr('y1', 7 * height / 8)
+      .attr('y2', 7 * height / 8)
+      .style('strokeWidth', 5)
+      .style('stroke', '#ccc');
+
+    this.economicAxis.append('text')
+      .attr('x', width / 2)
+      .attr('y', 7 * height / 8 + 16)
+      .style('font-size', '10px')
+      .style('fill', '#999')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'middle')
+      .text('Economic');
+
+    this.economicAxis.append('text')
+      .attr('x', 0)
+      .attr('y', 7 * height / 8 + 16)
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'start')
+      .text('Liberal');
+
+    this.economicAxis.append('text')
+      .attr('x', width)
+      .attr('y', 7 * height / 8 + 16)
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'end')
+      .text('Conservative');
+
+
+    this.socialAxis.append('line')
+      .attr('x1', 0)
+      .attr('x2', 0)
+      .attr('y1', height / 8)
+      .attr('y2', 7 * height / 8)
+      .style('strokeWidth', 5)
+      .style('stroke', '#ccc');
+
+
+    this.socialAxis.append('text')
+      .attr('x', 0)
+      .attr('dx', -5)
+      .attr('y', height / 8 + ((7 * height / 8) - height / 8) / 2)
+      .attr('text-anchor', 'end')
+      .style('font-size', '10px')
+      .style('fill', '#999')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .text('Social');
+
+    this.socialAxis.append('text')
+      .attr('x', 0)
+      .attr('y', height / 8)
+      .attr('dx', -5)
+      .attr('text-anchor', 'end')
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .text('Conservative');
+
+    this.socialAxis.append('text')
+      .attr('x', 0)
+      .attr('dx', -5)
+      .attr('y', 7 * height / 8)
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'end')
+      .text('Liberal');
+
+
     this.setDimensions(props.dimensions, false);
-    console.log('setting', 'color', props.highlightParty);
     this.setColors(props.highlightParty, false);
+    this.setEconomicAxis(props.showEconomicAxis);
+    this.setSocialAxis(props.showSocialAxis);
   }
 
   setDimensions(dimensions, transition) {
@@ -103,6 +188,22 @@ class CustomD3Component extends D3Component {
     }
   }
 
+  setSocialAxis(enabled) {
+    if (enabled) {
+      this.socialAxis.style('opacity', 1)
+    } else {
+      this.socialAxis.style('opacity', 0)
+    }
+  }
+
+  setEconomicAxis(enabled) {
+    if (enabled) {
+      this.economicAxis.style('opacity', 1)
+    } else {
+      this.economicAxis.style('opacity', 0)
+    }
+  }
+
   update(props, oldProps) {
 
     if (props.highlightParty !== oldProps.highlightParty && props.dimensions !== oldProps.dimensions) {
@@ -118,6 +219,13 @@ class CustomD3Component extends D3Component {
         this.setDimensions(props.dimensions, true);
       }
     }
+    if (props.showSocialAxis !== oldProps.showSocialAxis) {
+      this.setSocialAxis(props.showSocialAxis);
+    }
+    if (props.showEconomicAxis !== oldProps.showEconomicAxis) {
+      this.setEconomicAxis(props.showEconomicAxis);
+    }
+
 
     // this.svg
     //   .selectAll('circle')

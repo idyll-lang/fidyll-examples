@@ -50,6 +50,87 @@ class CustomD3Component extends D3Component {
     this.xScale = d3.scaleLinear().domain([-1, 1]).range([0, width]);
     this.yScale = d3.scaleLinear().domain([-1, 1]).range([height, 0]);
 
+    this.economicAxis = svg.append('g').style('opacity', 1.0);
+    this.socialAxis = svg.append('g').style('opacity', 1.0);
+
+    this.economicAxis.append('line')
+      .attr('x1',  width / 8)
+      .attr('x2', 7 * width / 8)
+      .attr('y1', 3 * height / 4)
+      .attr('y2', 3 * height / 4)
+      .style('strokeWidth', 5)
+      .style('stroke', '#ccc');
+
+    this.economicAxis.append('text')
+      .attr('x', width / 2)
+      .attr('y', 3 * height / 4 + 16)
+      .style('font-size', '10px')
+      .style('fill', '#999')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'middle')
+      .text('Economic Axis');
+
+    this.economicAxis.append('text')
+      .attr('x', width / 8)
+      .attr('y', 3 * height / 4 + 16)
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'start')
+      .text('Liberal');
+
+    this.economicAxis.append('text')
+      .attr('x', 7 * width / 8)
+      .attr('y', 3 * height / 4 + 16)
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'end')
+      .text('Conservative');
+
+
+    this.socialAxis.append('line')
+      .attr('x1', width / 8)
+      .attr('x2', width / 8)
+      .attr('y1', height / 8)
+      .attr('y2', 5 * height / 8)
+      .style('strokeWidth', 5)
+      .style('stroke', '#ccc');
+
+
+    this.socialAxis.append('text')
+      .attr('x', width / 8)
+      .attr('y', height / 8 + ((4 * height / 8) / 2))
+      .attr('text-anchor', 'end')
+      .style('font-size', '10px')
+      .style('fill', '#999')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .text('Social Axis');
+
+    this.socialAxis.append('text')
+      .attr('x', width / 8)
+      .attr('y', height / 8)
+      .attr('text-anchor', 'end')
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .text('Conservative');
+
+    this.socialAxis.append('text')
+      .attr('x', width / 8)
+      .attr('y', 5 * height / 8)
+      .style('font-size', '10px')
+      .style('fill', '#ccc')
+      .style('font-weight', 'bold')
+      .style('text-transform', 'uppercase')
+      .attr('text-anchor', 'end')
+      .text('Liberal');
+
     console.log('setting', 'dim', props.dimensions);
     this.setDimensions(props.dimensions, false);
     console.log('setting', 'color', props.highlightParty);
@@ -100,6 +181,22 @@ class CustomD3Component extends D3Component {
       selection
         .style('fill', '#333')
         .style('opacity', 0.6)
+    }
+  }
+
+  setSocialAxis(enabled) {
+    if (enabled) {
+      this.socialAxis.style('opacity', 1)
+    } else {
+      this.socialAxis.style('opacity', 0)
+    }
+  }
+
+  setEconomicAxis(enabled) {
+    if (enabled) {
+      this.economicAxis.style('opacity', 1)
+    } else {
+      this.economicAxis.style('opacity', 0)
     }
   }
 

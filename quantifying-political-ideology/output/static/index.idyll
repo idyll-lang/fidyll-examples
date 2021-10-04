@@ -1,13 +1,205 @@
+[meta
+  title:"Quantifying Political Ideology"
+  description:"Understanding DW-Nominate's Spatial Model"
+  fullWidth:true /]
 [Header
   color:"#333"
   background:"#fff"
   fullWidth:true
   title:"Quantifying Political Ideology"
   subtitle:"Understanding DW-Nominate's Spatial Model"
-  author:"Matthew Conlen" /]
-[data name:"members" source:"members-clean.json" /]
-[data name:"rollcalls" source:"rollcalls-small.csv" /]
-[data name:"membervotes" source:"member-votes-clean.json" /]
+  author:"Matthew Conlen"
+  authorLink:"https://mathisonian.com" /]
+[data name:"members" source:"members-clean-116.json" /]
+[data name:"rollcalls" source:"rollcalls-small-116.csv" /]
+[data name:"membervotes" source:"member-votes-clean-116.json" /]
+
+American politics are defined by a two party system. We often think of these two groups—the Democrats and the Republicans—as monoliths, two factions that each vote as a bloc to further their respective agenda. And while this is true to some extent, in reality there is at least a little bit more nuance. We know that some politicians, like Bernie Sanders on the left or Tom Cotton on the right are trying to push their party away from the center by enacting policies that differ, sometimes radically, from the status quo.
+
+The goal of this article is for a reader to understand the quantitative that political scientists developed in order to quantify the political leanings of elected officials. In particular we'll dig into _spatial_ models which should be intuitive to anyone who understood the references to _left_, _right_, and _center_ of the previous paragraph.
+
+This article focuses on the (DW-)NOMINATE method from Poole and Rosenthal, an algorithm which is used to derive _ideological scores_ that describe members of congress, senators, and presidents. This is by no means the only example in this family of models (for example Martin-Quinn scores similarly quantify leanings of supreme court judges), but it is widely used by political scientists.
+
+## Spatial Models
+
+The premise of a spatial model is simple: politicians are put at a particular position on a graph and we can compare their locations and distances between them using Euclidean geometry—that is, we can quantify how similar two politicians are simply by measuring the distance of the line of the line that connects them.
+
+Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    highlightParty:false
+    dimensions:0
+    showEconomicAxis:false
+    showSocialAxis:false /]
+[/Graphic]
+
+It's a trick question: it's impossible to say because they're positioned randomly on the screen. Is it any easier if we use ideological scores assigned by the NOMINATE method to position them along a horizontal line?
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    highlightParty:false
+    dimensions:1
+    showEconomicAxis:false
+    showSocialAxis:false /]
+[/Graphic]
+
+A pattern emerges! The politicians were assigned a position based solely on their prior voting behavior. While the algorithm doesn't understand anything about Democrats or Republicans, two clear groups have formed. Notice that there aren't any politicians directly in the middle, the parties have separated into distinct voting blocs.
+
+Note that, for the politicians most toward the center (the _moderates_), they are closer ideologically to some moderate members of the other party than they are to the most outlying members of their own party.
+
+It turns out that the politicians shown on the left are the Democratic house members and the ones on the right are the Republicans. It could just as easily have placed all of the Republicans on the left and the Democrats on the right, but we process the scores afterward to get the positions to match social convention.
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    highlightParty:true
+    dimensions:1
+    showEconomicAxis:false
+    showSocialAxis:false /]
+[/Graphic]
+
+There is no inherent reason that we only need to use one dimension (left-to-right). We are operating in the realm of mathematics and n-dimensional reasoning here, so we might find that a spatial model that uses more dimensions is more effective. The researchers that developed the NOMINATE method found that their system worked best when using two dimensions. Anything more than that just added more complexity without much benefit.
+
+The first dimension is typically understood to represent a politician's _economic_ ideology, although it is important to note that the algorithm itself doesn't ascribe any semantic meaning to these dimensions—this is overlaid by human analysts interpreting these results.
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    highlightParty:true
+    dimensions:1
+    showEconomicAxis:true
+    showSocialAxis:false /]
+[/Graphic]
+
+Once we add in the second dimension, a richer picture emerges.
+
+There is variance within both parties along both dimensions, although the thing that seems to truly
+separate Republicans from Democrats is their placement along the economic axis.
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    highlightParty:true
+    dimensions:2
+    showEconomicAxis:true
+    showSocialAxis:true /]
+[/Graphic]
+
+# The 116th Congress
+Each of the circles you've been seeing actually represents a member of the House
+of Representatives in the 116th United States Congress.
+The spatial model is useful because it defines a general ideological space. Not only
+can politicians be positioned in this space, but so can the bills they vote for!
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:-1
+    showMemberVote:false
+    transformCoordinates:false /]
+[/Graphic]
+
+When a congress member votes on a bill, they are expressing an ideological view: do they prefer a world in which the bill has passed or the status quo. Imagine that each of those two possible outcomes can be placed in our two-dimensional ideological space.
+
+Now, thinking geometrically, there must be a line that separates those politicians who are closer ideologically to the bill passing outcome from the status quo. That line is called a _cutting line_, because it separates those members that we would expect to vote for the bill from the ones that we expect to vote against.
+
+The cutting line seen here is the cutting line for U.S. House Bill 6201 (HR6201), which would provide federal aid for economic impacts from the coronavirus.
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:801
+    showMemberVote:false
+    transformCoordinates:false /]
+[/Graphic]
+
+The bill passed 363 to 41, and led to increased federal unemployment insurance payments, and more federal money for food aid programs among other things.
+
+The graphic shows how each member of the house voted for the bill. Those shown tinted in green voted _yay_, those tinted red voted _nay_, and the ones shaded gray did not vote.
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:801
+    showMemberVote:true
+    transformCoordinates:false /]
+[/Graphic]
+
+The cutting line is not perfect—some members vote against what we would have expected. In some cases this could be due to political gamesmanship, but generally it is just a byproduct of the fact that this is a messy, imperfect process.
+
+But as far as votes in the U.S. House of Representatives go, HR6201 was quite popular. Many are more clearly split along party lines.
+
+Take U.S. House Joint Resolution 46 which would terminate President Trump's declaration of an emergency at the U.S.-Mexican border. (The emergency declaration allowed him to bypass Congress and reallocate funds to build a border wall.)
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:93
+    showMemberVote:false
+    transformCoordinates:false /]
+[/Graphic]
+
+The cutting line for this vote has a different angle compared to HR6201. The fact that this cutting line isn't quite as vertical tells us that the social dimension
+played a larger role in the voting outcome compared to the coronavirus relief bill. This makes sense intuitively sense the relief bill was primarily economic in nature and the border wall plays on larger social issues.
+
+The bill ultimately passed the House 245 to 182 and went on to be approved by the Senate.
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:93
+    showMemberVote:true
+    transformCoordinates:false /]
+[/Graphic]
+
+Finally, let's look at one of the perfectly partisan votes that was held in the House. This vote, which took place on December 18, 2019, was simply called "On Motion to Adjourn" and would have let the House out of session for the remainder of the year.
+
+So why was a vote over whether the congress members could start winter holidays so contentious? Later that same day the House voted to impeach Donald Trump for the first time.
+
+[Graphic]
+  [VoteExplainer
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    rollnumber:691
+    showMemberVote:true
+    transformCoordinates:false /]
+[/Graphic]
+
+Okay lets kick it offffff....
+
+[Graphic]
+  [OptimizerVis
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    optimizeState:"initialization" /]
+[/Graphic]
+
+Put the votes in a random place!
+
+[Graphic]
+  [OptimizerVis
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    optimizeState:"placeVotes" /]
+[/Graphic]
+
+Put the members in a sorted place!
+
+[Graphic]
+  [OptimizerVis
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    optimizeState:"orderMembers" /]
+[/Graphic]
+
+Put the votes in a sorted place!
+
+[Graphic]
+  [OptimizerVis
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    optimizeState:"orderVotes" /]
+[/Graphic]
+
+And here we go with results
 
 At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
 
@@ -16,515 +208,257 @@ In presidential elections political scientists look toward the data collected ab
 A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
 
 [Graphic]
-  [DwNominate
+  [OptimizerVis
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    dimensions:0
-    highlightParty:false /]
+    optimizeState:"results" /]
 [/Graphic]
-
-Let's look at an example.
-
-Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
-
-[Graphic]
-  [DwNominate
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    dimensions:0
-    highlightParty:true /]
-[/Graphic]
-
-Of course not, because they're positioned randomly on the screen. While there isn't any information contained in the positions,
-this shows the essence of a spacial model: politicians are placed in a position [equation]x, y[/equation] and the euclidian distance
-between points can be interpreted as the magnitude of ideological differences.
-
-[Graphic]
-  [DwNominate
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    dimensions:1
-    highlightParty:false /]
-[/Graphic]
-
-The DW-Nominate method uses all of a body's past voting behavior to come up with two numbers that describe each politician. The algorithm doesn't know anything about
-their political party membership, iand nstead only looks at votes.
-
-Let's look at just the first component of the congress members' scores. Plotting using just a single component results in a line, something like a mathematical
-version of traditional left-right spectrum.
-
-[Graphic]
-  [DwNominate
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    dimensions:1
-    highlightParty:true /]
-[/Graphic]
-
-Using just one dimension, the loyalties of each politician become clear!
-
-Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
-
-[Graphic]
-  [DwNominate
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    dimensions:2
-    highlightParty:true /]
-[/Graphic]
-
-While compressing the behavior down to a left-right spectrum is pretty usesful, a second dimension is needed to be really accurate.
-
-These two dimensions are typically interpreted as _economic_ and _social_.
-
-When it comes to voting on legislation,
-Nope rollnumber rangee 1, 184, 1
-
-[Graphic]
-  [VoteExplainer
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    rollnumber:5 /]
-[/Graphic]
-
-Explainer of nominate
-
-[Graphic]
-  [VoteExplainer
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    rollnumber:5
-    showMemberVote:true /]
-[/Graphic]
-
-Explainer of DW
-
-[Graphic]
-  [VoteExplainer
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    rollnumber:5
-    showMemberVote:true
-    colorBg:true /]
-[/Graphic]
-
-Caveats
-
-See page 5-6 of ideology and congress
-
-[Graphic]
-  [VoteExplainer
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    rollnumber:9
-    showMemberVote:false
-    colorBg:false /]
-[/Graphic]
-
-Point to other resources
-
-[Graphic]
-  [VoteExplainer
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    rollnumber:9
-    showMemberVote:true /]
-[/Graphic]
-
-Martin-Quinn Scores
-
-[Graphic]
-  [VoteExplainer
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    rollnumber:9
-    showMemberVote:true
-    colorBg:true /]
-[/Graphic]
-
-These positions are highly predictive of the actual score. For example see:
-
 [div fullWidth:true]
   [div]
-## Appendix Scene 2
+## Appendix Scene 1
     [div className:"appendix-graphic-container"]
       [div]
-        [h3]
+        [h3 /]
+        [div className:"appendix-graphic-plex"]
           [div
-            className:"appendix-graphic-plex"
+            className:"appendix-graphic-holder"
             style:`{
-                            display: 'grid',
-                            gridTemplateColumns: '1fr 1fr 1fr 1fr'
-                          }`]
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [DwNominate
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              highlightParty:false
+              dimensions:0
+              showEconomicAxis:false
+              showSocialAxis:false /]
             [div
-              className:"appendix-graphic-holder"
               style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [DwNominate
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                highlightParty:false
-                dimensions:0 /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"highlightParty = false" /][br/]
-                [Equation latex:"dimensions = 0" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [DwNominate
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                highlightParty:false
-                dimensions:1 /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"highlightParty = false" /][br/]
-                [Equation latex:"dimensions = 1" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [DwNominate
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                highlightParty:false
-                dimensions:2 /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"highlightParty = false" /][br/]
-                [Equation latex:"dimensions = 2" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [DwNominate
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                highlightParty:true
-                dimensions:0 /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"highlightParty = true" /][br/]
-                [Equation latex:"dimensions = 0" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [DwNominate
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                highlightParty:true
-                dimensions:1 /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"highlightParty = true" /][br/]
-                [Equation latex:"dimensions = 1" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [DwNominate
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                highlightParty:true
-                dimensions:2 /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"highlightParty = true" /][br/]
-                [Equation latex:"dimensions = 2" /][br/]
-              [/div]
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showEconomicAxis = false" /][br/]
+              [Equation latex:"showSocialAxis = false" /][br/]
+              [Equation latex:"highlightParty = false" /][br/]
+              [Equation latex:"dimensions = 0" /][br/]
             [/div]
           [/div]
-        [/h3]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [DwNominate
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              highlightParty:false
+              dimensions:1
+              showEconomicAxis:false
+              showSocialAxis:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showEconomicAxis = false" /][br/]
+              [Equation latex:"showSocialAxis = false" /][br/]
+              [Equation latex:"highlightParty = false" /][br/]
+              [Equation latex:"dimensions = 1" /][br/]
+            [/div]
+          [/div]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [DwNominate
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              highlightParty:false
+              dimensions:2
+              showEconomicAxis:false
+              showSocialAxis:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showEconomicAxis = false" /][br/]
+              [Equation latex:"showSocialAxis = false" /][br/]
+              [Equation latex:"highlightParty = false" /][br/]
+              [Equation latex:"dimensions = 2" /][br/]
+            [/div]
+          [/div]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [DwNominate
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              highlightParty:true
+              dimensions:0
+              showEconomicAxis:false
+              showSocialAxis:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showEconomicAxis = false" /][br/]
+              [Equation latex:"showSocialAxis = false" /][br/]
+              [Equation latex:"highlightParty = true" /][br/]
+              [Equation latex:"dimensions = 0" /][br/]
+            [/div]
+          [/div]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [DwNominate
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              highlightParty:true
+              dimensions:1
+              showEconomicAxis:false
+              showSocialAxis:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showEconomicAxis = false" /][br/]
+              [Equation latex:"showSocialAxis = false" /][br/]
+              [Equation latex:"highlightParty = true" /][br/]
+              [Equation latex:"dimensions = 1" /][br/]
+            [/div]
+          [/div]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [DwNominate
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              highlightParty:true
+              dimensions:2
+              showEconomicAxis:false
+              showSocialAxis:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showEconomicAxis = false" /][br/]
+              [Equation latex:"showSocialAxis = false" /][br/]
+              [Equation latex:"highlightParty = true" /][br/]
+              [Equation latex:"dimensions = 2" /][br/]
+            [/div]
+          [/div]
+        [/div]
       [/div]
     [/div]
   [/div]
 [/div]
 [div fullWidth:true]
   [div]
-## Appendix Scene 3
+## Appendix Scene 2
     [div className:"appendix-graphic-container"]
       [div]
-        [h3]
+        [h3 /]
+        [div className:"appendix-graphic-plex"]
           [div
-            className:"appendix-graphic-plex"
+            className:"appendix-graphic-holder"
             style:`{
-                            display: 'grid',
-                            gridTemplateColumns: '1fr 1fr 1fr 1fr'
-                          }`]
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [VoteExplainer
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              rollnumber:93
+              showMemberVote:true
+              transformCoordinates:false /]
             [div
-              className:"appendix-graphic-holder"
               style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:5
-                showMemberVote:true
-                transformCoordinates:false
-                colorBg:true /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 5" /][br/]
-                [Equation latex:"colorBg = true" /][br/]
-                [Equation latex:"showMemberVote = true" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:5
-                showMemberVote:false
-                transformCoordinates:false
-                colorBg:true /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 5" /][br/]
-                [Equation latex:"colorBg = true" /][br/]
-                [Equation latex:"showMemberVote = false" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:5
-                showMemberVote:true
-                transformCoordinates:false
-                colorBg:false /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 5" /][br/]
-                [Equation latex:"colorBg = false" /][br/]
-                [Equation latex:"showMemberVote = true" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:5
-                showMemberVote:false
-                transformCoordinates:false
-                colorBg:false /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 5" /][br/]
-                [Equation latex:"colorBg = false" /][br/]
-                [Equation latex:"showMemberVote = false" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:7
-                showMemberVote:true
-                transformCoordinates:false
-                colorBg:true /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 7" /][br/]
-                [Equation latex:"colorBg = true" /][br/]
-                [Equation latex:"showMemberVote = true" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:7
-                showMemberVote:false
-                transformCoordinates:false
-                colorBg:true /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 7" /][br/]
-                [Equation latex:"colorBg = true" /][br/]
-                [Equation latex:"showMemberVote = false" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:7
-                showMemberVote:true
-                transformCoordinates:false
-                colorBg:false /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 7" /][br/]
-                [Equation latex:"colorBg = false" /][br/]
-                [Equation latex:"showMemberVote = true" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:7
-                showMemberVote:false
-                transformCoordinates:false
-                colorBg:false /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 7" /][br/]
-                [Equation latex:"colorBg = false" /][br/]
-                [Equation latex:"showMemberVote = false" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:9
-                showMemberVote:true
-                transformCoordinates:false
-                colorBg:true /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 9" /][br/]
-                [Equation latex:"colorBg = true" /][br/]
-                [Equation latex:"showMemberVote = true" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:9
-                showMemberVote:false
-                transformCoordinates:false
-                colorBg:true /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 9" /][br/]
-                [Equation latex:"colorBg = true" /][br/]
-                [Equation latex:"showMemberVote = false" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:9
-                showMemberVote:true
-                transformCoordinates:false
-                colorBg:false /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 9" /][br/]
-                [Equation latex:"colorBg = false" /][br/]
-                [Equation latex:"showMemberVote = true" /][br/]
-              [/div]
-            [/div]
-            [div
-              className:"appendix-graphic-holder"
-              style:`{
-                                  margin: '0 auto',
-                                  textAlign: 'center'
-                                }`]
-              [VoteExplainer
-                data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-                rollnumber:9
-                showMemberVote:false
-                transformCoordinates:false
-                colorBg:false /]
-              [div
-                style:`{
-                                    transform: 'scale(0.666)'
-                                  }`]
-                [Equation latex:"rollnumber = 9" /][br/]
-                [Equation latex:"colorBg = false" /][br/]
-                [Equation latex:"showMemberVote = false" /][br/]
-              [/div]
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showMemberVote = true" /][br/]
+              [Equation latex:"rollnumber = 93" /][br/]
             [/div]
           [/div]
-        [/h3]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [VoteExplainer
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              rollnumber:691
+              showMemberVote:true
+              transformCoordinates:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showMemberVote = true" /][br/]
+              [Equation latex:"rollnumber = 691" /][br/]
+            [/div]
+          [/div]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [VoteExplainer
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              rollnumber:801
+              showMemberVote:true
+              transformCoordinates:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showMemberVote = true" /][br/]
+              [Equation latex:"rollnumber = 801" /][br/]
+            [/div]
+          [/div]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [VoteExplainer
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              rollnumber:807
+              showMemberVote:true
+              transformCoordinates:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showMemberVote = true" /][br/]
+              [Equation latex:"rollnumber = 807" /][br/]
+            [/div]
+          [/div]
+          [div
+            className:"appendix-graphic-holder"
+            style:`{
+                              margin: '0 auto',
+                              textAlign: 'center'
+                            }`]
+            [VoteExplainer
+              data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              rollnumber:808
+              showMemberVote:true
+              transformCoordinates:false /]
+            [div
+              style:`{
+                                transform: 'scale(0.666)'
+                              }`]
+              [Equation latex:"showMemberVote = true" /][br/]
+              [Equation latex:"rollnumber = 808" /][br/]
+            [/div]
+          [/div]
+        [/div]
       [/div]
     [/div]
   [/div]

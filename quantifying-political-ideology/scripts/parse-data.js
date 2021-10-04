@@ -7,7 +7,7 @@ const path = require('path');
 const text = fs.readFileSync(path.join(__dirname, '..', 'data', 'HSall_members.csv'), 'utf-8');
 const df = aq.fromCSV(text)
 
-const currentClass = df.filter(d => d.congress === 117);
+const currentClass = df.filter(d => d.congress === 116);
 const currentHouse = currentClass.filter(d => d.chamber === 'House');
 
 
@@ -29,5 +29,5 @@ const currentClassWithHistory = df.filter(d => d.chamber === 'House').filter(aq.
 console.log(currentClassWithHistory.array('icpsr').length);
 
 
-fs.writeFileSync(path.join(__dirname, '..', 'data', 'members-clean.json'), JSON.stringify(currentClassWithHistory.objects()));
+fs.writeFileSync(path.join(__dirname, '..', 'data', 'members-clean-116.json'), JSON.stringify(currentClassWithHistory.objects()));
 

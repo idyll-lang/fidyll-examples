@@ -4,88 +4,85 @@
   title:"Quantifying Political Ideology"
   subtitle:"Understanding DW-Nominate's Spatial Model"
   author:"Matthew Conlen"
+  authorLink:"https://mathisonian.com"
   fullWidth:true /]
-[data name:"members" source:"members-clean.json" /]
-[data name:"rollcalls" source:"rollcalls-small.csv" /]
-[data name:"membervotes" source:"member-votes-clean.json" /]
+[data name:"members" source:"members-clean-116.json" /]
+[data name:"rollcalls" source:"rollcalls-small-116.csv" /]
+[data name:"membervotes" source:"member-votes-clean-116.json" /]
 [var name:"scene_0_highlightParty" value:false /]
 [var name:"scene_0_dimensions" value:0 /]
-[var name:"scene_1_rollnumber" value:1 /]
+[var name:"scene_0_showEconomicAxis" value:false /]
+[var name:"scene_0_showSocialAxis" value:false /]
+[var name:"scene_1_rollnumber" value:-1 /]
 [var name:"scene_1_showMemberVote" value:false /]
 [var name:"scene_1_transformCoordinates" value:false /]
-[var name:"scene_1_colorBg" value:false /]
+[var name:"scene_2_optimizeState" value:"initialization" /]
 
-At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
+American politics are defined by a two party system. We often think of these two groups—the Democrats and the Republicans—as monoliths, two factions that each vote as a bloc to further their respective agenda. And while this is true to some extent, in reality there is at least a little bit more nuance. We know that some politicians, like Bernie Sanders on the left or Tom Cotton on the right are trying to push their party away from the center by enacting policies that differ, sometimes radically, from the status quo.
 
-In presidential elections political scientists look toward the data collected about the voting public to predict change in the government. On the other hand we might be interested in using data about elected politicians in order to forecast the outcome of, for example, bills coming to vote.
+The goal of this article is for a reader to understand the quantitative that political scientists developed in order to quantify the political leanings of elected officials. In particular we'll dig into _spatial_ models which should be intuitive to anyone who understood the references to _left_, _right_, and _center_ of the previous paragraph.
 
-A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
+This article focuses on the (DW-)NOMINATE method from Poole and Rosenthal, an algorithm which is used to derive _ideological scores_ that describe members of congress, senators, and presidents. This is by no means the only example in this family of models (for example Martin-Quinn scores similarly quantify leanings of supreme court judges), but it is widely used by political scientists.
+
+## Spatial Models
+
+The premise of a spatial model is simple: politicians are put at a particular position on a graph and we can compare their locations and distances between them using Euclidean geometry—that is, we can quantify how similar two politicians are simply by measuring the distance of the line of the line that connects them.
 
 [Scroller fullWidth:true]
   [Graphic]
     [DwNominate
       data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
       highlightParty:scene_0_highlightParty
-      dimensions:scene_0_dimensions /]
-    [div className:"gridyll-control-container"]
-      [div]
-        highlightParty
-        [Boolean value:scene_0_highlightParty /]
-      [/div]
-      [div]
-        dimensions
-        [Range value:scene_0_dimensions min:0 max:2 step:1 /]
-      [/div]
-    [/div]
+      dimensions:scene_0_dimensions
+      showEconomicAxis:scene_0_showEconomicAxis
+      showSocialAxis:scene_0_showSocialAxis /]
+    [div className:"gridyll-control-container" /]
   [/Graphic]
   [Step]
     [p
-      onEnterViewFully:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
-      Let's look at an example.
-    [/p]
-    [p
-      onEnterViewFully:`scene_0_dimensions = 0;scene_0_highlightParty = false`]
+      onEnterViewFully:`scene_0_highlightParty = false;scene_0_dimensions = 0;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
       Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
     [/p]
   [/Step]
   [Step]
     [p
-      onEnterViewFully:`scene_0_dimensions = 0;scene_0_highlightParty = true`]
-      Of course not, because they're positioned randomly on the screen. While there isn't any information contained in the positions,
-this shows the essence of a spacial model: politicians are placed in a position [equation]x, y[/equation] and the euclidian distance
-between points can be interpreted as the magnitude of ideological differences.
+      onEnterViewFully:`scene_0_highlightParty = false;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
+      It's a trick question: it's impossible to say because they're positioned randomly on the screen. Is it any easier if we use ideological scores assigned by the NOMINATE method to position them along a horizontal line?
     [/p]
   [/Step]
   [Step]
     [p
-      onEnterViewFully:`scene_0_dimensions = 1;scene_0_highlightParty = false`]
-      The DW-Nominate method uses all of a body's past voting behavior to come up with two numbers that describe each politician. The algorithm doesn't know anything about
-their political party membership, iand nstead only looks at votes.
+      onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
+      A pattern emerges! The politicians were assigned a position based solely on their prior voting behavior. While the algorithm doesn't understand anything about Democrats or Republicans, two clear groups have formed. Notice that there aren't any politicians directly in the middle, the parties have separated into distinct voting blocs.
     [/p]
     [p
-      onEnterViewFully:`scene_0_dimensions = 1;scene_0_highlightParty = false`]
-      Let's look at just the first component of the congress members' scores. Plotting using just a single component results in a line, something like a mathematical
-version of traditional left-right spectrum.
-    [/p]
-  [/Step]
-  [Step]
-    [p
-      onEnterViewFully:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
-      Using just one dimension, the loyalties of each politician become clear!
+      onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
+      Note that, for the politicians most toward the center (the _moderates_), they are closer ideologically to some moderate members of the other party than they are to the most outlying members of their own party.
     [/p]
     [p
-      onEnterViewFully:`scene_0_dimensions = 1;scene_0_highlightParty = true`]
-      Even though the algorithm doesn't know about political parties, the candidates are split perfectly by party. This is because voting behavior occurs largely along party lines.
+      onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
+      It turns out that the politicians shown on the left are the Democratic house members and the ones on the right are the Republicans. It could just as easily have placed all of the Republicans on the left and the Democrats on the right, but we process the scores afterward to get the positions to match social convention.
     [/p]
   [/Step]
   [Step]
     [p
-      onEnterViewFully:`scene_0_dimensions = 2;scene_0_highlightParty = true`]
-      While compressing the behavior down to a left-right spectrum is pretty usesful, a second dimension is needed to be really accurate.
+      onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = true;scene_0_showSocialAxis = false`]
+      There is no inherent reason that we only need to use one dimension (left-to-right). We are operating in the realm of mathematics and n-dimensional reasoning here, so we might find that a spatial model that uses more dimensions is more effective. The researchers that developed the NOMINATE method found that their system worked best when using two dimensions. Anything more than that just added more complexity without much benefit.
     [/p]
     [p
-      onEnterViewFully:`scene_0_dimensions = 2;scene_0_highlightParty = true`]
-      These two dimensions are typically interpreted as _economic_ and _social_.
+      onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = true;scene_0_showSocialAxis = false`]
+      The first dimension is typically understood to represent a politician's _economic_ ideology, although it is important to note that the algorithm itself doesn't ascribe any semantic meaning to these dimensions—this is overlaid by human analysts interpreting these results.
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 2;scene_0_showEconomicAxis = true;scene_0_showSocialAxis = true`]
+      Once we add in the second dimension, a richer picture emerges.
+    [/p]
+    [p
+      onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 2;scene_0_showEconomicAxis = true;scene_0_showSocialAxis = true`]
+      There is variance within both parties along both dimensions, although the thing that seems to truly
+separate Republicans from Democrats is their placement along the economic axis.
     [/p]
   [/Step]
 [/Scroller]
@@ -95,68 +92,130 @@ version of traditional left-right spectrum.
       data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
       rollnumber:scene_1_rollnumber
       showMemberVote:scene_1_showMemberVote
-      transformCoordinates:scene_1_transformCoordinates
-      colorBg:scene_1_colorBg /]
+      transformCoordinates:scene_1_transformCoordinates /]
     [div className:"gridyll-control-container"]
-      [div]
-        rollnumber
-        [Select
-          value:scene_1_rollnumber
-          options:`[{"label":5,"value":5},{"label":7,"value":7},{"label":9,"value":9}]` /]
-      [/div]
-      [div]
-        colorBg
-        [Boolean value:scene_1_colorBg /]
-      [/div]
       [div]
         showMemberVote
         [Boolean value:scene_1_showMemberVote /]
       [/div]
+      [div]
+        rollnumber
+        [Select
+          value:scene_1_rollnumber
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
     [/div]
   [/Graphic]
   [Step]
-    [p]
-      When it comes to voting on legislation,
-Nope rollnumber rangee 1, 184, 1
-    [/p]
-  [/Step]
-  [Step]
-    [p onEnterViewFully:`scene_1_rollnumber = 5`]
-      Explainer of nominate
-    [/p]
-  [/Step]
-  [Step]
     [p
-      onEnterViewFully:`scene_1_rollnumber = 5;scene_1_showMemberVote = true`]
-      Explainer of DW
+      onEnterViewFully:`scene_1_rollnumber = -1;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      # The 116th Congress
+Each of the circles you've been seeing actually represents a member of the House
+of Representatives in the 116th United States Congress.
+The spatial model is useful because it defines a general ideological space. Not only
+can politicians be positioned in this space, but so can the bills they vote for!
     [/p]
   [/Step]
   [Step]
     [p
-      onEnterViewFully:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_colorBg = true`]
-      Caveats
+      onEnterViewFully:`scene_1_rollnumber = 801;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      When a congress member votes on a bill, they are expressing an ideological view: do they prefer a world in which the bill has passed or the status quo. Imagine that each of those two possible outcomes can be placed in our two-dimensional ideological space.
     [/p]
     [p
-      onEnterViewFully:`scene_1_rollnumber = 5;scene_1_showMemberVote = true;scene_1_colorBg = true`]
-      See page 5-6 of ideology and congress
+      onEnterViewFully:`scene_1_rollnumber = 801;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      Now, thinking geometrically, there must be a line that separates those politicians who are closer ideologically to the bill passing outcome from the status quo. That line is called a _cutting line_, because it separates those members that we would expect to vote for the bill from the ones that we expect to vote against.
     [/p]
-  [/Step]
-  [Step]
     [p
-      onEnterViewFully:`scene_1_rollnumber = 9;scene_1_showMemberVote = false;scene_1_colorBg = false`]
-      Point to other resources
+      onEnterViewFully:`scene_1_rollnumber = 801;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      The cutting line seen here is the cutting line for U.S. House Bill 6201 (HR6201), which would provide federal aid for economic impacts from the coronavirus.
     [/p]
   [/Step]
   [Step]
     [p
-      onEnterViewFully:`scene_1_rollnumber = 9;scene_1_showMemberVote = true`]
-      Martin-Quinn Scores
+      onEnterViewFully:`scene_1_rollnumber = 801;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+      The bill passed 363 to 41, and led to increased federal unemployment insurance payments, and more federal money for food aid programs among other things.
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 801;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+      The graphic shows how each member of the house voted for the bill. Those shown tinted in green voted _yay_, those tinted red voted _nay_, and the ones shaded gray did not vote.
     [/p]
   [/Step]
   [Step]
     [p
-      onEnterViewFully:`scene_1_rollnumber = 9;scene_1_showMemberVote = true;scene_1_colorBg = true`]
-      These positions are highly predictive of the actual score. For example see:
+      onEnterViewFully:`scene_1_rollnumber = 93;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      The cutting line is not perfect—some members vote against what we would have expected. In some cases this could be due to political gamesmanship, but generally it is just a byproduct of the fact that this is a messy, imperfect process.
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 93;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      But as far as votes in the U.S. House of Representatives go, HR6201 was quite popular. Many are more clearly split along party lines.
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 93;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      Take U.S. House Joint Resolution 46 which would terminate President Trump's declaration of an emergency at the U.S.-Mexican border. (The emergency declaration allowed him to bypass Congress and reallocate funds to build a border wall.)
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 93;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+      The cutting line for this vote has a different angle compared to HR6201. The fact that this cutting line isn't quite as vertical tells us that the social dimension
+played a larger role in the voting outcome compared to the coronavirus relief bill. This makes sense intuitively sense the relief bill was primarily economic in nature and the border wall plays on larger social issues.
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 93;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+      The bill ultimately passed the House 245 to 182 and went on to be approved by the Senate.
+    [/p]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 691;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+      Finally, let's look at one of the perfectly partisan votes that was held in the House. This vote, which took place on December 18, 2019, was simply called "On Motion to Adjourn" and would have let the House out of session for the remainder of the year.
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = 691;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
+      So why was a vote over whether the congress members could start winter holidays so contentious? Later that same day the House voted to impeach Donald Trump for the first time.
+    [/p]
+  [/Step]
+[/Scroller]
+[Scroller fullWidth:true]
+  [Graphic]
+    [OptimizerVis
+      data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+      optimizeState:scene_2_optimizeState /]
+    [div className:"gridyll-control-container" /]
+  [/Graphic]
+  [Step]
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "initialization"`]
+      Okay lets kick it offffff....
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_2_optimizeState = "placeVotes"`]
+      Put the votes in a random place!
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_2_optimizeState = "orderMembers"`]
+      Put the members in a sorted place!
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_2_optimizeState = "orderVotes"`]
+      Put the votes in a sorted place!
+    [/p]
+  [/Step]
+  [Step]
+    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
+      And here we go with results
+    [/p]
+    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
+      At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
+    [/p]
+    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
+      In presidential elections political scientists look toward the data collected about the voting public to predict change in the government. On the other hand we might be interested in using data about elected politicians in order to forecast the outcome of, for example, bills coming to vote.
+    [/p]
+    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
+      A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
     [/p]
   [/Step]
 [/Scroller]
