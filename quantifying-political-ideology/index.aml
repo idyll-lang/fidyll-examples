@@ -4,9 +4,7 @@ subtitle: Understanding DW-Nominate's Spatial Model
 author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
-    - static
     - presentation
-    - scroller
 data:
    members: members-clean-116.json
    rollcalls: rollcalls-small-116.csv

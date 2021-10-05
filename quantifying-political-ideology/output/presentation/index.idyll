@@ -115,6 +115,21 @@
     [div]
       This vote, on December 18, 2019, split perfectly along party lines, would have let the House out of session for the remainder of the year. Later that same day the House voted to impeach Donald Trump for the first time.
     [/div]
+    [details className:"control-details"]
+      [summary]
+        Controls
+      [/summary]
+      [div]
+        showMemberVote
+        [Boolean value:scene_1_showMemberVote /]
+      [/div]
+      [div]
+        rollnumber
+        [Select
+          value:scene_1_rollnumber
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/details]
   [/Slide]
   [Slide onEnter:`scene_2_optimizeState = "initialization"`]
     [div]
@@ -152,7 +167,7 @@
   [/Slide]
 [/Slideshow]
 [Broadcaster
-  peerkey:"gridyll-presentation-3869"
+  peerkey:"gridyll-presentation-1054"
   __slideshowIndex:__slideshowIndex
   __slideshowLength:__slideshowLength
   scene_0_highlightParty:scene_0_highlightParty

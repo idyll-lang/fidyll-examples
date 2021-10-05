@@ -4,8 +4,6 @@ subtitle: With Margo and Julia
 author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
-    - static
-    - scroller
     - presentation
 ---
 
