@@ -39,10 +39,12 @@ class OptimizerVis extends React.Component {
 
     const membersWithHistory = props.data.members;
     const currentMembers = membersWithHistory.filter(d => d.congress === 117);
-    this.members = currentMembers;
+    this.members = currentMembers.filter(_ => Math.random() < .15);
 
     this.xScale = d3.scaleLinear().domain([-1, 1]).range([0, width]);
     this.yScale = d3.scaleLinear().domain([-1, 1]).range([height, 0]);
+
+    this.rollcalls = props.data.rollcalls.filter(_ => Math.random() < .15);
   }
 
   getMemberVoteColor(m) {
@@ -71,7 +73,7 @@ class OptimizerVis extends React.Component {
           style={{ display: 'block', margin: '20px auto', background: 'white', maxHeight: '100vh' }}
         >
           <defs>
-            <clipPath id="clipCircle">
+            <clipPath id="clipCircleOpt">
               <circle r={6} cx={7.5} cy={7.5}/>
             </clipPath>
           </defs>
@@ -108,8 +110,8 @@ class OptimizerVis extends React.Component {
 
 
             return <React.Fragment key={`${m.icpsr}-container`}>
-              <circle key={`${m.icpsr}-member`} r={7} fill={PARTY_COLORS[m.party_code]} cx={this.xScale(mxt)} cy={this.yScale(myt)} />
-              <image width={15} height={15} href={`static/images/members-small/${pad(m.icpsr, 6)}.jpg`} transform={`translate(${this.xScale(mxt) - 15/2}, ${this.yScale(myt) - 15/2})`} clipPath="url(#clipCircle)" />
+              <motion.circle key={`${m.icpsr}-member`} r={7} fill={PARTY_COLORS[m.party_code]} animate={{cx: this.xScale(mxt), cy: this.yScale(myt)}} transition={{ease: "linear", duration: .25}} initial={false} />
+              <motion.image width={15} height={15} href={`static/images/members-small/${pad(m.icpsr, 6)}.jpg`} animate={{x: this.xScale(mxt) - 15/2,  y: this.yScale(myt) - 15/2 }} clipPath="url(#clipCircleOpt)" transition={{ease: "linear", duration: .25}} initial={false} />
 
               {/* <motion.rect animate={{x: this.xScale(mxt) - 15/2, y: this.yScale(myt) - 15/2}} width={15} height={15} fill={PARTY_COLORS[m.party_code]} opacity={0.2}  transition={{ease: "easeInOut", duration: .75}} initial={false} /> */}
               <motion.circle animate={{x: this.xScale(mxt), y: this.yScale(myt), opacity: props.showMemberVote ? .6 : 0,  fill: this.getMemberVoteColor(m) }} r={6}  transition={{ease: "easeInOut", duration: .75}} initial={false} />
@@ -117,7 +119,7 @@ class OptimizerVis extends React.Component {
             </React.Fragment>
           })}
 
-          {props.data.rollcalls.filter(_ => Math.random() < .05).map((rc, _idx) => {
+          {this.rollcalls.map((rc, _idx) => {
             let x, y;
 
             switch(props.optimizeState) {

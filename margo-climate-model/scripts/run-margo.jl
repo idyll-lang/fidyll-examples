@@ -10,7 +10,7 @@ function create_graphic(_params, _outfile)
   m = ClimateModel(params);
 
   if _params["optimizeControls"] == 1
-    @time optimize_controls!(m, temp_goal=_params["tempGoal"]);
+    @time optimize_controls!(m, temp_goal=_params["tempGoal"], obj_option=_params["optimizeFor"]);
   end
 
   fig, axes = ClimateMARGO.Plotting.plot_state(m);
@@ -18,3 +18,5 @@ function create_graphic(_params, _outfile)
   savefig(_outfile)
 
 end
+
+

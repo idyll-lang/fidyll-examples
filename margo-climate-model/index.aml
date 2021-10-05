@@ -5,6 +5,8 @@ author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
     - static
+    - scroller
+    - presentation
 ---
 
 This is the introduction to the Julia-based article. Here we note what ClimateMargo is.
@@ -16,7 +18,14 @@ script: ./scripts/run-margo.jl
 parameters:
     optimizeControls: 0
     tempGoal: 2.5
-
+    optimizeFor: "adaptive_temp"
+appendix:
+    optimizeControls:
+        set: [1]
+    tempGoal:
+        range: [0.5, 3.5, 0.5]
+    optimizeFor:
+        set: ["adaptive_temp", "temp", "net_benefit"]
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit placerat congue egestas, nibh eros fermentum justo, non feugiat justo ipsum vel lacus. Fusce non mattis erat, at ornare enim.
 
@@ -36,6 +45,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit plac
 summary: Optimizing to keep warming under 1.5 degrees
 parameters:
     tempGoal: 1.5
+controls:
+    tempGoal:
+        range: [0.5, 3.5, 0.5]
+    optimizeFor:
+        set: ["adaptive_temp", "temp", "net_benefit"]
 
 
 Now with the controls optimized, trying to keep warming to 1.5 degrees.

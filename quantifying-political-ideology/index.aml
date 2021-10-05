@@ -5,6 +5,8 @@ author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
     - presentation
+    - scroller
+    - static
 data:
    members: members-clean-116.json
    rollcalls: rollcalls-small-116.csv
@@ -96,11 +98,6 @@ appendix:
         set: [true]
     rollnumber:
         set: [93, 691, 801, 807, 808]
-controls:
-    showMemberVote:
-        set: [true, false]
-    rollnumber:
-        set: [93, 691, 801, 807, 808]
 
 
 # The 116th Congress
@@ -162,6 +159,11 @@ summary: This vote, on December 18, 2019, split perfectly along party lines, wou
 parameters:
     rollnumber: 691
     showMemberVote: true
+controls:
+    showMemberVote:
+        set: [true, false]
+    rollnumber:
+        set: [93, 691, 801, 807, 808]
 
 
 Finally, let's look at one of the perfectly partisan votes that was held in the House. This vote, which took place on December 18, 2019, was simply called "On Motion to Adjourn" and would have let the House out of session for the remainder of the year.

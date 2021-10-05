@@ -17,8 +17,15 @@ html {
 }
 
 .appendix-graphic-plex {
-    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-template-columns:  1fr 1fr;
     display: grid;
+}
+
+img {
+    max-width: 100vw;
+    max-height: 100%;
+    width: 150%;
+    margin: 2em -25% 1em -25%;
 }
 
 .appendix-graphic-holder {
@@ -51,6 +58,18 @@ html {
     right: calc((10vw + 600px + 5px) / -2);
     font-size: small;
     color: #999;
+}
+
+
+
+@media (max-width: 885px) {
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 40rem) {

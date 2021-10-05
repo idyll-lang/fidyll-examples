@@ -208,7 +208,7 @@ class VoteExplainer extends React.Component {
                   {/* <circle key={m.icpsr} r={3} fill={PARTY_COLORS[m.party_code]} cx={this.xScale(m.nominate_dim1)} cy={this.yScale(m.nominate_dim2)}  /> */}
                 </React.Fragment>
               })}
-            <motion.line  strokeDasharray={'5,5'} strokeWidth={3} stroke={'#ccc'} animate={{x1: this.xScale(lx1t), x2: this.xScale(lx2t), y1: this.yScale(ly1t), y2: this.yScale(ly2t) }} transition={{ease: "easeInOut", duration: .75}} initial={false}  />
+            <motion.line  strokeDasharray={'5,5'} strokeWidth={3} stroke={'#ccc'} animate={{x1: this.xScale(lx1t), x2: this.xScale(lx2t), y1: this.yScale(ly1t), y2: this.yScale(ly2t) }} transition={{ease: "linear", duration: .25}} initial={false}  />
 
             <text fontSize={10} fill={'#ccc'} fontWeight={'bold'} style={{textTransform: 'uppercase'}} textAnchor={cuttingLineLabelAnchor}
               dominantBaseline="central" transform={`translate(${cuttingLineLabeldX + this.xScale(cuttingLineLabelX)}, ${this.yScale(cuttingLineLabelY)}) rotate(0)`}>

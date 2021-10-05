@@ -152,7 +152,7 @@
   [/Slide]
 [/Slideshow]
 [Broadcaster
-  peerkey:"gridyll-presentation-7070"
+  peerkey:"gridyll-presentation-8324"
   __slideshowIndex:__slideshowIndex
   __slideshowLength:__slideshowLength
   scene_0_highlightParty:scene_0_highlightParty
@@ -295,8 +295,17 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
     [/Conditional]
   [/div]
   [div className:"gridyll-control-container"]
-    [Conditional if:`__slideshowIndex >= 1 && __slideshowIndex < 6` /]
-    [Conditional if:`__slideshowIndex >= 6 && __slideshowIndex < 12`]
+    [Conditional if:`__slideshowIndex == 1` /]
+    [Conditional if:`__slideshowIndex == 2` /]
+    [Conditional if:`__slideshowIndex == 3` /]
+    [Conditional if:`__slideshowIndex == 4` /]
+    [Conditional if:`__slideshowIndex == 5` /]
+    [Conditional if:`__slideshowIndex == 6` /]
+    [Conditional if:`__slideshowIndex == 7` /]
+    [Conditional if:`__slideshowIndex == 8` /]
+    [Conditional if:`__slideshowIndex == 9` /]
+    [Conditional if:`__slideshowIndex == 10` /]
+    [Conditional if:`__slideshowIndex == 11`]
       [div]
         showMemberVote
         [Boolean value:scene_1_showMemberVote /]
@@ -308,7 +317,11 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
           options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
       [/div]
     [/Conditional]
-    [Conditional if:`__slideshowIndex >= 12 && __slideshowIndex < 17` /]
+    [Conditional if:`__slideshowIndex == 12` /]
+    [Conditional if:`__slideshowIndex == 13` /]
+    [Conditional if:`__slideshowIndex == 14` /]
+    [Conditional if:`__slideshowIndex == 15` /]
+    [Conditional if:`__slideshowIndex == 16` /]
   [/div]
 [/Broadcaster]
 [SlideIndex
