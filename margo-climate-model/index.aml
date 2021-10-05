@@ -1,0 +1,44 @@
+---
+title: Modeling Climate Outcomes
+subtitle: With Margo and Julia
+author: Matthew Conlen
+authorLink: https://mathisonian.com
+targets:
+    - static
+---
+
+This is the introduction to the Julia-based article. Here we note what ClimateMargo is.
+
+{scene}
+title:
+summary: Climate models can help us understand what needs to be done to avoid the worst global warming scenarios.
+script: ./scripts/run-margo.jl
+parameters:
+    optimizeControls: 0
+    tempGoal: 2.5
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit placerat congue egestas, nibh eros fermentum justo, non feugiat justo ipsum vel lacus. Fusce non mattis erat, at ornare enim.
+
+{stage}
+summary: Now with the controls optimized to keep warming under 2.5 degrees
+parameters:
+    optimizeControls: 1
+    tempGoal: 2.5
+
+
+Now with the controls optimized.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit placerat congue egestas, nibh eros fermentum justo, non feugiat justo ipsum vel lacus. Fusce non mattis erat, at ornare enim.
+
+
+{stage}
+summary: Optimizing to keep warming under 1.5 degrees
+parameters:
+    tempGoal: 1.5
+
+
+Now with the controls optimized, trying to keep warming to 1.5 degrees.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit placerat congue egestas, nibh eros fermentum justo, non feugiat justo ipsum vel lacus. Fusce non mattis erat, at ornare enim.
+
