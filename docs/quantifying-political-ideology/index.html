@@ -48,20 +48,20 @@
       <div  style='margin:auto;'>
           <div style="margin-bottom: 2em;">
               <p>
-                Quantifying Political Ideology is a cross-platform interactive article created with <a href="">Gridyll</a>. Choose your
+                Quantifying Political Ideology is a multi-format interactive article. Choose your
                 experience below.
               </p>
             </div>
           <a class="article-link" href="./scroller/">Interactive Article</a>
           <a class="article-link" href="./presentation/?live=false">Interactive Slideshow</a>
-          <a class="article-link" href="./static-html/">Static HTML</a>
+          <a class="article-link" href="./static-html/">Low-motion HTML</a>
           <a class="article-link" href="./static-output.pdf">PDF</a>
 
           <div style="margin-top: 2em;">
             <a class="article-link" onclick="var roomcode = prompt('Enter room code'); roomcode ? window.location = ('./presentation/?live=true&room=' + roomcode) : null">
               Join live presentation
             </a>
-            <a class="article-link" onclick="var presentroomcode = prompt('Enter room code'); presentroomcode ? window.open('./presentation/?live=true&presenting=true&room=' + presentroomcode) : null; presentroomcode ? window.location = ('./presentation/?live=true&room=' + presentroomcode) : null">
+            <a class="article-link" onclick="var presentroomcode = prompt('Enter room code'); presentroomcode ? window.open('./presentation/?live=true&presenting=true&room=' + presentroomcode, '_blank', 'location=yes,height=400,width=600') : null; presentroomcode ? window.location = ('./presentation/?live=true&room=' + presentroomcode) : null">
               Start live presentation
             </a>
           </div>
