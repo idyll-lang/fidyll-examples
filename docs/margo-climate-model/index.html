@@ -48,7 +48,7 @@
       <div  style='margin:auto;'>
           <div style="margin-bottom: 2em;">
               <p>
-                Modeling Climate Outcomes is a multi-format interactive article. Choose your
+                <i>Modeling Climate Outcomes</i> is a multi-format interactive article. Choose your
                 experience below.
               </p>
             </div>
@@ -61,9 +61,14 @@
             <a class="article-link" onclick="var roomcode = prompt('Enter room code'); roomcode ? window.location = ('./presentation/?live=true&room=' + roomcode) : null">
               Join live presentation
             </a>
-            <a class="article-link" onclick="var presentroomcode = prompt('Enter room code'); presentroomcode ? window.open('./presentation/?live=true&presenting=true&room=' + presentroomcode, '_blank', 'location=yes,height=400,width=600') : null; presentroomcode ? window.location = ('./presentation/?live=true&room=' + presentroomcode) : null">
+            <a class="article-link" onclick="var presentroomcode = prompt('Enter room code'); presentroomcode ? window.open('./presentation/?live=true&presenting=true&room=' + presentroomcode, '_blank', 'location=yes,height=400,width=600') : null; presentroomcode ? setTimeeout(() => window.location = ('./presentation/?live=true&room=' + presentroomcode), 2500) : null">
               Start live presentation
             </a>
+          </div>
+        <div style="margin-top: 2em;">
+            <p>
+              See <a href="..">all examples</a>.
+            </p>
           </div>
       </div>
     </div>
