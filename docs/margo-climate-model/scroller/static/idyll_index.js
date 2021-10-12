@@ -21159,6 +21159,172 @@ var mapChildren = function mapChildren(children, transform) {
 
 module.exports = { filterChildren: filterChildren, mapChildren: mapChildren };
 
+},{"react":"react"}],"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/cite.js":[function(require,module,exports){
+"use strict";
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var React = require('react');
+
+var citations = [];
+var referenceInstances = [];
+
+var citationsChangeHandler = {
+  set: function set(target, property, value) {
+    referenceInstances.forEach(function (referenceInstance) {
+      referenceInstance.forceUpdate();
+    });
+    target[property] = value;
+    return true;
+  }
+};
+
+var citationsProxy = new Proxy(citations, citationsChangeHandler);
+
+var References = function (_React$Component) {
+  _inherits(References, _React$Component);
+
+  function References() {
+    _classCallCheck(this, References);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this));
+
+    referenceInstances.push(_this);
+    return _this;
+  }
+
+  References.prototype.render = function render() {
+    if (!citations.length) {
+      return null;
+    }
+    return React.createElement("div", { id: "references" }, React.createElement("h1", null, "References"), React.createElement("ol", null, citations.map(function (citation, index) {
+      return React.createElement("li", { key: index }, React.createElement("a", { href: citation.url, target: "_blank" }, citation.title), ", ", citation.authors, ".", React.createElement("em", null, citation.venue ? ' ' + citation.venue + '.' : ''), citation.date ? ' ' + citation.date + '.' : '');
+    })));
+  };
+
+  return References;
+}(React.Component);
+
+var Cite = function (_React$Component2) {
+  _inherits(Cite, _React$Component2);
+
+  function Cite(props) {
+    _classCallCheck(this, Cite);
+
+    var _this2 = _possibleConstructorReturn(this, _React$Component2.call(this, props));
+
+    var _this2$props = _this2.props,
+        authors = _this2$props.authors,
+        url = _this2$props.url,
+        title = _this2$props.title,
+        date = _this2$props.date,
+        venue = _this2$props.venue,
+        id = _this2$props.id;
+
+    var foundCitation = citationsProxy.find(function (citation) {
+      return citation.id === id && id !== undefined;
+    });
+    if (foundCitation) {
+      _this2.state = _extends({
+        citationNumber: citationsProxy.indexOf(foundCitation) + 1
+      }, foundCitation);
+      if (authors || title) {
+        console.warn('Warning: Ignoring authors and title as Cite with the given id was declared before.');
+      }
+    } else if (authors && title) {
+      var newCitation = { authors: authors, url: url, title: title, date: date, venue: venue, id: id };
+      citationsProxy.push(newCitation);
+      _this2.state = _extends({ citationNumber: citationsProxy.length }, newCitation);
+    } else {
+      console.warn("Warning: Cite with given id not found or invalid id. Check if a Cite with the id \"" + id + "\" was declared before this line.");
+      _this2.state = {};
+    }
+    return _this2;
+  }
+
+  Cite.prototype.render = function render() {
+    var _state = this.state,
+        citationNumber = _state.citationNumber,
+        authors = _state.authors,
+        title = _state.title,
+        url = _state.url;
+
+    return React.createElement("a", {
+      style: this.props.style,
+      title: title + ", " + authors,
+      href: url || '#references'
+    }, "[", citationNumber, "]");
+  };
+
+  return Cite;
+}(React.Component);
+
+Cite._idyll = {
+  name: 'Cite',
+  tagType: 'closed',
+  props: [{
+    name: 'authors',
+    type: 'string',
+    example: '"Matthew Conlen and Jeffrey Heer"'
+  }, {
+    name: 'title',
+    type: 'string',
+    example: '"Idyll: A Markup Language for Authoring and Publishing Interactive Articles on the Web"'
+  }, {
+    name: 'url',
+    type: 'string',
+    description: 'Link to the citation.',
+    example: '"https://idl.cs.washington.edu/papers/idyll"'
+  }, {
+    name: 'date',
+    type: 'string',
+    example: '"2018"'
+  }, {
+    name: 'venue',
+    type: 'string',
+    example: '"ACM User Interface Software & Technology (UIST)"'
+  }, {
+    name: 'id',
+    type: 'string',
+    example: '"idyll-2018"',
+    description: 'Can be used to refer a previously stated citation using the same id.'
+  }]
+};
+exports.References = References;
+
+Cite.References = References;
+exports.default = Cite;
+
 },{"react":"react"}],"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js":[function(require,module,exports){
 "use strict";
 
@@ -22019,20 +22185,20 @@ var Scroller = function (_React$Component) {
     this.props.updateProps && this.props.updateProps(update);
   };
 
-  Scroller.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  Scroller.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
     var _this2 = this;
 
-    if (nextProps.disableScroll && this.props.currentStep !== nextProps.currentStep) {
+    if (this.props.disableScroll && this.props.currentStep !== prevProps.currentStep) {
       d3.selectAll('#idyll-scroll-' + this.id + ' .idyll-step').filter(function (d, i) {
-        return i === nextProps.currentStep;
+        return i === this.props.currentStep;
       }).node().scrollIntoView({ behavior: 'smooth' });
     }
-    if (nextProps.disableScroll && this.props.currentState !== nextProps.currentState) {
+    if (this.props.disableScroll && this.props.currentState !== prevProps.currentState) {
       d3.selectAll('#idyll-scroll-' + this.id + ' .idyll-step').filter(function (d, i) {
-        return nextProps.currentState === _this2.SCROLL_NAME_MAP[i];
+        return _this2.props.currentState === _this2.SCROLL_NAME_MAP[i];
       }).node().scrollIntoView({ behavior: 'smooth' });
     }
-    if (nextProps.disableScroll && (!nextProps.currentStep || nextProps.currentStep < Object.keys(this.SCROLL_STEP_MAP).length - 1)) {
+    if (this.props.disableScroll && (!this.props.currentStep || this.props.currentStep < Object.keys(this.SCROLL_STEP_MAP).length - 1)) {
       d3.select('body').style('overflow', 'hidden');
     }
   };
@@ -22851,7 +23017,7 @@ var IdyllDocument = function (_React$Component) {
     this.setState({ error: error.message });
   };
 
-  IdyllDocument.prototype.componentWillReceiveProps = function componentWillReceiveProps(newProps) {
+  IdyllDocument.prototype.UNSAFE_componentWillReceiveProps = function UNSAFE_componentWillReceiveProps(newProps) {
     var _this3 = this;
 
     if (newProps.theme !== this.props.theme && newProps.injectThemeCSS) {
@@ -52643,7 +52809,7 @@ module.exports = function whichTypedArray(value) {
 },{"available-typed-arrays":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/available-typed-arrays/index.js","call-bind/callBound":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/call-bind/callBound.js","es-abstract/helpers/getOwnPropertyDescriptor":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/es-abstract/helpers/getOwnPropertyDescriptor.js","foreach":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/foreach/index.js","has-tostringtag/shams":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/has-tostringtag/shams.js","is-typed-array":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/is-typed-array/index.js"}],"__IDYLL_AST__":[function(require,module,exports){
 "use strict";
 
-module.exports = { "id": 0, "type": "component", "name": "div", "children": [{ "id": 2, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeControls" }, "value": { "type": "value", "value": 0 } } }, { "id": 3, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_tempGoal" }, "value": { "type": "value", "value": 2.5 } } }, { "id": 4, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeFor" }, "value": { "type": "value", "value": "adaptive_temp" } } }, { "id": 5, "type": "meta", "properties": { "title": { "type": "value", "value": "Modeling Climate Outcomes" }, "description": { "type": "value", "value": "With Margo and Julia" } } }, { "id": 6, "type": "component", "name": "Header", "properties": { "background": { "type": "value", "value": "#ffffff" }, "color": { "type": "value", "value": "#333333" }, "title": { "type": "value", "value": "Modeling Climate Outcomes" }, "subtitle": { "type": "value", "value": "With Margo and Julia" }, "author": { "type": "value", "value": "Matthew Conlen" }, "authorLink": { "type": "value", "value": "https://mathisonian.com" } }, "children": [] }, { "id": 7, "type": "component", "name": "TextContainer", "children": [{ "id": 8, "type": "component", "name": "p", "children": [{ "id": 9, "type": "textnode", "value": "This is the introduction to the Julia-based article. Here we note what ClimateMargo is." }] }] }, { "id": 10, "type": "component", "name": "Scroller", "children": [{ "id": 11, "type": "component", "name": "Graphic", "children": [{ "id": 12, "type": "component", "name": "img", "properties": { "data": { "type": "expression", "value": "{  }" }, "optimizeControls": { "type": "variable", "value": "scene_0_optimizeControls" }, "tempGoal": { "type": "variable", "value": "scene_0_tempGoal" }, "optimizeFor": { "type": "variable", "value": "scene_0_optimizeFor" }, "src": { "type": "expression", "value": "\"static/script-image-\" + \"tempGoal-\" + scene_0_tempGoal + \"-\" + \"optimizeFor-\" + scene_0_optimizeFor + \"-\" + \"optimizeControls-\" + scene_0_optimizeControls + \".png\"" } }, "children": [] }] }, { "id": 13, "type": "component", "name": "Step", "children": [{ "id": 14, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 0;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 15, "type": "textnode", "value": "\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit placerat congue egestas, nibh eros fermentum justo, non feugiat justo ipsum vel lacus. Fusce non mattis erat, at ornare enim.\n    " }] }, { "id": 16, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [] }] }, { "id": 17, "type": "component", "name": "Step", "children": [{ "id": 18, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 19, "type": "textnode", "value": "\n      Now with the controls optimized.\n    " }] }, { "id": 20, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 21, "type": "textnode", "value": "\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit placerat congue egestas, nibh eros fermentum justo, non feugiat justo ipsum vel lacus. Fusce non mattis erat, at ornare enim.\n    " }] }, { "id": 22, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [] }] }, { "id": 23, "type": "component", "name": "Step", "children": [{ "id": 24, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 1.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 25, "type": "textnode", "value": "\n      Now with the controls optimized, trying to keep warming to 1.5 degrees.\n    " }] }, { "id": 26, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 1.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 27, "type": "textnode", "value": "\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, elit placerat congue egestas, nibh eros fermentum justo, non feugiat justo ipsum vel lacus. Fusce non mattis erat, at ornare enim.\n    " }] }, { "id": 28, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [{ "id": 29, "type": "component", "name": "div", "children": [{ "id": 30, "type": "textnode", "value": "\n        tempGoal\n        " }, { "id": 31, "type": "component", "name": "Range", "properties": { "value": { "type": "variable", "value": "scene_0_tempGoal" }, "min": { "type": "value", "value": 0.5 }, "max": { "type": "value", "value": 3.5 }, "step": { "type": "value", "value": 0.5 } }, "children": [] }] }, { "id": 32, "type": "component", "name": "div", "children": [{ "id": 33, "type": "textnode", "value": "\n        optimizeFor\n        " }, { "id": 34, "type": "component", "name": "Select", "properties": { "value": { "type": "variable", "value": "scene_0_optimizeFor" }, "options": { "type": "expression", "value": "[{\"label\":\"adaptive_temp\",\"value\":\"adaptive_temp\"},{\"label\":\"temp\",\"value\":\"temp\"},{\"label\":\"net_benefit\",\"value\":\"net_benefit\"}]" } }, "children": [] }] }] }] }] }] };
+module.exports = { "id": 0, "type": "component", "name": "div", "children": [{ "id": 2, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeControls" }, "value": { "type": "value", "value": 0 } } }, { "id": 3, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_tempGoal" }, "value": { "type": "value", "value": 2.5 } } }, { "id": 4, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeFor" }, "value": { "type": "value", "value": "adaptive_temp" } } }, { "id": 5, "type": "meta", "properties": { "title": { "type": "value", "value": "Modeling Economic and Climate Outcomes" }, "description": { "type": "value", "value": "With Margo and Julia" } } }, { "id": 6, "type": "component", "name": "Header", "properties": { "background": { "type": "value", "value": "#ffffff" }, "color": { "type": "value", "value": "#333333" }, "title": { "type": "value", "value": "Modeling Economic and Climate Outcomes" }, "subtitle": { "type": "value", "value": "With Margo and Julia" }, "author": { "type": "value", "value": "Matthew Conlen" }, "authorLink": { "type": "value", "value": "https://mathisonian.com" } }, "children": [] }, { "id": 7, "type": "component", "name": "TextContainer", "children": [{ "id": 8, "type": "component", "name": "p", "children": [{ "id": 9, "type": "textnode", "value": "This is the introduction to the Julia-based article." }] }, { "id": 10, "type": "component", "name": "p", "children": [{ "id": 11, "type": "textnode", "value": "ClimateMargo is a climate-economic model that helps us understand possible pathways to limiting global warming to." }] }] }, { "id": 12, "type": "component", "name": "Scroller", "children": [{ "id": 13, "type": "component", "name": "Graphic", "children": [{ "id": 14, "type": "component", "name": "img", "properties": { "data": { "type": "expression", "value": "{  }" }, "optimizeControls": { "type": "variable", "value": "scene_0_optimizeControls" }, "tempGoal": { "type": "variable", "value": "scene_0_tempGoal" }, "optimizeFor": { "type": "variable", "value": "scene_0_optimizeFor" }, "src": { "type": "expression", "value": "\"static/script-image-\" + \"tempGoal-\" + scene_0_tempGoal + \"-\" + \"optimizeFor-\" + scene_0_optimizeFor + \"-\" + \"optimizeControls-\" + scene_0_optimizeControls + \".png\"" } }, "children": [] }] }, { "id": 15, "type": "component", "name": "Step", "children": [{ "id": 16, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 0;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 17, "type": "textnode", "value": "\n      Here’s an overview of what MARGO gives us.\nThe graphs show typical metrics like greenhous gas emissions and concentration, and temperature change.\nThey also include the suggested optimal deployments of mitigation strategies, and a cost-benefit analysis.\nCurrently the graphs just show what is expected to happen if no mitigation is done.\nThat is, no mitigation strategies are deployed.\n    " }] }, { "id": 18, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [] }] }, { "id": 19, "type": "component", "name": "Step", "children": [{ "id": 20, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 21, "type": "textnode", "value": "\n      Now we ask MARGO what the optimal approach is to limit warming to 2.5 degrees celcius.\nNotice that overwhelmingly the algorithm suggesets that we should focus on reducing emissions, but some amount of carbon dioxide removal and geoengineering is helpful too.\n    " }] }, { "id": 22, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [] }] }, { "id": 23, "type": "component", "name": "Step", "children": [{ "id": 24, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 1.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 25, "type": "textnode", "value": "\n      If we want to keep warming to 1.5 degrees, the amount of emissions reduction needs to increase sharply.\n    " }] }, { "id": 26, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [] }] }, { "id": 27, "type": "component", "name": "Step", "children": [{ "id": 28, "type": "component", "name": "p", "properties": { "onEnterViewFully": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 1.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 29, "type": "textnode", "value": "\n      Use the controls to see what MARGO suggests is the best path to limiting warming to a specific temperature.\nYou can also change what exactly MARGO optimizes for.\nOptimizing for net-benefit considers the cost-benefit analysis.\nOptimizing for temperature is optimizing only for limiting the warming under a certain temperature, while optimizing for " }, { "id": 30, "type": "component", "name": "code", "children": [{ "id": 31, "type": "textnode", "value": "adaptiv_temp" }] }, { "id": 32, "type": "textnode", "value": " is a slightly looser constraint that allows for adaptation to higher temperature.\n    " }] }, { "id": 33, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [{ "id": 34, "type": "component", "name": "div", "children": [{ "id": 35, "type": "textnode", "value": "\n        tempGoal\n        " }, { "id": 36, "type": "component", "name": "Range", "properties": { "value": { "type": "variable", "value": "scene_0_tempGoal" }, "min": { "type": "value", "value": 0.5 }, "max": { "type": "value", "value": 3.5 }, "step": { "type": "value", "value": 0.5 } }, "children": [] }] }, { "id": 37, "type": "component", "name": "div", "children": [{ "id": 38, "type": "textnode", "value": "\n        optimizeFor\n        " }, { "id": 39, "type": "component", "name": "Select", "properties": { "value": { "type": "variable", "value": "scene_0_optimizeFor" }, "options": { "type": "expression", "value": "[{\"label\":\"adaptive_temp\",\"value\":\"adaptive_temp\"},{\"label\":\"temp\",\"value\":\"temp\"},{\"label\":\"net_benefit\",\"value\":\"net_benefit\"}]" } }, "children": [] }] }] }] }] }, { "id": 40, "type": "component", "name": "TextContainer", "children": [{ "id": 41, "type": "component", "name": "Cite.References", "children": [] }] }] };
 
 },{}],"__IDYLL_COMPONENTS__":[function(require,module,exports){
 'use strict';
@@ -52655,10 +52821,11 @@ module.exports = {
 	'step': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/step.js'),
 	'range': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/range.js'),
 	'select': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/select.js'),
-	'scroller': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/scroller.js')
+	'scroller': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/scroller.js'),
+	'cite': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/cite.js')
 };
 
-},{"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/range.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/range.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/scroller.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/scroller.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/select.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/select.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/step.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/step.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/text-container.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/text-container.js"}],"__IDYLL_CONTEXT__":[function(require,module,exports){
+},{"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/cite.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/cite.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/range.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/range.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/scroller.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/scroller.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/select.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/select.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/step.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/step.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/text-container.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/text-container.js"}],"__IDYLL_CONTEXT__":[function(require,module,exports){
 "use strict";
 
 module.exports = function () {};
