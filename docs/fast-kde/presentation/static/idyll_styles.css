@@ -1,33 +1,21 @@
 
-
 body {
   margin: 0;
 }
 
 .idyll-root {
   box-sizing: border-box;
-  margin: 0 auto;
   padding: 60px 0;
   margin-bottom: 60px;
 }
 
 .idyll-text-container {
   max-width: 600px;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 50px;
-}
-
-.section {
-  padding: 0 10px;
   margin: 0 auto;
 }
-
 .article-header {
-  text-align: left;
-  padding-left: 50px;
   margin-bottom: 45px;
+  text-align: center;
 }
 
 .inset {
@@ -42,6 +30,7 @@ input {
 .relative {
   position: relative;
 }
+
 .aside-container {
   position: relative;
   display: block;
@@ -50,33 +39,21 @@ input {
   display: block;
   position: absolute;
   width: 300px;
-  right: calc((10vw + 600px + 150px) / -2);
-}
-
-.fixed {
-  position: fixed;
-  display: flex;
-  align-self: center;
-  flex-direction: column;
-  align-items: center;
-  right: 25px;
-  top: 0;
-  bottom: 0;
-  width: calc((80vw - 600px) - 50px);
-  justify-content: center;
-}
-
-.fixed div {
-  width: 100%;
+  right: calc((10vw + 350px + 150px) / -2);
 }
 
 .idyll-scroll-graphic {
   position: -webkit-sticky;
   position: sticky;
+  overflow: hidden;
 }
 
 .idyll-scroll-graphic img {
   max-height: 100vh;
+}
+
+.idyll-scroll-graphic > * {
+  display: block;
 }
 
 .component-debug-view {
@@ -197,14 +174,18 @@ input {
   font-style: italic;
 }
 
-@media all and (max-width: 1600px) {
-  .fixed {
-    width: calc((85vw - 600px) - 50px);
-  }
-}
-
 @media all and (max-width: 1000px) {
-  /* put your css styles in here */
+
+  .idyll-root {
+    margin: 0 auto;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+    width: 100%;
+  }
+  .idyll-text-container {
+    max-width: calc(100% - 2em);
+    margin: 0 1em;
+  }
   .desktop {
     display: none;
   }
@@ -216,41 +197,9 @@ input {
     width: 100%;
     right: 0;
   }
-  .idyll-text-container {
-    max-width: calc(100% - 2em);
-    margin-top: 0;
-    margin-right: 1em;
-    margin-bottom: 0;
-    margin-left: 1em;
-  }
-  .hed {
-    width: 100%;
-  }
 
-  .idyll-root {
-    padding: 15px 0;
-  }
-
-  .idyll-root {
-    margin: 0 auto;
-    padding-bottom: 80vh;
-  }
-  .article-header {
-    margin: 0 auto;
-    padding-left: 1em;
-  }
-  .fixed {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    top: initial;
-    background: white;
-    padding: 20px 0;
-    border-top: solid 2px black;
-  }
 }
+
 
 
 @font-face {
@@ -1111,7 +1060,17 @@ hr {
   font-family: monospace;
 }
 
+input[type='text'].idyll-input-error {
+  border-color: red;
+}
 
+span.idyll-input-error{
+  display: block;
+  margin: 0 auto;
+  padding: 10px 5px;
+  color: red;
+  width: 100%;
+}
 
 .idyll-step-graphic {
   top: 0;
@@ -1271,7 +1230,7 @@ img {
 .annotated-text,
 .annotated-text:visited {
   background: #efefef;
-  padding: 0 5px;
+  padding: 0 2.5px;
   transition: background 0.25s ease-out;
 }
 
@@ -1309,6 +1268,15 @@ img {
   transition: opacity 0.25s ease-out;
 }
 
+.annotated-text .annotation-text img {
+  display: block;
+  max-width: 100%;
+}
+
+.annotated-text p {
+  margin: 0;
+}
+
 @media all and (max-width: 800px) {
   .annotated-text .annotation-text {
     width: 50vh;
@@ -1339,6 +1307,10 @@ img {
   height: calc(100vh - 150px - 2em);
   width: calc(100% - 4em);
   margin: 150px 2em 2em 2em;
+}
+
+.slide {
+  padding: 0 1em;
 }
 
 .control-details {
@@ -1386,4 +1358,9 @@ img {
 
 svg {
   /* display: block; */
+}
+
+input, select {
+  margin: auto;
+  height: auto;
 }

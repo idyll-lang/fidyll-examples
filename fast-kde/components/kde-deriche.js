@@ -24,6 +24,7 @@ function kdeDeriche(el, points, bandwidth, mode, steps = 10) {
     .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`) // Matt - changed to use viewBox instead of explicit width/height
     .attr('width', '100%')
     .attr('height', 'auto')
+    .style('overflow', 'visible')
     .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 

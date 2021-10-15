@@ -16,7 +16,9 @@ const area = d3.area()
   .y0(height)
   .y1(d => yscale(d));
 
-const kdeIntro = (el, points, bandwidth) => {
+const kdeIntro = (el, props) => {
+
+  const { points, bandwidth, showDensities, showKernels } = props;
 
   // container
   const svg = d3.select(el)
@@ -25,19 +27,25 @@ const kdeIntro = (el, points, bandwidth) => {
     .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`) // Matt - changed to use viewBox instead of explicit width/height
     .attr('width', '100%')
     .attr('height', 'auto')
+    .style('overflow', 'visible')
     .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
   drawDataPoints(svg, points, xscale);
 
-  // total density
-  svg.selectAll('path.total')
-    .data([kde.kdeCDF1d(points, [0, 1], steps, bandwidth)])
-    .join('path')
-    .attr('d', d => area(d))
-    .attr('fill', '#ddd');
+  if (showDensities) {
+    // total density
+    svg.selectAll('path.total')
+      .data([kde.kdeCDF1d(points, [0, 1], steps, bandwidth)])
+      .join('path')
+      .attr('d', d => area(d))
+      .attr('fill', '#ddd');
 
-  drawPointDensities(svg, points, bandwidth, 800, xscale, ydomain);
+  }
+  if (showKernels) {
+    drawPointDensities(svg, points, bandwidth, 800, xscale, ydomain);
+  }
+
   drawDomainLine(svg);
 }
 
@@ -48,11 +56,11 @@ class KDEIntro extends D3Component {
       }
       const el = this.el = node;
 
-      kdeIntro(el, props.points, props.bandwidth);
+      kdeIntro(el, props);
   }
 
   update(props) {
-    kdeIntro(this.el, props.points, props.bandwidth);
+    kdeIntro(this.el, props);
   }
 }
 

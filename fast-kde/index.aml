@@ -5,60 +5,53 @@ authorLink: https://idl.cs.washington.edu
 targets:
     - scroller
     - presentation
+    - video
     - static
 data:
-   err1dimpulses: err1d_impulse.json
+   err1dimpulse: err1d_impulse.json
    err1dpenguins: err1d_penguins.json
    err2dcars: err2d_cars.json
    time1dpenguins: time1d_penguins.json
    time2dcars: time2d_cars.json
 ---
 
-So kernel density estimation or kde powers visualizations such as violin plots heat maps and contour plots by modeling a discrete sample as a continuous distribution so for a set of input data points we represent each point with a kernel function.
 
-We then sum the kernels to form a continuous density estimate here we focus on gaussian kernels which are commonly used in practice
+Kernel density estimation or kde powers visualizations such as violin plots heat maps and contour plots by modeling a discrete sample as a continuous distribution.
 
-{scene}
-graphic: img
-parameters:
-    src: static/images/kde-overview.png
-
-The spread of the kernels is determined by a bandwidth parameter for gaussian kernels this is just the standard deviation.
-unfortunately direct calculation is expensive for each of m measurement points we must sum the contributions of the n data points resulting in quadratic complexity.
-
-So how might we achieve fast yet accurate approximate estimates one approach is to discretize the problem by binning the data kde of n data points then reduces to a signal processing task smoothing a grid of m bins.
-
-With simple binning the weight of a data point is assigned to the nearest bin if we perturb the points we can see how the weight is reassigned across bin boundaries
-
-{stage}
-parameters:
-    src: static/images/kde-overview.png
-
-Alternatively we can linearly interpolate weight across bins the weight is assigned proportionally providing some smoothing we evaluate both of these binning methods
-
-now a number of gaussian smoothing approaches exist for binned data we focus on linear time methods that first bend the data an o of n step and then make a bounded number of passes over the binned grid an o of m step
-
+![kde-overview](static/images/kde-overview.png)
 
 {scene}
 graphic: KdeIntro
 parameters:
     bandwidth: 0.025
     points: [0.18, 0.52, 0.57, 0.68]
+    showKernels: false
+    showDensities: false
 
 
-the first method we'll consider is box filtering which approximates gaussian smoothing by iteratively applying a uniform or box filter
-
-we sum and scale the input values in the filter window to produce an output bin value
+For a set of input data points
 
 {stage}
 parameters:
-    bandwidth: 0.025
+    showKernels: true
+
+We represent each point with a kernel function.
+
+
+{stage}
+parameters:
+    showDensities: falses
+
+We then sum the kernels to form a continuous density estimate. Here we focus on gaussian kernels which are commonly used in practice.
+
+{stage}
 controls:
     bandwidth:
-        range: [0.015, 0.05, 0.005]
+        range: [0.01, 0.5, 0.01]
 
-we apply this running sum across the input grid writing results into an output grid
+The spread of the kernels is determined by a bandwidth parameter for gaussian kernels this is just the standard deviation.
 
+Unfortunately direct calculation is expensive. For each of [Equation]m[/Equation] measurement points we must sum the contributions of the [Equation]n[/Equation] data points resulting in quadratic complexity.
 
 {scene}
 graphic: KdeBinned
@@ -67,8 +60,16 @@ parameters:
     points: [0.18, 0.52, 0.57, 0.68]
     offset: 0
 
-to perform another iteration we first swap the input and output grids and then apply the box filter again
+So how might we achieve fast yet accurate approximate estimates? One approach is to discretize the problem by binning the data.
 
+KDE of [Equation]n[/Equation] data points then reduces to a signal processing task smoothing a grid of [Equation]m[/Equation] bins.
+
+{stage}
+controls:
+    offset:
+        range: [0, .1, 0.001]
+
+With simple binning the weight of a data point is assigned to the nearest bin. If we perturb the points we can see how the weight is reassigned across bin boundaries
 
 {stage}
 parameters:
@@ -77,39 +78,51 @@ controls:
     offset:
         range: [0, .1, 0.001]
 
+Alternatively we can linearly interpolate weight across bins the weight is assigned proportionally providing some smoothing. We evaluate both of these binning methods.
 
-but note that the box filters can blur weight outside our original grid extent so box filter methods require grids with extra padding which may increase memory use and running time where we perform
 
+{scene}
+graphic: img
+parameters:
+    src: static/images/method-table.png
+
+Now a number of gaussian smoothing approaches exist for binned data. We focus on linear time methods that first bin the data an O(n) step and then make a bounded number of passes over the binned grid, an O(m) step.
 
 {scene}
 graphic: KdeBoxFilter
 parameters:
     points: [0.18, 0.52, 0.57, 0.68]
     bandwidth: 0.25
-    boxIndex: 5
-    boxIter: 2
+    boxIndex: 0
+    boxIter: 0
 
-our second iteration swap the grids again perform a third iteration and arrive at our density estimate now
-
-
-
-box filters are fast and easy to implement but they do have important nuances.
-we already saw how we must add padding to the grid but in addition the filter width which is a function of bandwidth can suffer from quantization error
-
+The first method we'll consider is box filtering which approximates gaussian smoothing by iteratively applying a uniform or box filter. We sum and scale the input values in the filter window to produce an output bin value.
 
 {stage}
+parameters:
+    boxIndex: 10
+
+We apply this running sum across the input grid writing results into an output grid.
+
+{stage}
+parameters:
+    boxIndex: 4
+    boxIter: 1
+
+To perform another iteration we first swap the input and output grids and then apply the box filter again. But note that the box filters can blur weight outside our original grid extent so box filter methods require grids with extra padding which may increase memory use and running time.
+
+{stage}
+parameters:
+    boxIndex: 4
+    boxIter: 1
 controls:
-    bandwidth:
-        range: [0.05, 0.3, 0.01]
     boxIndex:
-        range: [-2, 13, 1]
+        range: [0, 12, 1]
     boxIter:
         range: [0, 3, 1]
 
+We perform our second iteration swap the grids again perform a third iteration and arrive at our density estimate.
 
-here bandwidths of 0.1 and 0.15 both map to a box filter of width 3. the box filter results for the 2 will be indistinguishable and similarly here we get a filter width of 5 bins for bandwidths of both 0.2 and 0.25
-
-so to address this the extended box filter method adds fractional weight to the ends of the filter window
 
 {scene}
 graphic: KdeBoxQuantization
@@ -118,21 +131,21 @@ parameters:
     bandwidth: 0.25
     index: 4
 
-as the bandwidth varies the extended box varies the filter response more smoothly
-
-finally let's consider an approximation developed in the early 90s by darich published in the signal processing literature
+Box filters are fast and easy to implement but they do have important nuances. We already saw how we must add padding to the grid but in addition the filter width, which is a function of bandwidth, can suffer from quantization error.
 
 {stage}
 controls:
     bandwidth:
-        range: [0.05, 0.3, 0.01]
-    index:
-        range: [-2, 13, 1]
+        set: [0.1, 0.15]
 
-our second iteration swap the grids again perform a third iteration and arrive at our density estimate now
+Here bandwidths of 0.1 and 0.15 both map to a box filter of width 3. The box filter results for the 2 will be indistinguishable.
 
-box filters are fast and easy to implement but they do have important nuances.
-we already saw how we must add padding to the grid but in addition the filter width which is a function of bandwidth can suffer from quantization error
+{stage}
+controls:
+    bandwidth:
+        set: [0.2, 0.25]
+
+Similarly here we get a filter width of 5 bins for bandwidths of both 0.2 and 0.25
 
 {scene}
 graphic: KdeExtendedBoxFilter
@@ -141,21 +154,11 @@ parameters:
     bandwidth: 0.25
     boxIndex: 0
     boxIter: 0
-
-
-this method seems to have been overlooked by statistics and visualization researchers
-
-
-{stage}
 controls:
     bandwidth:
         range: [0.05, 0.3, 0.01]
-    boxIndex:
-        range: [-2, 13, 1]
-    boxIter:
-        range: [0, 3, 1]
 
-duresh derived a recursive filter approximation for the right half of a gaussian with parameters he determined via optimization
+To address this, the extended box filter method adds fractional weight to the ends of the filter window. As the bandwidth varies the extended box varies the filter response more smoothly.
 
 
 {scene}
@@ -163,12 +166,28 @@ graphic: KdeDeriche
 parameters:
     points: [0.476]
     bandwidth: 0.25
-    mode: Causal
+    mode: None
     steps: 20
 
+Finally let's consider an approximation developed in the early 90s by Deriche [Cite
+  authors:"Rachid Deriche"
+  title:"Recursively implementating the Gaussian and its derivatives"
+  id:"deriche1993recursively"
+  venue: "INRIA"
+  date:"1993"
+/], published in the signal processing literature. This method seems to have been overlooked by statistics and visualization researchers.
 
-we can reverse the equation to model the left half of a gaussian and then sum the two filter responses the method runs in linear time but does involve more arithmetic operations than box filters
+{stage}
+parameters:
+    mode: Causal
 
+Deriche derived a recursive filter approximation for the right half of a gaussian with parameters he determined via optimization
+
+{stage}
+parameters:
+    mode: Anticausal
+
+We can reverse the equation to model the left half of a gaussian and then sum the two filter responses.
 
 {stage}
 parameters:
@@ -179,78 +198,105 @@ controls:
     mode:
         set: ["Causal", "Anticausal", "Both"]
 
-so now let's evaluate how these linear time methods fare in terms of accuracy we'll start with an impulse test involving a single data point corresponding to a single gaussian density we can compare direct calculation with box filters and extended box filters and we see that both methods lead to underestimation of the peak and poor fit to the tails of the distribution
+The method runs in linear time but does involve more arithmetic operations than box filters.
+
+
+{scene}
+graphic: img
+parameters:
+    src: static/images/evaluate-table.png
+
+So now let's evaluate how these linear time methods fare in terms of accuracy.
+
+We'll start with an impulse test involving a single data point corresponding to a single gaussian density we can compare direct calculation with box filters and extended box filters and we see that both methods lead to underestimation of the peak and poor fit to the tails of the distribution.
+
+Meanwhile the duresh method achieves high we must also inspect other bandwidth values in order to more systematically measure the error.
+
 
 
 {scene}
 graphic: Errors
 parameters:
-    dataset: err2dcars
-    bins: 512
+    dataset: err1dimpulse
+    bins: 256
     binMethod: Simple Binning
 
+For each KDE method we measure the maximum pixel error for a 100 pixel tall density chart plotting the results on a logarithmic scale and do this across a range of bandwidths.
 
-meanwhile the duresh method achieves high we must also inspect other bandwidth values in order to more systematically measure the error so for each kde method we measure the maximum pixel error for a 100 pixel tall density chart  plotting the results on a logarithmic scale and do this across a range of bandwidths
-
-
-
-so here are the error curves for simple binning on a 256 bin grid we see oscillation in the box method due to filter quantization the extended box method smooths this out jarisha's method outperforms the others and at high bandwidth it's over an order of magnitude better with a maximum error
-
-around one pixel switching to linear binning the duresh method improves with subpixel accuracy for most tested bandwidths
-
+Here are the error curves for simple binning on a 256 bin grid we see oscillation in the box method due to filter quantization the extended box method smooths this out jarisha's method outperforms the others and at high bandwidth it's over an order of magnitude better with a maximum error around one pixel.
 
 {stage}
 parameters:
-    dataset: err1dimpulse
     binMethod: Linear Binning
 
-if we double the number of bins darish improves further to near pixel perfect accuracy almost two orders of magnitude better than box filter methods ultimately we care about real world data
-
-so here's an excerpt from the palmer penguins data set showing an estimated density of penguin body mass at bandwidth 200 all methods appear to perform reasonably well however at lower bandwidths we see some significant discrepancies
-
-
-{scene}
-graphic: time
-parameters:
-    dataset: time1dpenguins
-    bins: 512
-
-
-the box filter methods may mi-estimate peaks or erode local optima and in the language of algebraic vis these are hallucinators that is our choice of technique may mislead us with inaccurate visual features
-
-so looking across bandwidths here are the results for simple binning with 256 bins again the duresh method provides the best performance accuracy improves with linear binning and the performance gap widens when doubling the number of bins
+Switching to linear binning the duresh method improves with subpixel accuracy for most tested bandwidths
 
 {stage}
 parameters:
+    bins: 512
+
+If we double the number of bins darish improves further to near pixel perfect accuracy almost two orders of magnitude better than box filter methods.
+
+
+{stage}
+parameters:
+    binMethod: Simple Binning
+    dataset: err1dpenguins
     bins: 256
 
-so finally let's examine 2d density estimation for heat maps and contour plots we'll look at mileage versus horsepower in the classic cars data set
+Ultimately we care about real world data, so here's an excerpt from the Palmer penguins data set showing an estimated density of penguin body mass at bandwidth 200. All methods appear to perform reasonably well however at lower bandwidths we see some significant discrepancies.
 
-using direct calculation as a baseline we can visualize the difference in estimates when using box and extended box filtering we again see that these methods tend to underestimate peaks yet overestimate the size of a distribution
+The box filter methods may misestimate peaks or erode local optima and in the language of algebraic vis these are hallucinators that is our choice of technique may mislead us with inaccurate visual features [Cite
+  authors:"Gordon Kindlmann and Carlos Scheidegger"
+  title:"An algebraic process for visualization design"
+  id:"kindlmann2014algebraic"
+  venue: "IEEE transactions on visualization and computer graphics"
+  date:"2014"
+/].
+
+So looking across bandwidths here are the results for simple binning with 256 bins. Again the duresh method provides the best performance.
+
+{stage}
+parameters:
+    binMethod: Simple Binning
+    dataset: err1dpenguins
+    bins: 256
+
+Accuracy improves with linear binning...
+
+{stage}
+parameters:
+    bins: 512
+
+and the performance gap widens when doubling the number of bins.
+
+
 
 {scene}
 graphic: Time2D
 parameters:
     dataset: time2dcars
-    bins: 512
+    bins: 256
 
-from the duresh method however are imperceptibly low on this color scale
 
-now if we overlay contours from all three methods we'll find that darice matches the ground truth while the box filter methods can incur missing contours missed estimated peaks and again other hallucinators
+So finally let's examine 2d density estimation for heat maps and contour plots we'll look at mileage versus horsepower in the classic cars data set.
+
+Using direct calculation as a baseline we can visualize the difference in estimates when using box and extended box filtering. We again see that these methods tend to underestimate peaks yet overestimate the size of a distribution.
+
+Errors from the duresh method however are imperceptibly low on this color scale. Now if we overlay contours from all three methods we'll find that darice matches the ground truth while the box filter methods can incur missing contours missed estimated peaks and again other hallucinators
+
+Across bandwidths we see that the duresh method is consistently better.
 
 {stage}
 parameters:
-    bins: 256
+    bins: 512
 
-across bandwidths we see that the duresh method is consistently better once again this further improves by using linear binning and increasing the grid size
+Once again this further improves by using linear binning and increasing the grid size.
 
 
 {conclusion}
 
-so in conclusion we find that the combination of duresh's approximation in linear binning provides high accuracy with a competitive linear running time
+In conclusion we find that the combination of duresh's approximation in linear binning provides high accuracy with a competitive linear running time. We recommend its use for one and two dimensional density visualizations.
 
-we recommend its use for 1 and 2d density visualizations
-
-there are some important limitations the method only supports gaussian kernels not other forms of kernel functions and it's inherently a one-dimensional technique that is use across multiple dimensions requires separable independent axes
-
+There are some important limitations the method only supports gaussian kernels not other forms of kernel functions and it's inherently a one-dimensional technique that is use across multiple dimensions requires separable independent axes.
 

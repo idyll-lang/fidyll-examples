@@ -5,9 +5,6 @@ author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
     - scroller
-    - static
-    - presentation
-    - video
 ---
 
 This is the introduction to the Julia-based article.
@@ -38,6 +35,8 @@ That is, no mitigation strategies are deployed.
 
 {stage}
 summary: Now with the controls optimized to keep warming under 2.5 degrees
+exclude:
+    - scroller
 parameters:
     optimizeControls: 1
     tempGoal: 2.5
@@ -45,6 +44,7 @@ parameters:
 
 Now we ask MARGO what the optimal approach is to limit warming to 2.5 degrees celcius.
 Notice that overwhelmingly the algorithm suggesets that we should focus on reducing emissions, but some amount of carbon dioxide removal and geoengineering is helpful too.
+
 
 {stage}
 summary: Optimizing to keep warming under 1.5 degrees
