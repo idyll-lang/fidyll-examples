@@ -1,0 +1,4214 @@
+[
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "rms_error": 1.4396974805994955,
+        "max_error": 19.385507251167088,
+        "time": 3.0765433311462402
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "rms_error": 1.477741302483692,
+        "max_error": 19.513127470883056,
+        "time": 2.1344008445739746
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "rms_error": 1.7727471735285467,
+        "max_error": 29.66038792654669,
+        "time": 8.390469074249268
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "rms_error": 0.2590768065888418,
+        "max_error": 2.949719254319949,
+        "time": 2.674835205078125
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "rms_error": 0.35220213637570175,
+        "max_error": 5.998950111725943,
+        "time": 1.7201719284057617
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "rms_error": 0.7032467525802951,
+        "max_error": 8.362536060873376,
+        "time": 3.0542640686035156
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "rms_error": 0.7531563721207264,
+        "max_error": 9.994383805597195,
+        "time": 12.939740180969238
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "rms_error": 1.3147276182630565,
+        "max_error": 17.676604640687486,
+        "time": 8.640105724334717
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "rms_error": 1.2544295777750498,
+        "max_error": 19.992739665461535,
+        "time": 11.641394138336182
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "rms_error": 0.009888467572387738,
+        "max_error": 0.18174973661614358,
+        "time": 12.046905994415283
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "rms_error": 1.1126453791123632,
+        "max_error": 11.646239048516849,
+        "time": 6.552824020385742
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "rms_error": 0.9516043761317183,
+        "max_error": 11.762333418027001,
+        "time": 13.595566749572754
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.015,
+        "rms_error": 1.2121076987454678,
+        "max_error": 13.569530053131306,
+        "time": 3.5683083534240723
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.015,
+        "rms_error": 1.3980161215305922,
+        "max_error": 16.09904145767411,
+        "time": 2.8972349166870117
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.015,
+        "rms_error": 1.9070566141865464,
+        "max_error": 22.562082098826018,
+        "time": 3.826274871826172
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.015,
+        "rms_error": 0.18308160899366965,
+        "max_error": 1.7041062637942195,
+        "time": 3.1393260955810547
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.015,
+        "rms_error": 0.532565262781828,
+        "max_error": 5.1049194513439815,
+        "time": 1.8717851638793945
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.015,
+        "rms_error": 1.2546890342722763,
+        "max_error": 11.22412016853196,
+        "time": 3.6571497917175293
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.015,
+        "rms_error": 0.6415520310843873,
+        "max_error": 7.0185086118576265,
+        "time": 10.974017143249512
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.015,
+        "rms_error": 0.7087521628654747,
+        "max_error": 8.943040599497854,
+        "time": 11.148300647735596
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.015,
+        "rms_error": 1.7848287635547169,
+        "max_error": 17.755328639798286,
+        "time": 17.29414939880371
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.015,
+        "rms_error": 0.006457501161563833,
+        "max_error": 0.07492468261582896,
+        "time": 16.146113872528076
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.015,
+        "rms_error": 0.3161968076967607,
+        "max_error": 4.7360058464611665,
+        "time": 13.782973289489746
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.015,
+        "rms_error": 1.6289634027266322,
+        "max_error": 14.557007360506347,
+        "time": 16.43431806564331
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "rms_error": 1.1395026318080623,
+        "max_error": 11.102420837938725,
+        "time": 3.1242480278015137
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "rms_error": 1.794269851694175,
+        "max_error": 17.123090526704953,
+        "time": 2.178804874420166
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "rms_error": 1.9564036556633173,
+        "max_error": 18.542804842599548,
+        "time": 2.8948240280151367
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "rms_error": 0.14079135716637076,
+        "max_error": 1.2269702668505078,
+        "time": 2.5113601684570312
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "rms_error": 1.5210705185983453,
+        "max_error": 10.736475167876748,
+        "time": 1.6296262741088867
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "rms_error": 1.4287737234997946,
+        "max_error": 10.103690865328524,
+        "time": 2.915942668914795
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "rms_error": 0.602131810754521,
+        "max_error": 5.972312936675883,
+        "time": 11.118194103240967
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "rms_error": 1.2152179262602485,
+        "max_error": 10.38352047760629,
+        "time": 9.434041976928711
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "rms_error": 1.8601819797309571,
+        "max_error": 15.437634127305866,
+        "time": 12.36453104019165
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "rms_error": 0.005657916404297623,
+        "max_error": 0.08197443066961796,
+        "time": 10.440718650817871
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "rms_error": 1.0092277864783796,
+        "max_error": 7.586015114767131,
+        "time": 8.944231033325195
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "rms_error": 1.7098594053131164,
+        "max_error": 11.939801941614734,
+        "time": 11.83611536026001
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.025,
+        "rms_error": 1.03089138416485,
+        "max_error": 9.276403390350286,
+        "time": 2.4434447288513184
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.025,
+        "rms_error": 1.0788039692158908,
+        "max_error": 9.498807792085051,
+        "time": 2.1343612670898438
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.025,
+        "rms_error": 1.3911563875790343,
+        "max_error": 12.81011387707644,
+        "time": 3.1012086868286133
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.025,
+        "rms_error": 0.12588464916747272,
+        "max_error": 0.9211681218753265,
+        "time": 2.4281811714172363
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.025,
+        "rms_error": 0.4548590000138025,
+        "max_error": 5.313637419953244,
+        "time": 1.5954737663269043
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.025,
+        "rms_error": 0.9105693175842835,
+        "max_error": 9.076235677449917,
+        "time": 2.542239189147949
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.025,
+        "rms_error": 0.5599215007096824,
+        "max_error": 5.04542401843816,
+        "time": 10.570794582366943
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.025,
+        "rms_error": 0.619288277488968,
+        "max_error": 5.563482631440985,
+        "time": 9.249563217163086
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.025,
+        "rms_error": 1.1017177170172738,
+        "max_error": 9.501975898185583,
+        "time": 12.255160808563232
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.025,
+        "rms_error": 0.004001284491474906,
+        "max_error": 0.052682855962671304,
+        "time": 10.379503726959229
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.025,
+        "rms_error": 0.2255454440761795,
+        "max_error": 2.8297032287415425,
+        "time": 6.6516923904418945
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.025,
+        "rms_error": 0.986163113983327,
+        "max_error": 9.891352706654871,
+        "time": 12.687122821807861
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "rms_error": 0.9237306689673775,
+        "max_error": 7.546015735925948,
+        "time": 2.503660202026367
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "rms_error": 0.9465639559655378,
+        "max_error": 7.777655310469744,
+        "time": 2.2451138496398926
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "rms_error": 1.3698433910509438,
+        "max_error": 12.002199016417602,
+        "time": 3.0206642150878906
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "rms_error": 0.11294579297042438,
+        "max_error": 0.7015546468281453,
+        "time": 2.4106712341308594
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "rms_error": 0.24340476744729392,
+        "max_error": 2.4728571703513946,
+        "time": 1.6313600540161133
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "rms_error": 0.9023286030547489,
+        "max_error": 6.365129245600098,
+        "time": 3.1185388565063477
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "rms_error": 0.4999756784405786,
+        "max_error": 4.06383908319814,
+        "time": 9.912328243255615
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "rms_error": 0.5922042760751147,
+        "max_error": 5.0129261408011105,
+        "time": 9.233044624328613
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "rms_error": 1.176330482136625,
+        "max_error": 8.779615459712337,
+        "time": 12.50427532196045
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "rms_error": 0.0043586942577487015,
+        "max_error": 0.043622415624577915,
+        "time": 10.001678943634033
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "rms_error": 0.39769126019633283,
+        "max_error": 3.956457556159887,
+        "time": 6.684391975402832
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "rms_error": 0.9573707671083498,
+        "max_error": 7.154956594483764,
+        "time": 13.292939186096191
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.035,
+        "rms_error": 0.8578417073257899,
+        "max_error": 6.484878210386313,
+        "time": 2.4832820892333984
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.035,
+        "rms_error": 0.918245438505715,
+        "max_error": 7.167474572828835,
+        "time": 2.463254928588867
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.035,
+        "rms_error": 1.4304182385420017,
+        "max_error": 11.943939865052705,
+        "time": 3.245337963104248
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.035,
+        "rms_error": 0.1068272443640576,
+        "max_error": 0.5922122620890091,
+        "time": 2.5089616775512695
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.035,
+        "rms_error": 0.2970379424408158,
+        "max_error": 1.7946291716920664,
+        "time": 1.7054862976074219
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.035,
+        "rms_error": 1.0676367817066097,
+        "max_error": 6.447505396755143,
+        "time": 3.0790276527404785
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.035,
+        "rms_error": 0.46127809180066937,
+        "max_error": 3.4487895344456287,
+        "time": 9.918834209442139
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.035,
+        "rms_error": 0.5019975385709186,
+        "max_error": 4.098362495599073,
+        "time": 9.663084030151367
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.035,
+        "rms_error": 1.294702661119997,
+        "max_error": 9.1099885251539,
+        "time": 17.70346975326538
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.035,
+        "rms_error": 0.0034878324415345933,
+        "max_error": 0.02938053945479302,
+        "time": 10.655182838439941
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.035,
+        "rms_error": 0.2135685207097097,
+        "max_error": 2.100381471301671,
+        "time": 9.461596965789795
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.035,
+        "rms_error": 1.1119456512018797,
+        "max_error": 6.7065109056002825,
+        "time": 13.20247507095337
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "rms_error": 0.8089462194221896,
+        "max_error": 5.663681564420974,
+        "time": 2.469935894012451
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "rms_error": 1.019268679505217,
+        "max_error": 6.6398478072480565,
+        "time": 2.53305721282959
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "rms_error": 1.4688119520176335,
+        "max_error": 11.331633065446173,
+        "time": 3.5135669708251953
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "rms_error": 0.10338524234496066,
+        "max_error": 0.5257050078300463,
+        "time": 2.4475507736206055
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "rms_error": 0.6795481852012504,
+        "max_error": 3.7142566907454655,
+        "time": 1.857025146484375
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "rms_error": 1.1915888277217979,
+        "max_error": 7.083579546700997,
+        "time": 3.231828212738037
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "rms_error": 0.4314062083852654,
+        "max_error": 3.005899772805287,
+        "time": 10.270004749298096
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "rms_error": 0.5292210360061183,
+        "max_error": 3.661279501297443,
+        "time": 11.23746919631958
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "rms_error": 1.392722837627818,
+        "max_error": 9.137287200992306,
+        "time": 14.335227966308594
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "rms_error": 0.0034516147724427677,
+        "max_error": 0.0299617558152665,
+        "time": 9.887944221496582
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "rms_error": 0.37653512841610415,
+        "max_error": 2.5669124245225494,
+        "time": 7.4664459228515625
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "rms_error": 1.246715241320899,
+        "max_error": 7.265462768743386,
+        "time": 14.62293004989624
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.7683031632073818,
+        "max_error": 4.954215208875768,
+        "time": 2.660676956176758
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.8652524280545043,
+        "max_error": 5.537501884835605,
+        "time": 2.662034034729004
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 1.5038331753640743,
+        "max_error": 10.215896272533842,
+        "time": 3.9264769554138184
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.1030292546848433,
+        "max_error": 0.48858456991323074,
+        "time": 2.6649599075317383
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.43170196219340334,
+        "max_error": 2.4183184875884223,
+        "time": 1.8875398635864258
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 1.3080511893467706,
+        "max_error": 7.2112155625791265,
+        "time": 3.7566752433776855
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.4051819131317398,
+        "max_error": 2.636691915143241,
+        "time": 10.371985912322998
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.6979899756934232,
+        "max_error": 4.377687998981239,
+        "time": 10.667896747589111
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 1.466196877363272,
+        "max_error": 8.228424645702159,
+        "time": 14.453136920928955
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.0035640858931014962,
+        "max_error": 0.02890793343059972,
+        "time": 9.914906978607178
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 0.621884247641454,
+        "max_error": 3.027246795988825,
+        "time": 8.041680335998535
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.045000000000000005,
+        "rms_error": 1.3572685153985908,
+        "max_error": 7.352858912751797,
+        "time": 15.71600866317749
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "rms_error": 0.7330382767907074,
+        "max_error": 4.327678374885025,
+        "time": 3.436795711517334
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "rms_error": 0.7692427045223529,
+        "max_error": 4.5958437791332685,
+        "time": 3.5191330909729004
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "rms_error": 1.6314665221561264,
+        "max_error": 9.688103555922222,
+        "time": 4.961782932281494
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "rms_error": 0.10133558291966505,
+        "max_error": 0.45142302411954605,
+        "time": 2.728825092315674
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "rms_error": 0.25893969948967627,
+        "max_error": 1.5715128983054716,
+        "time": 2.4193520545959473
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "rms_error": 1.5015222423251458,
+        "max_error": 8.038820281405979,
+        "time": 4.553603649139404
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "rms_error": 0.3818273888985848,
+        "max_error": 2.3025252445250444,
+        "time": 12.502656936645508
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "rms_error": 0.5191755699705682,
+        "max_error": 3.2427937661773987,
+        "time": 17.531641006469727
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "rms_error": 1.6552546517104132,
+        "max_error": 8.485008152190554,
+        "time": 26.560707092285156
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "rms_error": 0.0035472080329789074,
+        "max_error": 0.0257688836494796,
+        "time": 14.292684078216553
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "rms_error": 0.37965558510748487,
+        "max_error": 2.2172218911861274,
+        "time": 17.412827968597412
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "rms_error": 1.5702757425565175,
+        "max_error": 8.37457507591361,
+        "time": 23.635530948638916
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.055,
+        "rms_error": 0.7025736097177183,
+        "max_error": 3.76727363286119,
+        "time": 2.6145949363708496
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.055,
+        "rms_error": 1.1692006552003162,
+        "max_error": 6.9103135108702585,
+        "time": 2.972592830657959
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.055,
+        "rms_error": 1.7453360388421444,
+        "max_error": 9.182192739597983,
+        "time": 4.401883125305176
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.055,
+        "rms_error": 0.09896173356946805,
+        "max_error": 0.41523407876875584,
+        "time": 2.564955711364746
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.055,
+        "rms_error": 0.8986341936632669,
+        "max_error": 3.796558702340164,
+        "time": 2.284080982208252
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.055,
+        "rms_error": 1.6578707853102694,
+        "max_error": 8.043061664138474,
+        "time": 3.829141139984131
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.055,
+        "rms_error": 0.3617645386146094,
+        "max_error": 2.0166232982970267,
+        "time": 10.586297035217285
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.055,
+        "rms_error": 0.6954052992774663,
+        "max_error": 3.9862330925056533,
+        "time": 12.217370986938477
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.055,
+        "rms_error": 1.785909617429686,
+        "max_error": 7.921667016896771,
+        "time": 18.081503868103027
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.055,
+        "rms_error": 0.003724137714565375,
+        "max_error": 0.022223039794833088,
+        "time": 10.554917812347412
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.055,
+        "rms_error": 0.611451933238221,
+        "max_error": 2.7302009286583218,
+        "time": 9.164606094360352
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.055,
+        "rms_error": 1.7177090300306384,
+        "max_error": 8.240845581131651,
+        "time": 17.883322715759277
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 0.6770242123392277,
+        "max_error": 3.592173347428984,
+        "time": 3.6207170486450195
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 1.0095421159505225,
+        "max_error": 6.1167720704401685,
+        "time": 3.125715732574463
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 1.8081307188268987,
+        "max_error": 8.7381869843973,
+        "time": 3.5485763549804688
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 0.09752800451220257,
+        "max_error": 0.39103780760028073,
+        "time": 3.020991802215576
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 0.7057849227310575,
+        "max_error": 2.9468809471015933,
+        "time": 2.633035182952881
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 1.7477363335817808,
+        "max_error": 8.336269150876275,
+        "time": 4.297092914581299
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 0.3450776852905335,
+        "max_error": 1.7775002591419842,
+        "time": 10.06569528579712
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 0.5516302869725803,
+        "max_error": 3.3281230430301734,
+        "time": 13.385408878326416
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 1.856314938310226,
+        "max_error": 7.778741067235489,
+        "time": 18.1943678855896
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 0.0036332646203930566,
+        "max_error": 0.020946474956073935,
+        "time": 9.697665691375732
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 0.4380230537567555,
+        "max_error": 2.1049810999089313,
+        "time": 9.676939010620117
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "rms_error": 1.8016826768129353,
+        "max_error": 8.430250289831086,
+        "time": 18.21151828765869
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.065,
+        "rms_error": 0.6541520005098188,
+        "max_error": 3.3756450486202794,
+        "time": 2.5303750038146973
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.065,
+        "rms_error": 0.8779674408162053,
+        "max_error": 5.409336248659269,
+        "time": 3.197798252105713
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.065,
+        "rms_error": 1.8333152742734347,
+        "max_error": 8.426148753791034,
+        "time": 4.641304016113281
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.065,
+        "rms_error": 0.09600941739079913,
+        "max_error": 0.3688592883456243,
+        "time": 2.5329513549804688
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.065,
+        "rms_error": 0.5397358610572892,
+        "max_error": 2.3339911754289067,
+        "time": 2.440629005432129
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.065,
+        "rms_error": 1.8182807139470059,
+        "max_error": 7.707800248170582,
+        "time": 4.212586879730225
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.065,
+        "rms_error": 0.33168021157785027,
+        "max_error": 1.6013452978295928,
+        "time": 11.489297866821289
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.065,
+        "rms_error": 0.7799597110137304,
+        "max_error": 4.241136545544599,
+        "time": 13.94688892364502
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.065,
+        "rms_error": 1.8956164697256497,
+        "max_error": 7.775416102360266,
+        "time": 23.48424005508423
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.065,
+        "rms_error": 0.0034035731930466776,
+        "max_error": 0.0206787383780771,
+        "time": 10.838058948516846
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.065,
+        "rms_error": 0.7034780143037876,
+        "max_error": 3.166512588991588,
+        "time": 14.154603004455566
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.065,
+        "rms_error": 1.8669058365253601,
+        "max_error": 7.775488224439431,
+        "time": 20.323672771453857
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.6353556029334351,
+        "max_error": 3.1728335233871197,
+        "time": 2.4264297485351562
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.7723502573213672,
+        "max_error": 4.750258851289246,
+        "time": 3.2051572799682617
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 1.8992827148712492,
+        "max_error": 8.251446059657185,
+        "time": 4.706859111785889
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.09685319709690296,
+        "max_error": 0.3593960425637699,
+        "time": 2.651541233062744
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.4010508902941957,
+        "max_error": 1.7788006422212677,
+        "time": 2.440870761871338
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 1.9008171757354735,
+        "max_error": 7.202701823945112,
+        "time": 4.619895935058594
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.3206489646719243,
+        "max_error": 1.453171638480455,
+        "time": 10.253392696380615
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.6281887907091419,
+        "max_error": 3.599397440370322,
+        "time": 15.070230960845947
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 1.9760283403911303,
+        "max_error": 7.715839518152095,
+        "time": 20.16226100921631
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.003316338874024562,
+        "max_error": 0.0191205996837307,
+        "time": 10.906733989715576
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 0.5335782130962187,
+        "max_error": 2.5543819734469397,
+        "time": 11.806570053100586
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "rms_error": 1.9542362888689386,
+        "max_error": 7.230039228851625,
+        "time": 25.53174591064453
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.075,
+        "rms_error": 0.6197844738661437,
+        "max_error": 2.9820150582355653,
+        "time": 2.7400012016296387
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.075,
+        "rms_error": 1.30383043653621,
+        "max_error": 6.689627400060239,
+        "time": 3.328670024871826
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.075,
+        "rms_error": 1.9534955457563763,
+        "max_error": 8.081202058479226,
+        "time": 4.701838970184326
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.075,
+        "rms_error": 0.09545769741239328,
+        "max_error": 0.3410820300112749,
+        "time": 3.0562868118286133
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.075,
+        "rms_error": 1.071425663683557,
+        "max_error": 4.0725987481663175,
+        "time": 2.775233268737793
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.075,
+        "rms_error": 1.9760758033400927,
+        "max_error": 7.299081626025666,
+        "time": 3.92600679397583
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.075,
+        "rms_error": 0.3115192035241091,
+        "max_error": 1.333327207601731,
+        "time": 10.031636714935303
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.075,
+        "rms_error": 0.8540380394842809,
+        "max_error": 4.358063110178545,
+        "time": 14.17121696472168
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.075,
+        "rms_error": 2.0527660653732265,
+        "max_error": 7.6522301323715265,
+        "time": 18.760796070098877
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.075,
+        "rms_error": 0.0032556875343748397,
+        "max_error": 0.01692434828503009,
+        "time": 11.348608016967773
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.075,
+        "rms_error": 0.784556398221884,
+        "max_error": 3.375842345610669,
+        "time": 11.471540927886963
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.075,
+        "rms_error": 2.036395324109253,
+        "max_error": 7.338632176908333,
+        "time": 16.799222946166992
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "rms_error": 0.6053591297195344,
+        "max_error": 2.7892071212833325,
+        "time": 3.5687060356140137
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "rms_error": 1.1279399251811502,
+        "max_error": 5.909725781742692,
+        "time": 4.240736961364746
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "rms_error": 2.0226676622000195,
+        "max_error": 8.035536886251105,
+        "time": 5.460281848907471
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "rms_error": 0.09724853905655508,
+        "max_error": 0.33539248948649125,
+        "time": 2.8169374465942383
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "rms_error": 0.8790471261336185,
+        "max_error": 3.4087568212507913,
+        "time": 3.0698728561401367
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "rms_error": 2.044822326671001,
+        "max_error": 7.321834323808163,
+        "time": 4.168374061584473
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "rms_error": 0.30381791637301075,
+        "max_error": 1.2338694222407076,
+        "time": 11.555895328521729
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "rms_error": 0.6914826490432776,
+        "max_error": 3.6915789797273058,
+        "time": 16.010977745056152
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "rms_error": 2.111140432039062,
+        "max_error": 7.617997404780313,
+        "time": 24.625699996948242
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "rms_error": 0.003443675955648302,
+        "max_error": 0.017041669351464117,
+        "time": 11.148746967315674
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "rms_error": 0.6091948491256984,
+        "max_error": 2.7434467193521606,
+        "time": 15.26517629623413
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "rms_error": 2.100343354203581,
+        "max_error": 7.333095757513142,
+        "time": 20.998048782348633
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.5932310848922874,
+        "max_error": 2.6146006583346426,
+        "time": 2.4497013092041016
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.9702868381329717,
+        "max_error": 5.192390986998308,
+        "time": 3.5919079780578613
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 2.070213695858869,
+        "max_error": 7.904637761085734,
+        "time": 4.836153030395508
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.09645011061705108,
+        "max_error": 0.3204375231916412,
+        "time": 2.5491881370544434
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.7010166561294361,
+        "max_error": 2.79567035723729,
+        "time": 2.8064160346984863
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 2.101178537795361,
+        "max_error": 7.321937417885538,
+        "time": 4.2989091873168945
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.2972833736988935,
+        "max_error": 1.155760268737993,
+        "time": 11.83596420288086
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.9145627141423602,
+        "max_error": 4.381080822763284,
+        "time": 16.710676193237305
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 2.1797876657464266,
+        "max_error": 7.651867711607982,
+        "time": 21.192951679229736
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.0035684410736264672,
+        "max_error": 0.016780071790900575,
+        "time": 11.56562089920044
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 0.8512626856411342,
+        "max_error": 3.494146560692535,
+        "time": 13.327233791351318
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.08499999999999999,
+        "rms_error": 2.167079448287353,
+        "max_error": 7.366655837977298,
+        "time": 18.53970718383789
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "rms_error": 0.5828391093135704,
+        "max_error": 2.4547669746090572,
+        "time": 3.795830249786377
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "rms_error": 1.5798347383811704,
+        "max_error": 7.013105300807099,
+        "time": 4.254673004150391
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "rms_error": 2.1226936552341673,
+        "max_error": 7.903172432639682,
+        "time": 6.5665178298950195
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "rms_error": 0.09662261362322264,
+        "max_error": 0.3089419422195483,
+        "time": 3.2751312255859375
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "rms_error": 1.392285234683855,
+        "max_error": 4.876777893827539,
+        "time": 3.377495765686035
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "rms_error": 2.160367669620866,
+        "max_error": 7.177668902196832,
+        "time": 4.604049205780029
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "rms_error": 0.2916118931908633,
+        "max_error": 1.092574988153605,
+        "time": 11.415876388549805
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "rms_error": 1.1509376153468203,
+        "max_error": 5.051755558781423,
+        "time": 18.024147987365723
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "rms_error": 2.231344563655477,
+        "max_error": 7.687647592435757,
+        "time": 23.043630599975586
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "rms_error": 0.003566716974934365,
+        "max_error": 0.016489002158437405,
+        "time": 11.079197883605957
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "rms_error": 1.099603665308185,
+        "max_error": 4.2140594145410715,
+        "time": 14.6546630859375
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "rms_error": 2.2233651052573205,
+        "max_error": 7.221365130314283,
+        "time": 19.961459159851074
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.095,
+        "rms_error": 0.5734280054529167,
+        "max_error": 2.304381133852118,
+        "time": 2.443995952606201
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.095,
+        "rms_error": 1.3893625459022279,
+        "max_error": 6.273527281235525,
+        "time": 3.185047149658203
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.095,
+        "rms_error": 2.182268071231864,
+        "max_error": 7.988422515083535,
+        "time": 5.0838799476623535
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.095,
+        "rms_error": 0.09757461948887887,
+        "max_error": 0.301221444709171,
+        "time": 2.5600342750549316
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.095,
+        "rms_error": 1.196091931100508,
+        "max_error": 4.224984696083089,
+        "time": 2.905928134918213
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.095,
+        "rms_error": 2.2213136600379957,
+        "max_error": 6.885927093215837,
+        "time": 4.545614719390869
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.095,
+        "rms_error": 0.2868516298306163,
+        "max_error": 1.0331259717594188,
+        "time": 9.84171199798584
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.095,
+        "rms_error": 0.9686250820621795,
+        "max_error": 4.40835414981906,
+        "time": 19.017959117889404
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.095,
+        "rms_error": 2.2898487393520894,
+        "max_error": 7.784630431970744,
+        "time": 26.08739709854126
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.095,
+        "rms_error": 0.0032652294523850475,
+        "max_error": 0.014170685603953626,
+        "time": 12.76292896270752
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.095,
+        "rms_error": 0.9114739145742076,
+        "max_error": 3.5934713591536327,
+        "time": 18.909828186035156
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.095,
+        "rms_error": 2.2825472239604054,
+        "max_error": 7.086041758540055,
+        "time": 24.50220775604248
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 0.564234859924624,
+        "max_error": 2.159399056526423,
+        "time": 2.827241897583008
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 1.2125127962921047,
+        "max_error": 5.585274314389032,
+        "time": 4.232409954071045
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 2.246589353185773,
+        "max_error": 8.048227108586808,
+        "time": 5.827003002166748
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 0.09922273668670098,
+        "max_error": 0.2957090531248485,
+        "time": 2.6325221061706543
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 1.0075541978899731,
+        "max_error": 3.6054127290159887,
+        "time": 3.24660587310791
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 2.2766049701376003,
+        "max_error": 6.897372556220296,
+        "time": 4.926690101623535
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 0.2826219184491923,
+        "max_error": 0.9879962599652847,
+        "time": 11.413999080657959
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 1.2041181937314045,
+        "max_error": 5.0231083781015045,
+        "time": 22.93755531311035
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 2.3450488792038655,
+        "max_error": 7.821901507703388,
+        "time": 26.230655670166016
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 0.0031916364332474564,
+        "max_error": 0.013975489612838565,
+        "time": 11.414138317108154
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 1.1567143369289474,
+        "max_error": 4.240248803377322,
+        "time": 16.78329563140869
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "rms_error": 2.339023549760452,
+        "max_error": 7.16503421585197,
+        "time": 21.01571798324585
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.105,
+        "rms_error": 0.5566643886690154,
+        "max_error": 2.03480885360805,
+        "time": 2.6180381774902344
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.105,
+        "rms_error": 1.051353168963268,
+        "max_error": 4.954396485247958,
+        "time": 4.224915981292725
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.105,
+        "rms_error": 2.3031545526797403,
+        "max_error": 8.03758315740759,
+        "time": 5.812719821929932
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.105,
+        "rms_error": 0.10072579851668516,
+        "max_error": 0.2904435972423236,
+        "time": 3.0947036743164062
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.105,
+        "rms_error": 0.8337827289403681,
+        "max_error": 3.034290697530251,
+        "time": 3.595005989074707
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.105,
+        "rms_error": 2.3399684312837605,
+        "max_error": 6.968739816729008,
+        "time": 5.13468599319458
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.105,
+        "rms_error": 0.27897321631209276,
+        "max_error": 0.9474264716130776,
+        "time": 13.70346212387085
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.105,
+        "rms_error": 1.0245248974478536,
+        "max_error": 4.3987973926781665,
+        "time": 27.63172483444214
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.105,
+        "rms_error": 2.40740352631484,
+        "max_error": 7.854431531252995,
+        "time": 33.64667081832886
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.105,
+        "rms_error": 0.003074837118372849,
+        "max_error": 0.01316479205256682,
+        "time": 10.941007137298584
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.105,
+        "rms_error": 0.9724179877685726,
+        "max_error": 3.631584482443473,
+        "time": 21.52856969833374
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.105,
+        "rms_error": 2.402913026950406,
+        "max_error": 7.230469466251063,
+        "time": 27.433472156524658
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "rms_error": 0.5498724703002802,
+        "max_error": 1.9213691927541188,
+        "time": 2.610633373260498
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "rms_error": 1.6694540787587449,
+        "max_error": 6.551770896350229,
+        "time": 4.585409641265869
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "rms_error": 2.3622262623992634,
+        "max_error": 8.0504385995601,
+        "time": 6.335581302642822
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "rms_error": 0.10155599032141074,
+        "max_error": 0.2841021134793176,
+        "time": 2.7476725578308105
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "rms_error": 1.5158276858210606,
+        "max_error": 4.846058306677953,
+        "time": 3.9598031044006348
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "rms_error": 2.3952583920379134,
+        "max_error": 7.024754471202796,
+        "time": 6.6734089851379395
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "rms_error": 0.27578649277112666,
+        "max_error": 0.9081402111037362,
+        "time": 11.976816177368164
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "rms_error": 1.2636549429899913,
+        "max_error": 4.9714551800410955,
+        "time": 23.229581832885742
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "rms_error": 2.4642984189622745,
+        "max_error": 7.8836555688830305,
+        "time": 28.093497276306152
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "rms_error": 0.00295409096776115,
+        "max_error": 0.011866466596299752,
+        "time": 11.778325080871582
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "rms_error": 1.219635453897188,
+        "max_error": 4.234965206668518,
+        "time": 20.528193950653076
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "rms_error": 2.45877235769816,
+        "max_error": 7.281164221645128,
+        "time": 26.520068645477295
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 0.5432725971857034,
+        "max_error": 1.8132405632876991,
+        "time": 2.5977420806884766
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 1.4891383342814224,
+        "max_error": 5.899641852707416,
+        "time": 4.798490047454834
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 2.4235112032845145,
+        "max_error": 8.07416228957227,
+        "time": 5.135838031768799
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 0.10285073955708571,
+        "max_error": 0.2786827987969642,
+        "time": 2.623709201812744
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 1.3286524195431173,
+        "max_error": 4.254361238024762,
+        "time": 3.6047840118408203
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 2.4503583383454526,
+        "max_error": 7.081490873515362,
+        "time": 5.122729778289795
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 0.2728964202538372,
+        "max_error": 0.8742593370584029,
+        "time": 11.627493858337402
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 1.0881653697245977,
+        "max_error": 4.389803152579674,
+        "time": 25.006132125854492
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 2.5159908628254612,
+        "max_error": 7.886832079439518,
+        "time": 29.86933708190918
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 0.002813743317879021,
+        "max_error": 0.012230792627621057,
+        "time": 10.79052209854126
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 1.0406502308690608,
+        "max_error": 3.6668091865143637,
+        "time": 19.4597487449646
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.11499999999999999,
+        "rms_error": 2.513041520327831,
+        "max_error": 7.319167507291191,
+        "time": 27.49769401550293
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "rms_error": 0.5377629709276233,
+        "max_error": 1.7187603751708913,
+        "time": 3.460505962371826
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "rms_error": 1.318188005494634,
+        "max_error": 5.294118655756197,
+        "time": 4.69701623916626
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "rms_error": 2.4836078347061594,
+        "max_error": 8.074036406872393,
+        "time": 7.87874698638916
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "rms_error": 0.10351444202298395,
+        "max_error": 0.2722046586918936,
+        "time": 2.7543020248413086
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "rms_error": 1.1510669483574556,
+        "max_error": 3.711585712818355,
+        "time": 3.7878379821777344
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "rms_error": 2.5018230392826104,
+        "max_error": 7.121270675010457,
+        "time": 5.576259136199951
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "rms_error": 0.27030676143342597,
+        "max_error": 0.843728330228477,
+        "time": 11.278501987457275
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "rms_error": 1.3295186039236628,
+        "max_error": 4.958921887944956,
+        "time": 27.90625238418579
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "rms_error": 2.5770732490587682,
+        "max_error": 7.922139382886225,
+        "time": 32.087491035461426
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "rms_error": 0.002630529048362455,
+        "max_error": 0.011323721777267703,
+        "time": 11.48069429397583
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "rms_error": 1.2889574427191863,
+        "max_error": 4.274298873195526,
+        "time": 20.869571685791016
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "rms_error": 2.56920360355791,
+        "max_error": 7.366975701274075,
+        "time": 26.78240203857422
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.125,
+        "rms_error": 0.5327713250121506,
+        "max_error": 1.6333018473446592,
+        "time": 2.609246253967285
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.125,
+        "rms_error": 1.974459687091762,
+        "max_error": 6.854738033046526,
+        "time": 5.852887153625488
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.125,
+        "rms_error": 2.5509759480730776,
+        "max_error": 8.0807162982632,
+        "time": 6.849759578704834
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.125,
+        "rms_error": 0.10352192520304095,
+        "max_error": 0.264663235932977,
+        "time": 2.624636650085449
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.125,
+        "rms_error": 1.850202577688781,
+        "max_error": 5.458708939779955,
+        "time": 4.9393391609191895
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.125,
+        "rms_error": 2.5697012136787647,
+        "max_error": 7.185988229140405,
+        "time": 6.170069217681885
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.125,
+        "rms_error": 0.26797073280262457,
+        "max_error": 0.8166723257410191,
+        "time": 14.063081741333008
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.125,
+        "rms_error": 1.5809772561709485,
+        "max_error": 5.509233751111154,
+        "time": 26.47905397415161
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.125,
+        "rms_error": 2.6420693797555566,
+        "max_error": 7.933743232742771,
+        "time": 30.991313934326172
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.125,
+        "rms_error": 0.0024433102523486873,
+        "max_error": 0.010619155240598754,
+        "time": 13.026287078857422
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.125,
+        "rms_error": 1.5452140255167628,
+        "max_error": 4.864674523300749,
+        "time": 21.95750379562378
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.125,
+        "rms_error": 2.6365265495550623,
+        "max_error": 7.417245517636414,
+        "time": 28.489405155181885
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "rms_error": 0.5279451004147852,
+        "max_error": 1.5531281261851437,
+        "time": 2.3590240478515625
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "rms_error": 1.7949512544912922,
+        "max_error": 6.2412588821640025,
+        "time": 5.170485019683838
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "rms_error": 2.6171517870741385,
+        "max_error": 8.09168134719857,
+        "time": 6.44500207901001
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "rms_error": 0.10423402363452768,
+        "max_error": 0.2588355286579136,
+        "time": 2.8024959564208984
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "rms_error": 1.6676621035264567,
+        "max_error": 4.897445538348272,
+        "time": 4.001408100128174
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "rms_error": 2.633321400974417,
+        "max_error": 7.237876542338367,
+        "time": 6.463341236114502
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "rms_error": 0.26581324052754923,
+        "max_error": 0.7914886302562874,
+        "time": 12.147407054901123
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "rms_error": 1.4050675566282602,
+        "max_error": 4.952575154513905,
+        "time": 29.327735900878906
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "rms_error": 2.7092435992481487,
+        "max_error": 7.969542916373978,
+        "time": 38.657291889190674
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "rms_error": 0.002287446527223428,
+        "max_error": 0.009618124293164776,
+        "time": 10.661295890808105
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "rms_error": 1.3668965225127778,
+        "max_error": 4.325201172792026,
+        "time": 27.345262050628662
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "rms_error": 2.7027978136858755,
+        "max_error": 7.46838374774835,
+        "time": 32.54580497741699
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.135,
+        "rms_error": 0.5238008925307581,
+        "max_error": 1.48238685765687,
+        "time": 2.5316734313964844
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.135,
+        "rms_error": 1.6236620041339986,
+        "max_error": 5.668385629437611,
+        "time": 4.488137722015381
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.135,
+        "rms_error": 2.675629856974423,
+        "max_error": 8.119097918018486,
+        "time": 7.003258228302002
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.135,
+        "rms_error": 0.10582401681812358,
+        "max_error": 0.25516580537772726,
+        "time": 2.4731149673461914
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.135,
+        "rms_error": 1.49261948141273,
+        "max_error": 4.372317571583418,
+        "time": 4.278918743133545
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.135,
+        "rms_error": 2.6901669538677804,
+        "max_error": 7.287194640225591,
+        "time": 6.032463073730469
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.135,
+        "rms_error": 0.26385372552255065,
+        "max_error": 0.7660829262740809,
+        "time": 11.228288173675537
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.135,
+        "rms_error": 1.6605068814663493,
+        "max_error": 5.4631125854326275,
+        "time": 30.309916973114014
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.135,
+        "rms_error": 2.7603703483563633,
+        "max_error": 7.96826847842935,
+        "time": 36.28658580780029
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.135,
+        "rms_error": 0.002192808064134763,
+        "max_error": 0.009562472944790734,
+        "time": 12.206501960754395
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.135,
+        "rms_error": 1.626004313167486,
+        "max_error": 4.872276746064552,
+        "time": 27.797991275787354
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.135,
+        "rms_error": 2.7564948712560846,
+        "max_error": 7.50174584011066,
+        "time": 32.51595592498779
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "rms_error": 0.5196647809872939,
+        "max_error": 1.417085522259831,
+        "time": 2.8173909187316895
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "rms_error": 1.4609801740963384,
+        "max_error": 5.133631937552763,
+        "time": 5.421019077301025
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "rms_error": 2.7183352771670437,
+        "max_error": 8.097903539484804,
+        "time": 7.3162641525268555
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "rms_error": 0.10779389361841578,
+        "max_error": 0.2524649216217256,
+        "time": 2.7722363471984863
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "rms_error": 1.325298424684572,
+        "max_error": 3.8822001349175905,
+        "time": 4.3130879402160645
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "rms_error": 2.7370849307502385,
+        "max_error": 7.323068056086118,
+        "time": 6.105175971984863
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "rms_error": 0.2620223922228286,
+        "max_error": 0.7431709181678237,
+        "time": 11.432519912719727
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "rms_error": 1.488755879655825,
+        "max_error": 4.931774264727018,
+        "time": 32.78611707687378
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "rms_error": 2.81002897756244,
+        "max_error": 7.985186674792585,
+        "time": 45.353508949279785
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "rms_error": 0.002186837016396204,
+        "max_error": 0.00938910060039877,
+        "time": 10.945033550262451
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "rms_error": 1.4526823717056339,
+        "max_error": 4.357667544423249,
+        "time": 32.28006839752197
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "rms_error": 2.806439865390806,
+        "max_error": 7.535296477453385,
+        "time": 37.56329679489136
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 0.5162607756550828,
+        "max_error": 1.361160475209855,
+        "time": 2.5551490783691406
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 2.124983852502531,
+        "max_error": 6.534946688161486,
+        "time": 4.925188064575195
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 2.7588415253955136,
+        "max_error": 8.097861643547322,
+        "time": 7.63920783996582
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 0.10782823540586071,
+        "max_error": 0.24622494360976854,
+        "time": 2.6328988075256348
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 2.0184981978694654,
+        "max_error": 5.402836870898186,
+        "time": 4.499373912811279
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 2.779367198297877,
+        "max_error": 7.354867965008258,
+        "time": 6.1888861656188965
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 0.260305455629785,
+        "max_error": 0.7210961136037364,
+        "time": 10.54714298248291
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 1.7448329320644476,
+        "max_error": 5.403173441818909,
+        "time": 36.171321868896484
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 2.850223648664977,
+        "max_error": 7.992436263461117,
+        "time": 42.0437970161438
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 0.0022468515725763043,
+        "max_error": 0.009164951784845776,
+        "time": 12.426322937011719
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 1.7114551363658679,
+        "max_error": 4.861317469050974,
+        "time": 29.839666843414307
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.14500000000000002,
+        "rms_error": 2.848436583201096,
+        "max_error": 7.562577315323401,
+        "time": 33.34469938278198
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 0.513346958651994,
+        "max_error": 1.3123231399328583,
+        "time": 2.649674892425537
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 1.9534842964296462,
+        "max_error": 5.98789515482242,
+        "time": 6.049450874328613
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 2.8019597010069957,
+        "max_error": 8.112415457602829,
+        "time": 7.574856281280518
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 0.1085110214828068,
+        "max_error": 0.24168033228510466,
+        "time": 3.4423041343688965
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 1.8452195433958722,
+        "max_error": 4.8952063480409365,
+        "time": 4.5765509605407715
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 2.8203731975135766,
+        "max_error": 7.394583512319534,
+        "time": 6.870861053466797
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 0.25865454997001597,
+        "max_error": 0.7008523600852801,
+        "time": 11.483551979064941
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 1.5756431558956163,
+        "max_error": 4.897003934816901,
+        "time": 36.63658285140991
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 2.8877657278175186,
+        "max_error": 7.99844765341878,
+        "time": 46.52479076385498
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 0.00227530818546349,
+        "max_error": 0.009380916980405996,
+        "time": 11.390563011169434
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 1.5408055427361191,
+        "max_error": 4.369990097947463,
+        "time": 35.61867141723633
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "rms_error": 2.887120804464058,
+        "max_error": 7.588154694259706,
+        "time": 41.031914710998535
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.155,
+        "rms_error": 0.5099048030654906,
+        "max_error": 1.262533556451062,
+        "time": 2.4667181968688965
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.155,
+        "rms_error": 1.78664873182641,
+        "max_error": 5.470926056006542,
+        "time": 5.012506008148193
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.155,
+        "rms_error": 2.836294319303593,
+        "max_error": 8.107660421973195,
+        "time": 8.43134880065918
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.155,
+        "rms_error": 0.11009215315928143,
+        "max_error": 0.23914213889759672,
+        "time": 2.7786850929260254
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.155,
+        "rms_error": 1.6757745065897836,
+        "max_error": 4.414358878861391,
+        "time": 4.565131664276123
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.155,
+        "rms_error": 2.856991056848882,
+        "max_error": 7.4255833767324235,
+        "time": 6.809587001800537
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.155,
+        "rms_error": 0.25709213909736056,
+        "max_error": 0.6809440708165471,
+        "time": 10.68668508529663
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.155,
+        "rms_error": 1.8300546218384817,
+        "max_error": 5.332434937217334,
+        "time": 35.33485221862793
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.155,
+        "rms_error": 2.924825765191546,
+        "max_error": 8.015820740961095,
+        "time": 46.961546897888184
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.155,
+        "rms_error": 0.0023421098164799294,
+        "max_error": 0.00925778627118845,
+        "time": 12.078838348388672
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.155,
+        "rms_error": 1.7969323986872574,
+        "max_error": 4.831934171709867,
+        "time": 29.933928966522217
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.155,
+        "rms_error": 2.925152031422506,
+        "max_error": 7.618418654727743,
+        "time": 36.449185848236084
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "rms_error": 0.5069782693320705,
+        "max_error": 1.219712351711677,
+        "time": 2.8450751304626465
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "rms_error": 1.6266674504880454,
+        "max_error": 4.986608563039918,
+        "time": 6.0322041511535645
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "rms_error": 2.8682631792479114,
+        "max_error": 8.104475424791778,
+        "time": 8.509784698486328
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "rms_error": 0.11097736029514615,
+        "max_error": 0.2356497944232705,
+        "time": 3.442142963409424
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "rms_error": 1.5116793985439312,
+        "max_error": 3.96219453872777,
+        "time": 4.777107238769531
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "rms_error": 2.8920546882049414,
+        "max_error": 7.498214631746314,
+        "time": 7.229323863983154
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "rms_error": 0.2555593170001275,
+        "max_error": 0.6620504343917033,
+        "time": 11.351886749267578
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "rms_error": 1.6628429467072396,
+        "max_error": 4.848431552092292,
+        "time": 37.53108215332031
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "rms_error": 2.956010084405559,
+        "max_error": 8.018970625568912,
+        "time": 46.96698713302612
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "rms_error": 0.0023634087703557167,
+        "max_error": 0.009222477234638315,
+        "time": 12.511011600494385
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "rms_error": 1.6285513012852415,
+        "max_error": 4.36116465366384,
+        "time": 34.716637134552
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "rms_error": 2.9594193448457773,
+        "max_error": 7.644003747040054,
+        "time": 40.479148864746094
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.165,
+        "rms_error": 0.5046248236586901,
+        "max_error": 1.185651093854101,
+        "time": 2.6010689735412598
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.165,
+        "rms_error": 2.284064967176071,
+        "max_error": 6.223527387631778,
+        "time": 6.429878234863281
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.165,
+        "rms_error": 2.900765843988294,
+        "max_error": 8.111337547651857,
+        "time": 9.714903831481934
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.165,
+        "rms_error": 0.11154252014606315,
+        "max_error": 0.23186925272891123,
+        "time": 2.921779155731201
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.165,
+        "rms_error": 2.188920926426654,
+        "max_error": 5.280413161427811,
+        "time": 5.964854717254639
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.165,
+        "rms_error": 2.927108649474202,
+        "max_error": 7.584777188314984,
+        "time": 7.101494312286377
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.165,
+        "rms_error": 0.25407887399094187,
+        "max_error": 0.643970026576357,
+        "time": 11.734714984893799
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.165,
+        "rms_error": 1.9144537832170754,
+        "max_error": 5.248686123394686,
+        "time": 39.648104190826416
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.165,
+        "rms_error": 2.992233333354616,
+        "max_error": 8.042964731504231,
+        "time": 51.678422927856445
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.165,
+        "rms_error": 0.002475837550648037,
+        "max_error": 0.008567372109202775,
+        "time": 11.065782070159912
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.165,
+        "rms_error": 1.8813576897333486,
+        "max_error": 4.785049367557203,
+        "time": 42.996427059173584
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.165,
+        "rms_error": 2.995945541125256,
+        "max_error": 7.675751970930433,
+        "time": 46.43737983703613
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "rms_error": 0.5025332535742483,
+        "max_error": 1.155703184936785,
+        "time": 2.4148731231689453
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "rms_error": 2.1173117098721552,
+        "max_error": 5.730905203928794,
+        "time": 6.636703014373779
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "rms_error": 2.9351218473689222,
+        "max_error": 8.133877454096828,
+        "time": 8.857317924499512
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "rms_error": 0.11292851026281349,
+        "max_error": 0.22977586227176938,
+        "time": 2.7189931869506836
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "rms_error": 2.0190508382499472,
+        "max_error": 4.814507969156051,
+        "time": 5.127932071685791
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "rms_error": 2.9621618116280493,
+        "max_error": 7.693627147600591,
+        "time": 7.3005499839782715
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "rms_error": 0.2526357850976826,
+        "max_error": 0.6267239201969033,
+        "time": 9.930220127105713
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "rms_error": 2.165559673924363,
+        "max_error": 5.621874253872744,
+        "time": 41.55658197402954
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "rms_error": 3.020713094559697,
+        "max_error": 8.045015536550567,
+        "time": 48.01706409454346
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "rms_error": 0.002449105274377207,
+        "max_error": 0.00853301442180765,
+        "time": 10.757265090942383
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "rms_error": 2.132685808875743,
+        "max_error": 5.1788141783802475,
+        "time": 35.38963603973389
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "rms_error": 3.026629131765382,
+        "max_error": 7.758610567070567,
+        "time": 44.3195276260376
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 0.5000745168213876,
+        "max_error": 1.1243127493987815,
+        "time": 2.4192757606506348
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 1.9539298065547912,
+        "max_error": 5.262764200598468,
+        "time": 6.719608306884766
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 2.9631313430376793,
+        "max_error": 8.128258050570702,
+        "time": 9.205983638763428
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 0.11270557953459194,
+        "max_error": 0.2252595942431601,
+        "time": 3.045745372772217
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 1.8522674261632557,
+        "max_error": 4.371892440465974,
+        "time": 5.049916744232178
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 2.9923914135126943,
+        "max_error": 7.783588771098826,
+        "time": 7.6214070320129395
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 0.2512146854120864,
+        "max_error": 0.6104226005845037,
+        "time": 10.147286891937256
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 1.9963536627051632,
+        "max_error": 5.1529229922960385,
+        "time": 45.26757097244263
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 3.0509352278548327,
+        "max_error": 8.066074112974604,
+        "time": 50.59545040130615
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 0.0024801449504358655,
+        "max_error": 0.008939456819689884,
+        "time": 11.646199226379395
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 1.9627002706460803,
+        "max_error": 4.721511623309049,
+        "time": 38.12573289871216
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.17500000000000002,
+        "rms_error": 3.059588693470359,
+        "max_error": 7.87142226998348,
+        "time": 56.495129108428955
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 0.49794333974913846,
+        "max_error": 1.0972050370972264,
+        "time": 2.505491256713867
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 2.60796400952657,
+        "max_error": 6.382098511201595,
+        "time": 7.310693740844727
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 2.994143114517013,
+        "max_error": 8.14055916872383,
+        "time": 9.285346031188965
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 0.11268518171037258,
+        "max_error": 0.22135580577965497,
+        "time": 2.5899596214294434
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 2.5178693097524936,
+        "max_error": 5.553482524277414,
+        "time": 5.568445205688477
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 3.0268136741321277,
+        "max_error": 7.910916568359699,
+        "time": 7.757657051086426
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 0.24977828602368007,
+        "max_error": 0.5956858004608212,
+        "time": 10.197399616241455
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 2.242462504896189,
+        "max_error": 5.496083704606381,
+        "time": 42.0914192199707
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 3.0809653624493447,
+        "max_error": 8.054219672932728,
+        "time": 55.02599477767944
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 0.0024832016031861187,
+        "max_error": 0.009071168484114933,
+        "time": 11.019686222076416
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 2.2086847770815687,
+        "max_error": 5.08375507623175,
+        "time": 38.86411476135254
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "rms_error": 3.092250873899781,
+        "max_error": 7.989291030152851,
+        "time": 48.338340282440186
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 0.496215577305091,
+        "max_error": 1.0744651829969865,
+        "time": 2.6545019149780273
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 2.4394665935929742,
+        "max_error": 5.911215148451926,
+        "time": 7.680365085601807
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 3.0227075407408477,
+        "max_error": 8.069211443187667,
+        "time": 10.063560009002686
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 0.11385108569868478,
+        "max_error": 0.21956427914596732,
+        "time": 2.585725784301758
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 2.3475716833490234,
+        "max_error": 5.107056082656014,
+        "time": 7.351071834564209
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 3.061100598590467,
+        "max_error": 8.027949317515393,
+        "time": 8.524201393127441
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 0.24838283544000228,
+        "max_error": 0.5809975624576635,
+        "time": 10.916260242462158
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 2.076018210997701,
+        "max_error": 5.051328151676154,
+        "time": 49.966007709503174
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 3.1118852502593937,
+        "max_error": 7.962327250384677,
+        "time": 60.392292976379395
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 0.002454662809644301,
+        "max_error": 0.009089200225903538,
+        "time": 11.408744812011719
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 2.0410267043824595,
+        "max_error": 4.649004823106672,
+        "time": 50.873361110687256
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.18500000000000003,
+        "rms_error": 3.1261883094027363,
+        "max_error": 8.11337357214642,
+        "time": 57.381229877471924
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "rms_error": 0.4940314212744865,
+        "max_error": 1.0508439103310674,
+        "time": 2.5164690017700195
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "rms_error": 2.275771776114651,
+        "max_error": 5.465163684049884,
+        "time": 8.66650915145874
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "rms_error": 3.0506093764359834,
+        "max_error": 8.014724235469862,
+        "time": 11.196534156799316
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "rms_error": 0.11500518674154152,
+        "max_error": 0.21790006073437174,
+        "time": 2.854121685028076
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "rms_error": 2.180965601875588,
+        "max_error": 4.6840219670147345,
+        "time": 6.328610420227051
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "rms_error": 3.0943902207166087,
+        "max_error": 8.111040528238556,
+        "time": 9.41311264038086
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "rms_error": 0.24702293641399503,
+        "max_error": 0.5664742351881302,
+        "time": 12.614756107330322
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "rms_error": 2.318832773631075,
+        "max_error": 5.374368794449702,
+        "time": 50.706764698028564
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "rms_error": 3.14150178736124,
+        "max_error": 7.882186874688157,
+        "time": 58.877477169036865
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "rms_error": 0.002542114662080934,
+        "max_error": 0.009220339637827646,
+        "time": 10.5034761428833
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "rms_error": 2.2838514625931805,
+        "max_error": 4.990466137558452,
+        "time": 42.68696689605713
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "rms_error": 3.158824898773637,
+        "max_error": 8.20094870956587,
+        "time": 53.666959285736084
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.195,
+        "rms_error": 0.49205982723456737,
+        "max_error": 1.0320783220436947,
+        "time": 2.7062110900878906
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.195,
+        "rms_error": 2.115622054871734,
+        "max_error": 5.041525273341996,
+        "time": 7.281473636627197
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.195,
+        "rms_error": 3.078729396574158,
+        "max_error": 7.875909432861031,
+        "time": 10.996008396148682
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.195,
+        "rms_error": 0.11483712273191521,
+        "max_error": 0.21463238084420966,
+        "time": 2.586179733276367
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.195,
+        "rms_error": 2.018163012940163,
+        "max_error": 4.284730993358243,
+        "time": 5.834300994873047
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.195,
+        "rms_error": 3.128246049405605,
+        "max_error": 8.165554651768813,
+        "time": 8.967955112457275
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.195,
+        "rms_error": 0.24561056387542657,
+        "max_error": 0.5537972665892621,
+        "time": 10.493641376495361
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.195,
+        "rms_error": 2.153987199813468,
+        "max_error": 4.951910974216705,
+        "time": 51.20524072647095
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.195,
+        "rms_error": 3.170197283046101,
+        "max_error": 7.880041590468534,
+        "time": 58.96319913864136
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.195,
+        "rms_error": 0.002551410644293677,
+        "max_error": 0.008986963057833197,
+        "time": 10.510047912597656
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.195,
+        "rms_error": 2.117903327268283,
+        "max_error": 4.578344328448014,
+        "time": 46.23757791519165
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.195,
+        "rms_error": 3.1906918185662003,
+        "max_error": 8.254082864037654,
+        "time": 59.46339702606201
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "rms_error": 0.4904298272192029,
+        "max_error": 1.0163151868804898,
+        "time": 3.2368650436401367
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "rms_error": 2.755882012853739,
+        "max_error": 6.051716453365658,
+        "time": 11.986071109771729
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "rms_error": 3.1080932023946697,
+        "max_error": 7.719271139764489,
+        "time": 14.47696304321289
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "rms_error": 0.11557135187023443,
+        "max_error": 0.21300623293149523,
+        "time": 3.7549538612365723
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "rms_error": 2.664572518626138,
+        "max_error": 5.340622536292533,
+        "time": 7.716331958770752
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "rms_error": 3.163778535748924,
+        "max_error": 8.213701991787131,
+        "time": 10.021305084228516
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "rms_error": 0.24419615048759366,
+        "max_error": 0.5417460519991479,
+        "time": 11.064355850219727
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "rms_error": 2.3945901113475982,
+        "max_error": 5.261299137928383,
+        "time": 64.71415615081787
+    },
+    {
+        "grid": "Simple Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "rms_error": 3.201781650434325,
+        "max_error": 7.946012873701047,
+        "time": 71.60820198059082
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "rms_error": 0.002509657382077406,
+        "max_error": 0.008522382447234689,
+        "time": 12.02731704711914
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "rms_error": 2.3578530054193485,
+        "max_error": 4.903418925202652,
+        "time": 57.60008096694946
+    },
+    {
+        "grid": "Linear Binning",
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "rms_error": 3.2250765917454234,
+        "max_error": 8.306276686321084,
+        "time": 51.95309400558472
+    }
+]

@@ -1,0 +1,722 @@
+[
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "time": 11.728984451293945
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "time": 6.6375758171081545
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.01,
+        "time": 10.715994834899902
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "time": 2.9637545108795167
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "time": 1.9145329475402832
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.01,
+        "time": 2.9426115989685058
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "time": 11.958947849273681
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "time": 7.620826244354248
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.02,
+        "time": 11.516881465911865
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "time": 2.878670358657837
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "time": 2.259882926940918
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.02,
+        "time": 2.8762375831604006
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "time": 12.360858345031739
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "time": 9.623193264007568
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.03,
+        "time": 11.745286464691162
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "time": 3.0397006988525392
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "time": 2.3585824012756347
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.03,
+        "time": 3.2992554187774656
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "time": 11.662912559509277
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "time": 9.54952268600464
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.04,
+        "time": 13.784834384918213
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "time": 2.983478546142578
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "time": 2.628191328048706
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.04,
+        "time": 3.580199384689331
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "time": 11.73517656326294
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "time": 10.974421787261964
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.05,
+        "time": 15.2068510055542
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "time": 2.993638038635254
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "time": 2.5548296928405763
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.05,
+        "time": 3.9210649013519285
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "time": 11.916069316864014
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "time": 11.935842990875244
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.060000000000000005,
+        "time": 17.132451915740965
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "time": 2.827298974990845
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "time": 2.8776359081268312
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.060000000000000005,
+        "time": 4.1890984058380125
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "time": 11.633705615997314
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "time": 12.883624744415282
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.06999999999999999,
+        "time": 18.530749320983887
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "time": 2.8119481563568116
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "time": 2.9980771064758303
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.06999999999999999,
+        "time": 4.4690343856811525
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "time": 11.716763305664063
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "time": 14.284989643096925
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.08,
+        "time": 20.792457485198973
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "time": 2.8130099296569826
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "time": 3.1071584224700928
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.08,
+        "time": 4.449365186691284
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "time": 11.564322566986084
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "time": 16.279442977905273
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.09,
+        "time": 21.92102508544922
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "time": 2.8838234901428224
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "time": 3.4010469913482666
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.09,
+        "time": 4.852572298049926
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "time": 11.50608205795288
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "time": 20.820903301239014
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.09999999999999999,
+        "time": 23.958666229248045
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "time": 2.845885992050171
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "time": 3.621182346343994
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.09999999999999999,
+        "time": 5.605875062942505
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "time": 11.630656147003174
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "time": 23.22296781539917
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.11,
+        "time": 26.831552696228027
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "time": 2.820020580291748
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "time": 3.946515512466431
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.11,
+        "time": 5.634785270690918
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "time": 11.074069690704345
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "time": 24.200020694732665
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.12,
+        "time": 28.523344802856446
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "time": 2.861965608596802
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "time": 4.036687803268433
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.12,
+        "time": 6.2463172435760494
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "time": 10.873206520080567
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "time": 26.605044078826904
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.13,
+        "time": 32.02445278167725
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "time": 2.9286099433898927
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "time": 4.492851066589355
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.13,
+        "time": 7.469216775894165
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "time": 11.158411598205566
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "time": 30.22557125091553
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.14,
+        "time": 35.86610774993896
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "time": 2.7463310241699217
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "time": 4.515188121795655
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.14,
+        "time": 7.039320278167724
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "time": 11.332254123687743
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "time": 31.76365385055542
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.15000000000000002,
+        "time": 38.50575494766235
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "time": 2.7122676372528076
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "time": 4.778421401977539
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.15000000000000002,
+        "time": 7.47464952468872
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "time": 11.443088626861572
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "time": 36.8623327255249
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.16,
+        "time": 44.463587284088135
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "time": 3.0346426010131835
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "time": 6.02495265007019
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.16,
+        "time": 9.048420333862305
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "time": 11.5297532081604
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "time": 44.4065279006958
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.17,
+        "time": 45.12133417129517
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "time": 2.84777455329895
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "time": 7.353188848495483
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.17,
+        "time": 9.076362943649292
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "time": 10.801668930053712
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "time": 42.771479511260985
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.18000000000000002,
+        "time": 50.18203506469727
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "time": 2.8395424365997313
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "time": 6.988694143295288
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.18000000000000002,
+        "time": 10.34225058555603
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "time": 11.015384960174561
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "time": 47.31419372558594
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.19,
+        "time": 55.73437728881836
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "time": 2.935809278488159
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "time": 8.29411792755127
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.19,
+        "time": 11.06973056793213
+    },
+    {
+        "method": "Deriche",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "time": 11.189417743682862
+    },
+    {
+        "method": "Box",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "time": 53.26437330245972
+    },
+    {
+        "method": "ExtBox",
+        "bins": 512,
+        "bandwidth": 0.2,
+        "time": 54.31468887329102
+    },
+    {
+        "method": "Deriche",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "time": 2.9605534076690674
+    },
+    {
+        "method": "Box",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "time": 8.167808294296265
+    },
+    {
+        "method": "ExtBox",
+        "bins": 256,
+        "bandwidth": 0.2,
+        "time": 11.442238569259644
+    }
+]

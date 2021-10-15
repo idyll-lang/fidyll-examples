@@ -21,12 +21,39 @@
 [var name:"scene_1_showMemberVote" value:false /]
 [var name:"scene_1_transformCoordinates" value:false /]
 [var name:"scene_2_optimizeState" value:"initialization" /]
+[var name:"scene_2_rollcallFocus" value:-1 /]
+[var name:"scene_2_rollcalls" value:`[93,691,801,807,808]` /]
+[var name:"scene_2_showVotes" value:false /]
 
 American politics are defined by a two party system. We often think of these two groups—the Democrats and the Republicans—as monoliths, two factions that each vote as a bloc to further their respective agenda. And while this is true to some extent, in reality there is at least a little bit more nuance. We know that some politicians, like Bernie Sanders on the left or Tom Cotton on the right are trying to push their party away from the center by enacting policies that differ, sometimes radically, from the status quo.
 
 The goal of this article is for a reader to understand the quantitative that political scientists developed in order to quantify the political leanings of elected officials. In particular we'll dig into _spatial_ models which should be intuitive to anyone who understood the references to _left_, _right_, and _center_ of the previous paragraph.
 
-This article focuses on the (DW-)NOMINATE method from Poole and Rosenthal, an algorithm which is used to derive _ideological scores_ that describe members of congress, senators, and presidents. This is by no means the only example in this family of models (for example Martin-Quinn scores similarly quantify leanings of supreme court judges), but it is widely used by political scientists.
+This article focuses on the (DW-)NOMINATE method from Poole and Rosenthal [Cite
+
+  authors: "Keith Poole and Howard Rosenthal"
+
+  title: "A spatial model for legislative roll call analysis"
+
+  id: "poole1985spatial"
+
+  venue: "American Journal of Political Science"
+
+  date: "1985"
+
+/], an algorithm which is used to derive _ideological scores_ that describe members of congress, senators, and presidents. This is by no means the only example in this family of models (for example Martin-Quinn scores similarly quantify leanings of supreme court judges [Cite
+
+  authors: "Andrew Martin and Kevin Quinn"
+
+  title: "Dynamic ideal point estimation via Markov chain Monte Carlo for the US Supreme Court, 1953-1999"
+
+  id: "martin2002dynamic"
+
+  venue: "Cambridge University Press"
+
+  date: "2002"
+
+/]), but it is widely used by political scientists.
 
 ## Spatial Models
 
@@ -193,46 +220,102 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
   [Graphic]
     [OptimizerVis
       data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-      optimizeState:scene_2_optimizeState /]
+      optimizeState:scene_2_optimizeState
+      rollcallFocus:scene_2_rollcallFocus
+      rollcalls:scene_2_rollcalls
+      showVotes:scene_2_showVotes /]
   [/Graphic]
   [Step]
     [p
-      onEnterViewFully:`scene_2_optimizeState = "initialization"`]
-      Okay lets kick it offffff....
+      onEnterViewFully:`scene_2_optimizeState = "initialization";scene_2_rollcallFocus = -1;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = false`]
+      To this point we've seen how the spatial model can be used to compare the ideologies of politicians as well as votes, but we haven't discussed how the spatial positions of the politicians are actually determined.
+To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
+  authors: "Keith Poole"
+  title: "Spatial Models of Parliamentary Voting"
+  id: "poole2005spatial"
+  venue: "Cambridge University Press"
+  date: "2005"
+/] for a detailed treatment), so we're going to step through a simplified example based on [i]Ideology and Congress[/i][Display value: " " /][Cite authors: "Keith Poole and Howard Rosenthal" title: "Ideology & Congress: A Political Economic History of Roll Call Voting" id: "poole2017ideology" date: "2017" venue: "Routledge" /].
     [/p]
     [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
-    [p onEnterViewFully:`scene_2_optimizeState = "placeVotes"`]
-      Put the votes in a random place!
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "placeVotes";scene_2_rollcallFocus = -1;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = false`]
+      In this example, we're going to figure out the positions of the congressmembers along just a single dimension, left-to-right. We start off with them placed randomly, and through an iterative optimization process will find their "true" positions.
     [/p]
     [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
-    [p onEnterViewFully:`scene_2_optimizeState = "orderMembers"`]
-      Put the members in a sorted place!
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "placeVotes";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      Once the politicians are placed, we can then also place the votes randomly. Note that since we're doing this in one dimension there will be a _cutting point_ instad of a cutting line, that is, a congress member is expected to vote _yea_ or _nay_ depending on which side of this point they are on.
+    [/p]
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "placeVotes";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      At this point the locations of both the cutting points and the members of Congress are random and unlikely to be correct.
+    [/p]
+    [div className:"gridyll-control-container"]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/div]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "orderMembers";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      The first part of the iterative optimization procedure is to order the members such that they minimize the number of voting errors given the current positions of the vote cutting points.
+    [/p]
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "orderMembers";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      By _voting error_ I mean a case where we would have expected a congress member to vote _yea_ and they actually voted _nay_ or vice-versa.
+    [/p]
+    [div className:"gridyll-control-container"]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/div]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "orderVotes";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      One the members have been sorted, we can keep them fixed in place and do the same procedure for the votes: move the cutting points to minimize the number of errors given the ideological points of the members of Congress.
+    [/p]
+    [div className:"gridyll-control-container"]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/div]
+  [/Step]
+  [Step]
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "iterate";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      The previous two steps represent the bulk of the algorithm. Now they just need to be repeated until a stable solution is found. First hold the vote cutting points constant while moving the politicians, and then hold the politicians in place and move the vote cutting points.
     [/p]
     [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
-    [p onEnterViewFully:`scene_2_optimizeState = "orderVotes"`]
-      Put the votes in a sorted place!
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "results";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      Eventually this process will converge to an ordering that minimizes the number of voting errors. While this is a simplified example compared to the full DW-NOMINATE algorithm, this approach of iterative improvement is the core idea.
     [/p]
-    [div className:"gridyll-control-container" /]
-  [/Step]
-  [Step]
-    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
-      And here we go with results
-    [/p]
-    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
-      At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
-    [/p]
-    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
-      In presidential elections political scientists look toward the data collected about the voting public to predict change in the government. On the other hand we might be interested in using data about elected politicians in order to forecast the outcome of, for example, bills coming to vote.
-    [/p]
-    [p onEnterViewFully:`scene_2_optimizeState = "results"`]
-      A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "results";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+      The full algorithm operates over an arbitrary number of dimensions, and uses a probabilistic approach to ideological preference. Instead of optimizing for the minimum number of voting errors, DW-NOMINATE will optimize for the likelylihood that we would have seen the historic votes given a particular placement of ideal points and cutting lines.
     [/p]
     [div className:"gridyll-control-container" /]
   [/Step]
 [/Scroller]
+
+Spatial models can be useful for understanding both how individual politicians vote as well as how politics has changed over time. In this article we walked through examples showing how to interpret the DW-Nominate algorithm, and sketched how the model was calculated in a single dimension. If you're interested, feel free to dig into the references below to get more details on this kind of model.
+
+[Cite.References /]

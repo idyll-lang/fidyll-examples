@@ -1,0 +1,797 @@
+[
+    {
+        "method": "Direct",
+        "size": 100,
+        "time": 2.8555073738098145
+    },
+    {
+        "method": "Box",
+        "size": 100,
+        "time": 0.012061286163330078
+    },
+    {
+        "method": "ExtBox",
+        "size": 100,
+        "time": 0.013604450225830077
+    },
+    {
+        "method": "Deriche",
+        "size": 100,
+        "time": 0.04949197769165039
+    },
+    {
+        "method": "Direct",
+        "size": 200,
+        "time": 5.863475513458252
+    },
+    {
+        "method": "Box",
+        "size": 200,
+        "time": 0.013361286163330078
+    },
+    {
+        "method": "ExtBox",
+        "size": 200,
+        "time": 0.015355110168457031
+    },
+    {
+        "method": "Deriche",
+        "size": 200,
+        "time": 0.053471653747558595
+    },
+    {
+        "method": "Direct",
+        "size": 300,
+        "time": 8.996060943603515
+    },
+    {
+        "method": "Box",
+        "size": 300,
+        "time": 0.014361286163330078
+    },
+    {
+        "method": "ExtBox",
+        "size": 300,
+        "time": 0.020114612579345704
+    },
+    {
+        "method": "Deriche",
+        "size": 300,
+        "time": 0.050171653747558595
+    },
+    {
+        "method": "Direct",
+        "size": 400,
+        "time": 11.60582914352417
+    },
+    {
+        "method": "Box",
+        "size": 400,
+        "time": 0.0135589599609375
+    },
+    {
+        "method": "ExtBox",
+        "size": 400,
+        "time": 0.018418598175048827
+    },
+    {
+        "method": "Deriche",
+        "size": 400,
+        "time": 0.030680084228515626
+    },
+    {
+        "method": "Direct",
+        "size": 500,
+        "time": 14.384397888183594
+    },
+    {
+        "method": "Box",
+        "size": 500,
+        "time": 0.01411895751953125
+    },
+    {
+        "method": "ExtBox",
+        "size": 500,
+        "time": 0.019619560241699217
+    },
+    {
+        "method": "Deriche",
+        "size": 500,
+        "time": 0.03146238327026367
+    },
+    {
+        "method": "Direct",
+        "size": 600,
+        "time": 17.61215944290161
+    },
+    {
+        "method": "Box",
+        "size": 600,
+        "time": 0.018965435028076173
+    },
+    {
+        "method": "ExtBox",
+        "size": 600,
+        "time": 0.02252960205078125
+    },
+    {
+        "method": "Deriche",
+        "size": 600,
+        "time": 0.037502193450927736
+    },
+    {
+        "method": "Direct",
+        "size": 700,
+        "time": 20.355927562713624
+    },
+    {
+        "method": "Box",
+        "size": 700,
+        "time": 0.018104362487792968
+    },
+    {
+        "method": "ExtBox",
+        "size": 700,
+        "time": 0.023578453063964843
+    },
+    {
+        "method": "Deriche",
+        "size": 700,
+        "time": 0.03722686767578125
+    },
+    {
+        "method": "Direct",
+        "size": 800,
+        "time": 23.12137050628662
+    },
+    {
+        "method": "Box",
+        "size": 800,
+        "time": 0.018780040740966796
+    },
+    {
+        "method": "ExtBox",
+        "size": 800,
+        "time": 0.025512218475341797
+    },
+    {
+        "method": "Deriche",
+        "size": 800,
+        "time": 0.03694562911987305
+    },
+    {
+        "method": "Direct",
+        "size": 900,
+        "time": 26.372519493103027
+    },
+    {
+        "method": "Box",
+        "size": 900,
+        "time": 0.02494964599609375
+    },
+    {
+        "method": "ExtBox",
+        "size": 900,
+        "time": 0.02822427749633789
+    },
+    {
+        "method": "Deriche",
+        "size": 900,
+        "time": 0.04534139633178711
+    },
+    {
+        "method": "Direct",
+        "size": 1000,
+        "time": 29.631368541717528
+    },
+    {
+        "method": "Box",
+        "size": 1000,
+        "time": 0.03246030807495117
+    },
+    {
+        "method": "ExtBox",
+        "size": 1000,
+        "time": 0.03229303359985351
+    },
+    {
+        "method": "Deriche",
+        "size": 1000,
+        "time": 0.0562443733215332
+    },
+    {
+        "method": "Direct",
+        "size": 2000,
+        "time": 57.99912872314453
+    },
+    {
+        "method": "Box",
+        "size": 2000,
+        "time": 0.03666982650756836
+    },
+    {
+        "method": "ExtBox",
+        "size": 2000,
+        "time": 0.04463825225830078
+    },
+    {
+        "method": "Deriche",
+        "size": 2000,
+        "time": 0.06274299621582032
+    },
+    {
+        "method": "Direct",
+        "size": 3000,
+        "time": 87.02133779525757
+    },
+    {
+        "method": "Box",
+        "size": 3000,
+        "time": 0.05246295928955078
+    },
+    {
+        "method": "ExtBox",
+        "size": 3000,
+        "time": 0.06232442855834961
+    },
+    {
+        "method": "Deriche",
+        "size": 3000,
+        "time": 0.08710393905639649
+    },
+    {
+        "method": "Direct",
+        "size": 4000,
+        "time": 116.51754274368287
+    },
+    {
+        "method": "Box",
+        "size": 4000,
+        "time": 0.0849447250366211
+    },
+    {
+        "method": "ExtBox",
+        "size": 4000,
+        "time": 0.08566532135009766
+    },
+    {
+        "method": "Deriche",
+        "size": 4000,
+        "time": 0.11778678894042968
+    },
+    {
+        "method": "Direct",
+        "size": 5000,
+        "time": 145.31199674606324
+    },
+    {
+        "method": "Box",
+        "size": 5000,
+        "time": 0.08524456024169921
+    },
+    {
+        "method": "ExtBox",
+        "size": 5000,
+        "time": 0.09524593353271485
+    },
+    {
+        "method": "Deriche",
+        "size": 5000,
+        "time": 0.1254100799560547
+    },
+    {
+        "method": "Direct",
+        "size": 6000,
+        "time": 174.33567667007446
+    },
+    {
+        "method": "Box",
+        "size": 6000,
+        "time": 0.09654912948608399
+    },
+    {
+        "method": "ExtBox",
+        "size": 6000,
+        "time": 0.10943794250488281
+    },
+    {
+        "method": "Deriche",
+        "size": 6000,
+        "time": 0.1523843765258789
+    },
+    {
+        "method": "Direct",
+        "size": 7000,
+        "time": 206.86120796203613
+    },
+    {
+        "method": "Box",
+        "size": 7000,
+        "time": 0.11461839675903321
+    },
+    {
+        "method": "ExtBox",
+        "size": 7000,
+        "time": 0.12640800476074218
+    },
+    {
+        "method": "Deriche",
+        "size": 7000,
+        "time": 0.16458606719970703
+    },
+    {
+        "method": "Direct",
+        "size": 8000,
+        "time": 233.32427864074708
+    },
+    {
+        "method": "Box",
+        "size": 8000,
+        "time": 0.13081111907958984
+    },
+    {
+        "method": "ExtBox",
+        "size": 8000,
+        "time": 0.15481184768676757
+    },
+    {
+        "method": "Deriche",
+        "size": 8000,
+        "time": 0.18458606719970703
+    },
+    {
+        "method": "Direct",
+        "size": 9000,
+        "time": 269.88316497802737
+    },
+    {
+        "method": "Box",
+        "size": 9000,
+        "time": 0.15367584228515624
+    },
+    {
+        "method": "ExtBox",
+        "size": 9000,
+        "time": 0.19181184768676757
+    },
+    {
+        "method": "Deriche",
+        "size": 9000,
+        "time": 0.22664968490600585
+    },
+    {
+        "method": "Direct",
+        "size": 10000,
+        "time": 289.3063754081726
+    },
+    {
+        "method": "Box",
+        "size": 10000,
+        "time": 0.16657619476318358
+    },
+    {
+        "method": "ExtBox",
+        "size": 10000,
+        "time": 0.20087875747680665
+    },
+    {
+        "method": "Deriche",
+        "size": 10000,
+        "time": 0.2617640495300293
+    },
+    {
+        "method": "Direct",
+        "size": 20000,
+        "time": 564.9274641990662
+    },
+    {
+        "method": "Box",
+        "size": 20000,
+        "time": 0.2986949920654297
+    },
+    {
+        "method": "ExtBox",
+        "size": 20000,
+        "time": 0.40106773376464844
+    },
+    {
+        "method": "Deriche",
+        "size": 20000,
+        "time": 0.47884607315063477
+    },
+    {
+        "method": "Direct",
+        "size": 30000,
+        "time": 846.313064956665
+    },
+    {
+        "method": "Box",
+        "size": 30000,
+        "time": 0.43352746963500977
+    },
+    {
+        "method": "ExtBox",
+        "size": 30000,
+        "time": 0.5630864143371582
+    },
+    {
+        "method": "Deriche",
+        "size": 30000,
+        "time": 0.6075919151306153
+    },
+    {
+        "method": "Box",
+        "size": 40000,
+        "time": 0.5754222869873047
+    },
+    {
+        "method": "ExtBox",
+        "size": 40000,
+        "time": 0.7561137199401855
+    },
+    {
+        "method": "Deriche",
+        "size": 40000,
+        "time": 0.8651247978210449
+    },
+    {
+        "method": "Box",
+        "size": 50000,
+        "time": 0.7492241859436035
+    },
+    {
+        "method": "ExtBox",
+        "size": 50000,
+        "time": 1.0183929443359374
+    },
+    {
+        "method": "Deriche",
+        "size": 50000,
+        "time": 1.1123296737670898
+    },
+    {
+        "method": "Box",
+        "size": 60000,
+        "time": 0.8566477775573731
+    },
+    {
+        "method": "ExtBox",
+        "size": 60000,
+        "time": 1.143974208831787
+    },
+    {
+        "method": "Deriche",
+        "size": 60000,
+        "time": 1.2058847427368165
+    },
+    {
+        "method": "Box",
+        "size": 70000,
+        "time": 1.0761121749877929
+    },
+    {
+        "method": "ExtBox",
+        "size": 70000,
+        "time": 1.368606185913086
+    },
+    {
+        "method": "Deriche",
+        "size": 70000,
+        "time": 1.5602405548095703
+    },
+    {
+        "method": "Box",
+        "size": 80000,
+        "time": 1.1511842727661132
+    },
+    {
+        "method": "ExtBox",
+        "size": 80000,
+        "time": 1.495017147064209
+    },
+    {
+        "method": "Deriche",
+        "size": 80000,
+        "time": 1.5341620445251465
+    },
+    {
+        "method": "Box",
+        "size": 90000,
+        "time": 1.2952864646911622
+    },
+    {
+        "method": "ExtBox",
+        "size": 90000,
+        "time": 1.7905156135559082
+    },
+    {
+        "method": "Deriche",
+        "size": 90000,
+        "time": 1.9101224899291993
+    },
+    {
+        "method": "Box",
+        "size": 100000,
+        "time": 1.515305519104004
+    },
+    {
+        "method": "ExtBox",
+        "size": 100000,
+        "time": 1.9353062629699707
+    },
+    {
+        "method": "Deriche",
+        "size": 100000,
+        "time": 2.018917751312256
+    },
+    {
+        "method": "Box",
+        "size": 200000,
+        "time": 2.882886791229248
+    },
+    {
+        "method": "ExtBox",
+        "size": 200000,
+        "time": 3.9987722396850587
+    },
+    {
+        "method": "Deriche",
+        "size": 200000,
+        "time": 3.91239595413208
+    },
+    {
+        "method": "Box",
+        "size": 300000,
+        "time": 4.399110794067383
+    },
+    {
+        "method": "ExtBox",
+        "size": 300000,
+        "time": 5.816098594665528
+    },
+    {
+        "method": "Deriche",
+        "size": 300000,
+        "time": 5.805368232727051
+    },
+    {
+        "method": "Box",
+        "size": 400000,
+        "time": 5.693821048736572
+    },
+    {
+        "method": "ExtBox",
+        "size": 400000,
+        "time": 8.501880359649657
+    },
+    {
+        "method": "Deriche",
+        "size": 400000,
+        "time": 8.013949775695801
+    },
+    {
+        "method": "Box",
+        "size": 500000,
+        "time": 7.603185367584229
+    },
+    {
+        "method": "ExtBox",
+        "size": 500000,
+        "time": 10.257552146911621
+    },
+    {
+        "method": "Deriche",
+        "size": 500000,
+        "time": 10.31107292175293
+    },
+    {
+        "method": "Box",
+        "size": 600000,
+        "time": 8.641495990753175
+    },
+    {
+        "method": "ExtBox",
+        "size": 600000,
+        "time": 12.084935855865478
+    },
+    {
+        "method": "Deriche",
+        "size": 600000,
+        "time": 12.165524291992188
+    },
+    {
+        "method": "Box",
+        "size": 700000,
+        "time": 9.968770503997803
+    },
+    {
+        "method": "ExtBox",
+        "size": 700000,
+        "time": 15.104591655731202
+    },
+    {
+        "method": "Deriche",
+        "size": 700000,
+        "time": 15.072883224487304
+    },
+    {
+        "method": "Box",
+        "size": 800000,
+        "time": 11.640618801116943
+    },
+    {
+        "method": "ExtBox",
+        "size": 800000,
+        "time": 16.188237190246582
+    },
+    {
+        "method": "Deriche",
+        "size": 800000,
+        "time": 16.034933280944824
+    },
+    {
+        "method": "Box",
+        "size": 900000,
+        "time": 12.971796226501464
+    },
+    {
+        "method": "ExtBox",
+        "size": 900000,
+        "time": 18.119571113586424
+    },
+    {
+        "method": "Deriche",
+        "size": 900000,
+        "time": 18.261524772644044
+    },
+    {
+        "method": "Box",
+        "size": 1000000,
+        "time": 14.388158798217773
+    },
+    {
+        "method": "ExtBox",
+        "size": 1000000,
+        "time": 20.19646577835083
+    },
+    {
+        "method": "Deriche",
+        "size": 1000000,
+        "time": 20.102941036224365
+    },
+    {
+        "method": "Box",
+        "size": 2000000,
+        "time": 28.81522102355957
+    },
+    {
+        "method": "ExtBox",
+        "size": 2000000,
+        "time": 39.97379817962646
+    },
+    {
+        "method": "Deriche",
+        "size": 2000000,
+        "time": 40.20557537078857
+    },
+    {
+        "method": "Box",
+        "size": 3000000,
+        "time": 42.8912636756897
+    },
+    {
+        "method": "ExtBox",
+        "size": 3000000,
+        "time": 60.454058742523195
+    },
+    {
+        "method": "Deriche",
+        "size": 3000000,
+        "time": 59.89782838821411
+    },
+    {
+        "method": "Box",
+        "size": 4000000,
+        "time": 57.94125986099243
+    },
+    {
+        "method": "ExtBox",
+        "size": 4000000,
+        "time": 80.50295486450196
+    },
+    {
+        "method": "Deriche",
+        "size": 4000000,
+        "time": 80.60276432037354
+    },
+    {
+        "method": "Box",
+        "size": 5000000,
+        "time": 71.98788566589356
+    },
+    {
+        "method": "ExtBox",
+        "size": 5000000,
+        "time": 101.18683938980102
+    },
+    {
+        "method": "Deriche",
+        "size": 5000000,
+        "time": 102.27433319091797
+    },
+    {
+        "method": "Box",
+        "size": 6000000,
+        "time": 86.2297604560852
+    },
+    {
+        "method": "ExtBox",
+        "size": 6000000,
+        "time": 120.57122020721435
+    },
+    {
+        "method": "Deriche",
+        "size": 6000000,
+        "time": 121.04805517196655
+    },
+    {
+        "method": "Box",
+        "size": 7000000,
+        "time": 103.43523244857788
+    },
+    {
+        "method": "ExtBox",
+        "size": 7000000,
+        "time": 142.56770286560058
+    },
+    {
+        "method": "Deriche",
+        "size": 7000000,
+        "time": 145.53876218795776
+    },
+    {
+        "method": "Box",
+        "size": 8000000,
+        "time": 114.34141044616699
+    },
+    {
+        "method": "ExtBox",
+        "size": 8000000,
+        "time": 161.17641134262084
+    },
+    {
+        "method": "Deriche",
+        "size": 8000000,
+        "time": 161.40577917099
+    },
+    {
+        "method": "Box",
+        "size": 9000000,
+        "time": 130.36187343597413
+    },
+    {
+        "method": "ExtBox",
+        "size": 9000000,
+        "time": 180.5392777442932
+    },
+    {
+        "method": "Deriche",
+        "size": 9000000,
+        "time": 181.8326374053955
+    },
+    {
+        "method": "Box",
+        "size": 10000000,
+        "time": 145.79055471420287
+    },
+    {
+        "method": "ExtBox",
+        "size": 10000000,
+        "time": 200.49323253631593
+    },
+    {
+        "method": "Deriche",
+        "size": 10000000,
+        "time": 201.18347873687745
+    }
+]

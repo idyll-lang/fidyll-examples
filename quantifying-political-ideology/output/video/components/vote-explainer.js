@@ -38,7 +38,25 @@ class VoteExplainer extends React.Component {
     this.members = currentMembers;
 
     this.xScale = d3.scaleLinear().domain([-1, 1]).range([0, width]);
-    this.yScale = d3.scaleLinear().domain([-1, 1]).range([height, 0]);
+    this.yScale = d3.scaleLinear().domain([-1, 1]).range([height - 40, 40]);
+
+    this.state = {
+      selected: null
+    }
+  }
+
+  getMemberVoteDesc(m) {
+    // const memberAllVotes = this.props.data.membervotes.filter(mv => mv.icpsr == m.icpsr);
+    const memberVote = this.props.data.membervotes.filter(mv => mv.icpsr == m.icpsr && mv.rollnumber == this.props.rollnumber)[0];
+    if (!memberVote || memberVote.cast_code === 0 || memberVote.cast_code >= 7) {
+      return '';
+    } else if (memberVote.cast_code < 4) {
+      return 'Yea';
+    } else if (memberVote.cast_code < 7) {
+      return 'Nay'
+    } else {
+      return '';
+    }
   }
 
   getMemberVoteColor(m) {
@@ -104,13 +122,33 @@ class VoteExplainer extends React.Component {
           width={'100%'}
           height={'auto'}
           viewBox={`0 0 ${width} ${height}`}
-          style={{ display: 'block', margin: '20px auto', background: 'white', maxHeight: '100vh' }}
+          style={{ display: 'block', margin: '20px auto', background: 'white' }}
         >
           <defs>
             <clipPath id="clipCircle">
               <circle r={6} cx={7.5} cy={7.5}/>
             </clipPath>
           </defs>
+          <line x1={30} x2={width} stroke={'#ccc'} strokeWidth={1} y1={height - 30} y2={height - 30}></line>
+          <line x1={30} x2={30} stroke={'#ccc'} strokeWidth={1} y1={30} y2={height - 30}></line>
+          <text x={(width - 30) / 2 + 30} y={height - 15} fill={'#999'} fontWeight={'bold'} fontSize={10} textAnchor={'middle'}>
+            Economic
+          </text>
+          <text x={20} y={(height - 30) / 2} fill={'#999'} fontWeight={'bold'} fontSize={10} textAnchor={'middle'} transform={`rotate(-90, ${15}, ${(height - 30) / 2})`}>
+            Social
+          </text>
+
+          {props.data.rollcalls.filter((d, i) => d.rollnumber == this.props.rollnumber).length === 0 ? this.members.map((m) => {
+            const mx = m.nominate_dim1;
+            const my = m.nominate_dim2;
+
+            const [mxt, myt] = linearTransform(mx, my);
+
+            return <React.Fragment key={`${m.icpsr}-container`}>
+              <circle key={`${m.icpsr}-member`} r={7} fill={PARTY_COLORS[m.party_code]} cx={this.xScale(mxt)} cy={this.yScale(myt)} />
+              <image width={15} height={15} href={`static/images/members-small/${pad(m.icpsr, 6)}.jpg`} transform={`translate(${this.xScale(mxt) - 15/2}, ${this.yScale(myt) - 15/2})`} clipPath="url(#clipCircle)" />
+            </React.Fragment>
+          }) : null}
           {props.data.rollcalls.filter((d, i) => d.rollnumber == this.props.rollnumber).map((rc, _idx) => {
 
             const x = rc.nominate_mid_1;
@@ -163,11 +201,27 @@ class VoteExplainer extends React.Component {
             if (ly2t > ly1t) {
               [lx1t, lx2t, ly1t, ly2t] = [lx2t, lx1t, ly2t, ly1t];
             }
+
+            const cuttingLineLabelY = this.yScale.invert(40);
+            const cuttingLineLabelX = (cuttingLineLabelY - cuttingLineIntercept) / cuttingLineSlope;
+            const cuttingLineLabeldX = cuttingLineLabelX < 0 ? 10 : -10;
+            const cuttingLineLabelAnchor = cuttingLineLabelX < 0 ? "start" : "end";
+
             // [lx1t, lx2t] = [Math.min(lx1t, lx2t), Math.max(lx1t, lx2t)];
             // [ly1t, ly2t] = [Math.max(ly1t, ly2t), Math.max(ly1t, ly2t)];
 
 
             return (<React.Fragment key={`${_idx}-contain`}>
+
+              <text x={10} y={10} fill={'#999'} fontWeight={'bold'} fontSize={10}>
+                {[rc.vote_desc, rc.dtl_desc, ].filter(d => d).join(', ')}
+                {/* rc.vote_question */}
+              </text>
+              {props.showMemberVote ? <text x={10} y={22} fill={rc.vote_result.toLowerCase() === 'passed' ? '#00cc00' : ( rc.vote_result.toLowerCase() === 'failed' ? '#cc0000' : '#999')} fontWeight={'bold'} fontSize={10}>
+                {rc.vote_result}
+              </text> : null}
+
+
               {props.colorBg ? <rect  opacity={0.125} fill={VOTE_STATUS_COLORS[rc.vote_result]} x={0} y={0} width={width} height={height} /> : null}
 
 
@@ -183,21 +237,30 @@ class VoteExplainer extends React.Component {
                 const [mxt, myt] = linearTransform(mx, my, rc.nominate_mid_1, rc.nominate_mid_2, rc.nominate_spread_1, rc.nominate_spread_2);
 
                 return <React.Fragment key={`${m.icpsr}-container`}>
-                  <circle key={`${m.icpsr}-member`} r={7} fill={PARTY_COLORS[m.party_code]} cx={this.xScale(mxt)} cy={this.yScale(myt)} />
+                  {this.state.selected === m.icpsr ? <text x={width - 34} y={height - 10} textAnchor={'end'} fontSize={10} fill={'#999'} fontWeight={'bold'}>
+                    {m.bioname}
+                  </text> : null}
+
+                  {props.showMemberVote && this.state.selected === m.icpsr ? <text x={width - 5} y={height - 10} textAnchor={'end'} fontSize={10} fill={this.getMemberVoteColor(m)} fontWeight={'bold'}>
+                    {this.getMemberVoteDesc(m)}
+                  </text> : null}
+
+
+                  <circle key={`${m.icpsr}-member`} r={this.state.selected === m.icpsr ? 8 : 7} fill={PARTY_COLORS[m.party_code]} cx={this.xScale(mxt)} cy={this.yScale(myt)} />
                   <image width={15} height={15} href={`static/images/members-small/${pad(m.icpsr, 6)}.jpg`} transform={`translate(${this.xScale(mxt) - 15/2}, ${this.yScale(myt) - 15/2})`} clipPath="url(#clipCircle)" />
 
                   {/* <motion.rect animate={{x: this.xScale(mxt) - 15/2, y: this.yScale(myt) - 15/2}} width={15} height={15} fill={PARTY_COLORS[m.party_code]} opacity={0.2}  transition={{ease: "easeInOut", duration: .75}} initial={false} /> */}
-                  <motion.circle animate={{x: this.xScale(mxt), y: this.yScale(myt), opacity: props.showMemberVote ? .6 : 0,  fill: this.getMemberVoteColor(m) }} r={6}  transition={{ease: "easeInOut", duration: .75}} initial={false} />
+                  <motion.circle style={{cursor: 'crosshair'}} animate={{x: this.xScale(mxt), y: this.yScale(myt), opacity: props.showMemberVote ? (this.state.selected === m.icpsr ? .4 : .6) : 0,  fill: this.getMemberVoteColor(m) }} r={6}  transition={{ease: "easeInOut", duration: .25}} initial={false} onMouseEnter={() => this.setState({ selected: m.icpsr })} onMouseLeave={() => this.setState({ selected: null })} />
                   {/* <circle key={m.icpsr} r={3} fill={PARTY_COLORS[m.party_code]} cx={this.xScale(m.nominate_dim1)} cy={this.yScale(m.nominate_dim2)}  /> */}
                 </React.Fragment>
               })}
-            <motion.line  strokeDasharray={'5,5'} strokeWidth={3} stroke={'#ccc'} animate={{x1: this.xScale(lx1t), x2: this.xScale(lx2t), y1: this.yScale(ly1t), y2: this.yScale(ly2t) }} transition={{ease: "easeInOut", duration: .75}} initial={false}  />
+              <motion.line  strokeDasharray={'5,5'} strokeWidth={3} stroke={'#ccc'} animate={{x1: this.xScale(lx1t), x2: this.xScale(lx2t), y1: this.yScale(ly1t), y2: this.yScale(ly2t) }} transition={{ease: "linear", duration: .25}} initial={false}  />
 
-            <text fontSize={12} fill={'#ccc'} fontWeight={'bold'} style={{textTransform: 'uppercase'}} textAnchor="middle"
-              dominantBaseline="central" transform={`translate(${(this.xScale(lx1t) + this.xScale(lx2t)) / 2 + (this.xScale(lx1t) + this.xScale(lx2t)) / 2 > (width / 2) ? 10 : -10}, ${(this.yScale(ly1t) + this.yScale(ly2t)) / 2}) rotate(${Math.atan2(Math.abs(this.yScale(ly1t) - this.yScale(ly2t)),  Math.abs(this.xScale(lx1t) - this.xScale(lx2t)))})`}>
-                Cutting Line
-            </text>
-              {/* <rect opacity={0.25} fill={VOTE_STATUS_COLORS[rc.vote_result]} x={this.xScale(x1t)} y={this.yScale(y1t)} width={this.xScale(x2t) - this.xScale(x1t)} height={Math.max(this.yScale(y2t) - this.yScale(y1t)) || 10} /> */}
+              <text fontSize={10} fill={'#ccc'} fontWeight={'bold'} style={{textTransform: 'uppercase'}} textAnchor={cuttingLineLabelAnchor}
+                dominantBaseline="central" transform={`translate(${cuttingLineLabeldX + this.xScale(cuttingLineLabelX)}, ${this.yScale(cuttingLineLabelY)}) rotate(0)`}>
+                  Cutting Line
+              </text>
+                {/* <rect opacity={0.25} fill={VOTE_STATUS_COLORS[rc.vote_result]} x={this.xScale(x1t)} y={this.yScale(y1t)} width={this.xScale(x2t) - this.xScale(x1t)} height={Math.max(this.yScale(y2t) - this.yScale(y1t)) || 10} /> */}
             </React.Fragment>)
           })}
         </svg>

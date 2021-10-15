@@ -10,6 +10,9 @@
 [var name:"scene_1_showMemberVote" value:false /]
 [var name:"scene_1_transformCoordinates" value:false /]
 [var name:"scene_2_optimizeState" value:"initialization" /]
+[var name:"scene_2_rollcallFocus" value:-1 /]
+[var name:"scene_2_rollcalls" value:`[93,691,801,807,808]` /]
+[var name:"scene_2_showVotes" value:false /]
 [data name:"members" source:"members-clean-116.json" /]
 [data name:"rollcalls" source:"rollcalls-small-116.csv" /]
 [data name:"membervotes" source:"member-votes-clean-116.json" /]
@@ -35,10 +38,13 @@
         showMemberVote:scene_1_showMemberVote
         transformCoordinates:scene_1_transformCoordinates /]
     [/Conditional]
-    [Conditional if:`__slideshowIndex >= 12 && __slideshowIndex < 17`]
+    [Conditional if:`__slideshowIndex >= 12 && __slideshowIndex < 19`]
       [OptimizerVis
         data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-        optimizeState:scene_2_optimizeState /]
+        optimizeState:scene_2_optimizeState
+        rollcallFocus:scene_2_rollcallFocus
+        rollcalls:scene_2_rollcalls
+        showVotes:scene_2_showVotes /]
     [/Conditional]
   [/Graphic]
   [Slide]
@@ -131,43 +137,84 @@
       [/div]
     [/details]
   [/Slide]
-  [Slide onEnter:`scene_2_optimizeState = "initialization"`]
+  [Slide
+    onEnter:`scene_2_optimizeState = "initialization";scene_2_rollcallFocus = -1;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = false`]
     [div]
-      Okay lets kick it offffff....
+      How do we calculate the spatial coordinates of politicians and legislation?
     [/div]
   [/Slide]
-  [Slide onEnter:`scene_2_optimizeState = "placeVotes"`]
+  [Slide
+    onEnter:`scene_2_optimizeState = "placeVotes";scene_2_rollcallFocus = -1;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = false`]
     [div]
-      Put the votes in a random place!
+      Let's walk through an illustrative example along one dimension.
     [/div]
   [/Slide]
-  [Slide onEnter:`scene_2_optimizeState = "orderMembers"`]
+  [Slide
+    onEnter:`scene_2_optimizeState = "placeVotes";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
     [div]
-      Put the members in a sorted place!
+      First the votes and Congress members are placed randomly. An iterative approach is used to improve the positions.
+    [/div]
+    [details className:"control-details"]
+      [summary]
+        Controls
+      [/summary]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/details]
+  [/Slide]
+  [Slide
+    onEnter:`scene_2_optimizeState = "orderMembers";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+    [div]
+      The iteration first occurs with the positions of the politicians, while the locations of the vote cutting points are held constant.
+    [/div]
+    [details className:"control-details"]
+      [summary]
+        Controls
+      [/summary]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/details]
+  [/Slide]
+  [Slide
+    onEnter:`scene_2_optimizeState = "orderVotes";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+    [div]
+      Then, the locations of the politicians are held constant while the vote positions are optimized.
+    [/div]
+    [details className:"control-details"]
+      [summary]
+        Controls
+      [/summary]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/details]
+  [/Slide]
+  [Slide
+    onEnter:`scene_2_optimizeState = "iterate";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
+    [div]
+      This process is repeated until a stable solution is found.
     [/div]
   [/Slide]
-  [Slide onEnter:`scene_2_optimizeState = "orderVotes"`]
+  [Slide
+    onEnter:`scene_2_optimizeState = "results";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
     [div]
-      Put the votes in a sorted place!
-    [/div]
-  [/Slide]
-  [Slide onEnter:`scene_2_optimizeState = "results"`]
-    [div]
-      And here we go with results
-    [/div]
-    [div]
-      At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
-    [/div]
-    [div]
-      In presidential elections political scientists look toward the data collected about the voting public to predict change in the government. On the other hand we might be interested in using data about elected politicians in order to forecast the outcome of, for example, bills coming to vote.
-    [/div]
-    [div]
-      A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
+      Eventaully it will converge to an ordering that is representative of the politicians' ideologies.
     [/div]
   [/Slide]
 [/Slideshow]
 [Broadcaster
-  peerkey:"gridyll-presentation-1054"
+  peerkey:"gridyll-presentation-9432"
   __slideshowIndex:__slideshowIndex
   __slideshowLength:__slideshowLength
   scene_0_highlightParty:scene_0_highlightParty
@@ -178,6 +225,9 @@
   scene_1_showMemberVote:scene_1_showMemberVote
   scene_1_transformCoordinates:scene_1_transformCoordinates
   scene_2_optimizeState:scene_2_optimizeState
+  scene_2_rollcallFocus:scene_2_rollcallFocus
+  scene_2_rollcalls:scene_2_rollcalls
+  scene_2_showVotes:scene_2_showVotes
   fullWidth:true]
   [div className:"gridyll-presenter-notes"]
     [Conditional if:`__slideshowIndex === 1`]
@@ -276,36 +326,53 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
     [/Conditional]
     [Conditional if:`__slideshowIndex === 12`]
       [p]
-        Okay lets kick it offffff....
+        To this point we've seen how the spatial model can be used to compare the ideologies of politicians as well as votes, but we haven't discussed how the spatial positions of the politicians are actually determined.
+To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
+  authors: "Keith Poole"
+  title: "Spatial Models of Parliamentary Voting"
+  id: "poole2005spatial"
+  venue: "Cambridge University Press"
+  date: "2005"
+/] for a detailed treatment), so we're going to step through a simplified example based on [i]Ideology and Congress[/i][Display value: " " /][Cite authors: "Keith Poole and Howard Rosenthal" title: "Ideology & Congress: A Political Economic History of Roll Call Voting" id: "poole2017ideology" date: "2017" venue: "Routledge" /].
       [/p]
     [/Conditional]
     [Conditional if:`__slideshowIndex === 13`]
       [p]
-        Put the votes in a random place!
+        In this example, we're going to figure out the positions of the congressmembers along just a single dimension, left-to-right. We start off with them placed randomly, and through an iterative optimization process will find their "true" positions.
       [/p]
     [/Conditional]
     [Conditional if:`__slideshowIndex === 14`]
       [p]
-        Put the members in a sorted place!
+        Once the politicians are placed, we can then also place the votes randomly. Note that since we're doing this in one dimension there will be a _cutting point_ instad of a cutting line, that is, a congress member is expected to vote _yea_ or _nay_ depending on which side of this point they are on.
+      [/p]
+      [p]
+        At this point the locations of both the cutting points and the members of Congress are random and unlikely to be correct.
       [/p]
     [/Conditional]
     [Conditional if:`__slideshowIndex === 15`]
       [p]
-        Put the votes in a sorted place!
+        The first part of the iterative optimization procedure is to order the members such that they minimize the number of voting errors given the current positions of the vote cutting points.
+      [/p]
+      [p]
+        By _voting error_ I mean a case where we would have expected a congress member to vote _yea_ and they actually voted _nay_ or vice-versa.
       [/p]
     [/Conditional]
     [Conditional if:`__slideshowIndex === 16`]
       [p]
-        And here we go with results
+        One the members have been sorted, we can keep them fixed in place and do the same procedure for the votes: move the cutting points to minimize the number of errors given the ideological points of the members of Congress.
+      [/p]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex === 17`]
+      [p]
+        The previous two steps represent the bulk of the algorithm. Now they just need to be repeated until a stable solution is found. First hold the vote cutting points constant while moving the politicians, and then hold the politicians in place and move the vote cutting points.
+      [/p]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex === 18`]
+      [p]
+        Eventually this process will converge to an ordering that minimizes the number of voting errors. While this is a simplified example compared to the full DW-NOMINATE algorithm, this approach of iterative improvement is the core idea.
       [/p]
       [p]
-        At least once every four years Americans become very interested in the art of forecasting political events. A crucial element to this is the ability to transform granular demographic data into predictive features that quantify the likelihood of particular electoral outcomes.
-      [/p]
-      [p]
-        In presidential elections political scientists look toward the data collected about the voting public to predict change in the government. On the other hand we might be interested in using data about elected politicians in order to forecast the outcome of, for example, bills coming to vote.
-      [/p]
-      [p]
-        A crucial step in this case is to quantify the past voting behavior of individual politicians. This is where spatial models like DW-Nominate come in: the technique places each member of congress at a particular location in euclidean space based on their ideology along two dimensions and turns out to be a highly accurate yet concise way to quantify voting behavior.
+        The full algorithm operates over an arbitrary number of dimensions, and uses a probabilistic approach to ideological preference. Instead of optimizing for the minimum number of voting errors, DW-NOMINATE will optimize for the likelylihood that we would have seen the historic votes given a particular placement of ideal points and cutting lines.
       [/p]
     [/Conditional]
   [/div]
@@ -334,11 +401,35 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
     [/Conditional]
     [Conditional if:`__slideshowIndex == 12` /]
     [Conditional if:`__slideshowIndex == 13` /]
-    [Conditional if:`__slideshowIndex == 14` /]
-    [Conditional if:`__slideshowIndex == 15` /]
-    [Conditional if:`__slideshowIndex == 16` /]
+    [Conditional if:`__slideshowIndex == 14`]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex == 15`]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex == 16`]
+      [div]
+        rollcallFocus
+        [Select
+          value:scene_2_rollcallFocus
+          options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
+      [/div]
+    [/Conditional]
+    [Conditional if:`__slideshowIndex == 17` /]
+    [Conditional if:`__slideshowIndex == 18` /]
   [/div]
 [/Broadcaster]
+[VideoStepper index:__slideshowIndex length:19 fullWidth:true /]
 [SlideIndex
   index:__slideshowIndex
   length:__slideshowLength

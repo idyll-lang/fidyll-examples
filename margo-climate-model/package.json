@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "idyll": "^5.7.0",
+    "idyll": "^5.7.1",
     "idyll-d3-component": "^2.1.0",
     "little-loader": "^0.2.0"
   }
