@@ -5,9 +5,6 @@ author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
     - scroller
-    - presentation
-    - static
-    - video
 data:
    members: members-clean-116.json
    rollcalls: rollcalls-small-116.csv

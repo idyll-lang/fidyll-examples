@@ -59,8 +59,13 @@ This article focuses on the (DW-)NOMINATE method from Poole and Rosenthal [Cite
 
 The premise of a spatial model is simple: politicians are put at a particular position on a graph and we can compare their locations and distances between them using Euclidean geometry—that is, we can quantify how similar two politicians are simply by measuring the distance of the line of the line that connects them.
 
-[Scroller fullWidth:true]
-  [Graphic]
+[Scroller className:" " fullWidth:true]
+  [Graphic
+    displayParameters:true
+    highlightParty:scene_0_highlightParty
+    dimensions:scene_0_dimensions
+    showEconomicAxis:scene_0_showEconomicAxis
+    showSocialAxis:scene_0_showSocialAxis]
     [DwNominate
       data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
       highlightParty:scene_0_highlightParty
@@ -73,14 +78,12 @@ The premise of a spatial model is simple: politicians are put at a particular po
       onEnterViewFully:`scene_0_highlightParty = false;scene_0_dimensions = 0;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
       Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
       onEnterViewFully:`scene_0_highlightParty = false;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
       It's a trick question: it's impossible to say because they're positioned randomly on the screen. Is it any easier if we use ideological scores assigned by the NOMINATE method to position them along a horizontal line?
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -95,7 +98,6 @@ The premise of a spatial model is simple: politicians are put at a particular po
       onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
       It turns out that the politicians shown on the left are the Democratic house members and the ones on the right are the Republicans. It could just as easily have placed all of the Republicans on the left and the Democrats on the right, but we process the scores afterward to get the positions to match social convention.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -106,7 +108,6 @@ The premise of a spatial model is simple: politicians are put at a particular po
       onEnterViewFully:`scene_0_highlightParty = true;scene_0_dimensions = 1;scene_0_showEconomicAxis = true;scene_0_showSocialAxis = false`]
       The first dimension is typically understood to represent a politician's _economic_ ideology, although it is important to note that the algorithm itself doesn't ascribe any semantic meaning to these dimensions—this is overlaid by human analysts interpreting these results.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -118,11 +119,14 @@ The premise of a spatial model is simple: politicians are put at a particular po
       There is variance within both parties along both dimensions, although the thing that seems to truly
 separate Republicans from Democrats is their placement along the economic axis.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
 [/Scroller]
-[Scroller fullWidth:true]
-  [Graphic]
+[Scroller className:" " fullWidth:true]
+  [Graphic
+    displayParameters:true
+    rollnumber:scene_1_rollnumber
+    showMemberVote:scene_1_showMemberVote
+    transformCoordinates:scene_1_transformCoordinates]
     [VoteExplainer
       data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
       rollnumber:scene_1_rollnumber
@@ -133,12 +137,17 @@ separate Republicans from Democrats is their placement along the economic axis.
     [p
       onEnterViewFully:`scene_1_rollnumber = -1;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
       # The 116th Congress
-Each of the circles you've been seeing actually represents a member of the House
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = -1;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      Each of the circles you've been seeing actually represents a member of the House
 of Representatives in the 116th United States Congress.
-The spatial model is useful because it defines a general ideological space. Not only
+    [/p]
+    [p
+      onEnterViewFully:`scene_1_rollnumber = -1;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
+      The spatial model is useful because it defines a general ideological space. Not only
 can politicians be positioned in this space, but so can the bills they vote for!
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -153,7 +162,6 @@ can politicians be positioned in this space, but so can the bills they vote for!
       onEnterViewFully:`scene_1_rollnumber = 801;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
       The cutting line seen here is the cutting line for U.S. House Bill 6201 (HR6201), which would provide federal aid for economic impacts from the coronavirus.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -164,7 +172,6 @@ can politicians be positioned in this space, but so can the bills they vote for!
       onEnterViewFully:`scene_1_rollnumber = 801;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
       The graphic shows how each member of the House voted for the bill. Those shown tinted in green voted _yay_, those tinted red voted _nay_, and the ones shaded gray did not vote.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -179,7 +186,6 @@ can politicians be positioned in this space, but so can the bills they vote for!
       onEnterViewFully:`scene_1_rollnumber = 93;scene_1_showMemberVote = false;scene_1_transformCoordinates = false`]
       Take U.S. House Joint Resolution 46 which would terminate President Trump's declaration of an emergency at the U.S.-Mexican border. (The emergency declaration allowed him to bypass Congress and reallocate funds to build a border wall.)
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -191,7 +197,6 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
       onEnterViewFully:`scene_1_rollnumber = 93;scene_1_showMemberVote = true;scene_1_transformCoordinates = false`]
       The bill ultimately passed the House 245 to 182 and went on to be approved by the Senate.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -204,11 +209,15 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
     [/p]
     [div className:"gridyll-control-container"]
       [div]
-        showMemberVote
+        [div]
+          showMemberVote
+        [/div]
         [Boolean value:scene_1_showMemberVote /]
       [/div]
       [div]
-        rollnumber
+        [div]
+          rollnumber
+        [/div]
         [Select
           value:scene_1_rollnumber
           options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
@@ -216,8 +225,13 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
     [/div]
   [/Step]
 [/Scroller]
-[Scroller fullWidth:true]
-  [Graphic]
+[Scroller className:" " fullWidth:true]
+  [Graphic
+    displayParameters:true
+    optimizeState:scene_2_optimizeState
+    rollcallFocus:scene_2_rollcallFocus
+    rollcalls:scene_2_rollcalls
+    showVotes:scene_2_showVotes]
     [OptimizerVis
       data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
       optimizeState:scene_2_optimizeState
@@ -229,7 +243,10 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
     [p
       onEnterViewFully:`scene_2_optimizeState = "initialization";scene_2_rollcallFocus = -1;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = false`]
       To this point we've seen how the spatial model can be used to compare the ideologies of politicians as well as votes, but we haven't discussed how the spatial positions of the politicians are actually determined.
-To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
+    [/p]
+    [p
+      onEnterViewFully:`scene_2_optimizeState = "initialization";scene_2_rollcallFocus = -1;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = false`]
+      To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
   authors: "Keith Poole"
   title: "Spatial Models of Parliamentary Voting"
   id: "poole2005spatial"
@@ -237,14 +254,12 @@ To do so requires analyzing every vote that each member of congress has ever mad
   date: "2005"
 /] for a detailed treatment), so we're going to step through a simplified example based on [i]Ideology and Congress[/i][Display value: " " /][Cite authors: "Keith Poole and Howard Rosenthal" title: "Ideology & Congress: A Political Economic History of Roll Call Voting" id: "poole2017ideology" date: "2017" venue: "Routledge" /].
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
       onEnterViewFully:`scene_2_optimizeState = "placeVotes";scene_2_rollcallFocus = -1;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = false`]
       In this example, we're going to figure out the positions of the congressmembers along just a single dimension, left-to-right. We start off with them placed randomly, and through an iterative optimization process will find their "true" positions.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -257,7 +272,9 @@ To do so requires analyzing every vote that each member of congress has ever mad
     [/p]
     [div className:"gridyll-control-container"]
       [div]
-        rollcallFocus
+        [div]
+          rollcallFocus
+        [/div]
         [Select
           value:scene_2_rollcallFocus
           options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
@@ -275,7 +292,9 @@ To do so requires analyzing every vote that each member of congress has ever mad
     [/p]
     [div className:"gridyll-control-container"]
       [div]
-        rollcallFocus
+        [div]
+          rollcallFocus
+        [/div]
         [Select
           value:scene_2_rollcallFocus
           options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
@@ -289,7 +308,9 @@ To do so requires analyzing every vote that each member of congress has ever mad
     [/p]
     [div className:"gridyll-control-container"]
       [div]
-        rollcallFocus
+        [div]
+          rollcallFocus
+        [/div]
         [Select
           value:scene_2_rollcallFocus
           options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
@@ -301,7 +322,6 @@ To do so requires analyzing every vote that each member of congress has ever mad
       onEnterViewFully:`scene_2_optimizeState = "iterate";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
       The previous two steps represent the bulk of the algorithm. Now they just need to be repeated until a stable solution is found. First hold the vote cutting points constant while moving the politicians, and then hold the politicians in place and move the vote cutting points.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
   [Step]
     [p
@@ -312,7 +332,6 @@ To do so requires analyzing every vote that each member of congress has ever mad
       onEnterViewFully:`scene_2_optimizeState = "results";scene_2_rollcallFocus = 93;scene_2_rollcalls = [93,691,801,807,808];scene_2_showVotes = true`]
       The full algorithm operates over an arbitrary number of dimensions, and uses a probabilistic approach to ideological preference. Instead of optimizing for the minimum number of voting errors, DW-NOMINATE will optimize for the likelylihood that we would have seen the historic votes given a particular placement of ideal points and cutting lines.
     [/p]
-    [div className:"gridyll-control-container" /]
   [/Step]
 [/Scroller]
 

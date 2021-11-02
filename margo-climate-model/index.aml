@@ -4,7 +4,7 @@ subtitle: With Margo and Julia
 author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
-    - video
+    - scroller
 ---
 
 This is the introduction to the Julia-based article.
@@ -25,6 +25,9 @@ appendix:
         range: [0.5, 3.5, 0.5]
     optimizeFor:
         set: ["adaptive_temp", "temp", "net_benefit"]
+scroller:
+    layout: fullwidth
+    graphicAnchor: bottom
 
 Here's an overview of what MARGO gives us.
 The graphs show typical metrics like greenhous gas emissions and concentration, and temperature change.
@@ -35,8 +38,6 @@ That is, no mitigation strategies are deployed.
 
 {stage}
 summary: Now with the controls optimized to keep warming under 2.5 degrees
-exclude:
-    - scroller
 parameters:
     optimizeControls: 1
     tempGoal: 2.5

@@ -214,7 +214,7 @@
   [/Slide]
 [/Slideshow]
 [Broadcaster
-  peerkey:"gridyll-presentation-9432"
+  peerkey:"gridyll-presentation-9069"
   __slideshowIndex:__slideshowIndex
   __slideshowLength:__slideshowLength
   scene_0_highlightParty:scene_0_highlightParty
@@ -271,9 +271,13 @@ separate Republicans from Democrats is their placement along the economic axis.
     [Conditional if:`__slideshowIndex === 6`]
       [p]
         # The 116th Congress
-Each of the circles you've been seeing actually represents a member of the House
+      [/p]
+      [p]
+        Each of the circles you've been seeing actually represents a member of the House
 of Representatives in the 116th United States Congress.
-The spatial model is useful because it defines a general ideological space. Not only
+      [/p]
+      [p]
+        The spatial model is useful because it defines a general ideological space. Not only
 can politicians be positioned in this space, but so can the bills they vote for!
       [/p]
     [/Conditional]
@@ -327,7 +331,9 @@ played a larger role in the voting outcome compared to the coronavirus relief bi
     [Conditional if:`__slideshowIndex === 12`]
       [p]
         To this point we've seen how the spatial model can be used to compare the ideologies of politicians as well as votes, but we haven't discussed how the spatial positions of the politicians are actually determined.
-To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
+      [/p]
+      [p]
+        To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
   authors: "Keith Poole"
   title: "Spatial Models of Parliamentary Voting"
   id: "poole2005spatial"

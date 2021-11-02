@@ -195,8 +195,10 @@ separate Republicans from Democrats is their placement along the economic axis.
 [/Graphic]
 
 # The 116th Congress
+
 Each of the circles you've been seeing actually represents a member of the House
 of Representatives in the 116th United States Congress.
+
 The spatial model is useful because it defines a general ideological space. Not only
 can politicians be positioned in this space, but so can the bills they vote for!
 
@@ -286,6 +288,7 @@ So why was a vote over whether the congress members could start winter holidays 
 [/Graphic]
 
 To this point we've seen how the spatial model can be used to compare the ideologies of politicians as well as votes, but we haven't discussed how the spatial positions of the politicians are actually determined.
+
 To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
   authors: "Keith Poole"
   title: "Spatial Models of Parliamentary Voting"
