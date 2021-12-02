@@ -9,24 +9,41 @@
     <meta property="description" content="With Margo and Julia">
 
     <link rel="stylesheet" href="static/idyll_styles.css">
-  <link id="idyll-equation-css" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet" type="text/css" media="all"></head>
+  <style type="text/css">
+                        .gridyll-control-container {
+                            display: none;
+                        }
+
+                        .article-header {
+                            display: none;
+                        }
+
+                        h1.hed {
+                            display: none;
+                        }
+                        .byline {
+                            display: none;
+                        }
+
+                        .fidyll-appendix {
+                            display: block;
+                        }
+
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            width: 100%;
+                            margin: 2em auto 2em auto;
+                        }
+                    </style></head>
   <body><script id="__bs_script__">//<![CDATA[
     document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.27.5'><\/script>".replace("HOST", location.hostname));
 //]]></script><script async="" src="/browser-sync/browser-sync-client.js?v=2.27.5"></script>
 
-    <div id="idyll-mount"><div><div class="idyll-root"><div class="article-header" style="background: rgb(255, 255, 255); color: rgb(51, 51, 51);"><h1 class="hed">Modeling Economic and Climate Outcomes</h1><h2 class="dek">With Margo and Julia</h2><div class="byline">By: <a target="_blank" href="https://mathisonian.com" style="color: rgb(51, 51, 51);">Matthew Conlen</a></div></div><div class=" idyll-text-container"><p>This is the introduction to the Julia-based article.</p><p>ClimateMargo is a climate-economic model that helps us understand possible pathways to limiting global warming to.</p><p>Here’s an overview of what MARGO gives us.
-The graphs show typical metrics like greenhous gas emissions and concentration, and temperature change.
-They also include the suggested optimal deployments of mitigation strategies, and a cost-benefit analysis.
-Currently the graphs just show what is expected to happen if no mitigation is done.
-That is, no mitigation strategies are deployed.</p><div><img data="[object Object]" optimizecontrols="0" tempgoal="2.5" optimizefor="adaptive_temp" src="static/script-image-tempGoal-2.5-optimizeFor-adaptive_temp-optimizeControls-0.png" idyll="[object Object]"></div><p>Now we ask MARGO what the optimal approach is to limit warming to 2.5 degrees celcius.
-Notice that overwhelmingly the algorithm suggesets that we should focus on reducing emissions, but some amount of carbon dioxide removal and geoengineering is helpful too.</p><div><img data="[object Object]" optimizecontrols="1" tempgoal="2.5" optimizefor="adaptive_temp" src="static/script-image-tempGoal-2.5-optimizeFor-adaptive_temp-optimizeControls-1.png" idyll="[object Object]"></div><p>If we want to keep warming to 1.5 degrees, the amount of emissions reduction needs to increase sharply.</p><div><img data="[object Object]" optimizecontrols="1" tempgoal="1.5" optimizefor="adaptive_temp" src="static/script-image-tempGoal-1.5-optimizeFor-adaptive_temp-optimizeControls-1.png" idyll="[object Object]"></div><p>Use the controls to see what MARGO suggests is the best path to limiting warming to a specific temperature.
-You can also change what exactly MARGO optimizes for.
-Optimizing for net-benefit considers the cost-benefit analysis.
-Optimizing for temperature is optimizing only for limiting the warming under a certain temperature, while optimizing for <code>adaptiv_temp</code> is a slightly looser constraint that allows for adaptation to higher temperature.</p><div><img data="[object Object]" optimizecontrols="1" tempgoal="1.5" optimizefor="adaptive_temp" src="static/script-image-tempGoal-1.5-optimizeFor-adaptive_temp-optimizeControls-1.png" idyll="[object Object]"><div class="gridyll-control-container"><div>
-      tempGoal
-      <input type="range" min="0.5" max="3.5" step="0.5" value="1.5"></div><div>
-      optimizeFor
-      <select options="[object Object],[object Object],[object Object]"><option value="adaptive_temp">adaptive_temp</option><option value="temp">temp</option><option value="net_benefit">net_benefit</option></select></div></div></div></div><div><div><h2 id="appendix-scene-1">Appendix Scene 1</h2><div class="appendix-graphic-container"><div><h3 id=""></h3><div class="appendix-graphic-plex"><img style="max-width: 100%;" src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-appendix-0.png"></div><div class="appendix-graphic-plex"><img style="max-width: 100%;" src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-appendix-1.png"></div><div class="appendix-graphic-plex"><img style="max-width: 100%;" src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-appendix-2.png"></div><div class="appendix-graphic-plex"><img style="max-width: 100%;" src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-appendix-3.png"></div><div class="appendix-graphic-plex"><img style="max-width: 100%;" src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-appendix-4.png"></div><div class="appendix-graphic-plex"><img style="max-width: 100%;" src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-appendix-5.png"></div></div></div></div></div></div></div></div>
+    <div id="idyll-mount"><div><div class="idyll-root"><div class=" idyll-text-container"><p>This is the introduction to MARGO, an climate-economic model that helps us understand possible pathways to limiting global warming <a title="A multi-control climate policy process for a trusted decision maker, Drake, Henri F and Rivest, Ronald L and Deutch, John and Edelman, Alan" href="#references">[1]</a>.</p><p>The model is <a href="https://github.com/ClimateMARGO/ClimateMARGO.jl">implemented in Julia</a>, and the figures here were generated using MARGO’s built-in plotting functions.</p><p>Margo models the future global temperature and carbon dioxide emissions and concentration in response to various control measures that can be deployed. The controls include: mitigation of greenhouse gas emissions, adaptation to climate impacts, removal of carbon dioxide (CDR), and Geoengineering by solar radiation modification (SRM).</p><p>The model optimizes the deployment of these controls given specific targets, such as keeping the global temperature to under 2.5 degrees of warming or budgetary requirements.</p><p>Here’s an overview of MARGO’s baseline scenario.</p><p>The temperature will continue to rise…</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-0.png"></div><p>…nd each year we emit more carbon until 2100 when the trend reverses.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-1.png"></div><p>As that carbon dioxide is released into the atmosphere some of it will be drawn into natural CO2 sinks, like the ocean,
+while the rest remains in the atmosphere.</p><p>The overall concentration of CO2 in the atmosphere is expected to continue growing.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-2.png"></div><p>So what should we do? Margo suggests if we want to limit warming to under 2.5 degrees celsius we should
+deploy the mitigation strategies suggested in the visualization. Most notably, and intuitively, the model
+suggests our primary option should be mitigation, that is, not putting more CO2 into the atmposphere.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-3.png"></div><p>Here’s what the emissions curve looks like with those controls in place.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-4.png"></div><p>And the effect that each would have on the overall temperature.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-5.png"></div><p>If we want to keep warming lower, say to 1.5 degrees, the amount of emissions reduction needs to increase sharply.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-6.png"></div><p>Now, you can see the entire model output. You can also change what exactly MARGO optimizes for. Optimizing for net-benefit considers the cost-benefit analysis; optimizing for temperature is optimizing only for limiting the warming under a certain temperature, while optimizing for <code>adaptiv_temp</code> is a slightly looser constraint that allows for adaptation to higher temperature.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-7.png"></div><p>Use the controls to see what MARGO suggests is the best path to limiting warming to a specific temperature.</p><div class="idyll-graphic"><img src="/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/static/build/static/static-graphic-8.png"></div><div id="references"><h1>References</h1><ol><li><a target="_blank">A multi-control climate policy process for a trusted decision maker</a>, Drake, Henri F and Rivest, Ronald L and Deutch, John and Edelman, Alan.<em></em> 2020.</li></ol></div></div></div></div></div>
     <script src="static/idyll_index.js"></script>
   
 

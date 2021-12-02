@@ -5,8 +5,8 @@ author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
     - scroller
-    - static
     - presentation
+    - static
 ---
 
 This is the introduction to MARGO, an climate-economic model that helps us understand possible pathways to limiting global warming [Cite

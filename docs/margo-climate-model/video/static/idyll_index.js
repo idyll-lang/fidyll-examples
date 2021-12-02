@@ -20243,66 +20243,6 @@ Conditional._idyll = {
 };
 module.exports = Conditional;
 
-},{"react":"react"}],"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js":[function(require,module,exports){
-"use strict";
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _objectWithoutProperties(obj, keys) {
-  var target = {};for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
-  }return target;
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var React = require('react');
-
-var Graphic = function (_React$Component) {
-  _inherits(Graphic, _React$Component);
-
-  function Graphic() {
-    _classCallCheck(this, Graphic);
-
-    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
-  }
-
-  Graphic.prototype.render = function render() {
-    var _props = this.props,
-        idyll = _props.idyll,
-        updateProps = _props.updateProps,
-        hasError = _props.hasError,
-        props = _objectWithoutProperties(_props, ["idyll", "updateProps", "hasError"]);
-
-    return React.createElement("div", props);
-  };
-
-  return Graphic;
-}(React.Component);
-
-Graphic._idyll = {
-  name: "Graphic",
-  tagType: "open"
-};
-
-module.exports = Graphic;
-
 },{"react":"react"}],"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js":[function(require,module,exports){
 'use strict';
 
@@ -50575,7 +50515,113 @@ var Broadcaster = function (_React$Component) {
 
 module.exports = Broadcaster;
 
-},{"little-loader":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/little-loader/lib/little-loader.js","react":"react"}],"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide-index.js":[function(require,module,exports){
+},{"little-loader":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/little-loader/lib/little-loader.js","react":"react"}],"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/graphic.js":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+
+var Graphic = function (_React$Component) {
+  _inherits(Graphic, _React$Component);
+
+  function Graphic() {
+    _classCallCheck(this, Graphic);
+
+    return _possibleConstructorReturn(this, (Graphic.__proto__ || Object.getPrototypeOf(Graphic)).apply(this, arguments));
+  }
+
+  _createClass(Graphic, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          idyll = _props.idyll,
+          updateProps = _props.updateProps,
+          hasError = _props.hasError,
+          children = _props.children,
+          error = _props.error,
+          title = _props.title,
+          subtitle = _props.subtitle,
+          displayParameters = _props.displayParameters,
+          source = _props.source,
+          props = _objectWithoutProperties(_props, ['idyll', 'updateProps', 'hasError', 'children', 'error', 'title', 'subtitle', 'displayParameters', 'source']);
+
+      return React.createElement(
+        'div',
+        { className: 'idyll-graphic' },
+        React.createElement(
+          'div',
+          null,
+          children
+        ),
+        title || subtitle ? React.createElement(
+          'div',
+          null,
+          title ? React.createElement(
+            'div',
+            { className: 'idyll-graphic-title' },
+            React.createElement(
+              'b',
+              null,
+              title
+            )
+          ) : null,
+          subtitle ? React.createElement(
+            'div',
+            null,
+            subtitle
+          ) : null
+        ) : null,
+        displayParameters ? React.createElement(
+          'details',
+          null,
+          React.createElement(
+            'summary',
+            null,
+            'Parameters'
+          ),
+          Object.keys(props).map(function (k) {
+            return React.createElement(
+              'div',
+              { key: k },
+              React.createElement(
+                'div',
+                null,
+                k,
+                ': ',
+                '' + props[k]
+              )
+            );
+          })
+        ) : null,
+        source ? React.createElement(
+          'div',
+          { className: 'idyll-graphic-source' },
+          source
+        ) : null
+      );
+    }
+  }]);
+
+  return Graphic;
+}(React.Component);
+
+Graphic._idyll = {
+  name: "Graphic",
+  tagType: "open"
+};
+
+module.exports = Graphic;
+
+},{"react":"react"}],"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide-index.js":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -50860,7 +50906,7 @@ var VideoStepper = function (_React$Component) {
       var _this2 = this;
 
       window.status = "ready";
-
+      document.body.className += ' video';
       window._setSlide = function (_slideIndex) {
         _this2.props.updateProps({
           index: _slideIndex
@@ -50913,14 +50959,14 @@ module.exports = VideoStepper;
 },{"react":"react"}],"__IDYLL_AST__":[function(require,module,exports){
 "use strict";
 
-module.exports = { "id": 0, "type": "component", "name": "div", "children": [{ "id": 2, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeControls" }, "value": { "type": "value", "value": 0 } } }, { "id": 3, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_tempGoal" }, "value": { "type": "value", "value": 2.5 } } }, { "id": 4, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeFor" }, "value": { "type": "value", "value": "adaptive_temp" } } }, { "id": 5, "type": "var", "properties": { "name": { "type": "value", "value": "__slideshowIndex" }, "value": { "type": "value", "value": 0 } } }, { "id": 6, "type": "var", "properties": { "name": { "type": "value", "value": "__slideshowLength" }, "value": { "type": "value", "value": 0 } } }, { "id": 7, "type": "meta", "properties": { "title": { "type": "value", "value": "Modeling Economic and Climate Outcomes" }, "description": { "type": "value", "value": "With Margo and Julia" } } }, { "id": 8, "type": "component", "name": "Slideshow", "properties": { "currentSlide": { "type": "variable", "value": "__slideshowIndex" }, "numSlides": { "type": "variable", "value": "__slideshowLength" } }, "children": [{ "id": 9, "type": "component", "name": "Graphic", "children": [{ "id": 10, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex >= 1 && __slideshowIndex < 4" } }, "children": [{ "id": 11, "type": "component", "name": "img", "properties": { "data": { "type": "expression", "value": "{  }" }, "optimizeControls": { "type": "variable", "value": "scene_0_optimizeControls" }, "tempGoal": { "type": "variable", "value": "scene_0_tempGoal" }, "optimizeFor": { "type": "variable", "value": "scene_0_optimizeFor" }, "src": { "type": "expression", "value": "\"static/script-image-\" + \"tempGoal-\" + scene_0_tempGoal + \"-\" + \"optimizeFor-\" + scene_0_optimizeFor + \"-\" + \"optimizeControls-\" + scene_0_optimizeControls + \".png\"" } }, "children": [] }] }] }, { "id": 12, "type": "component", "name": "Slide", "children": [{ "id": 13, "type": "component", "name": "Header", "properties": { "background": { "type": "value", "value": "#ffffff" }, "color": { "type": "value", "value": "#333333" }, "title": { "type": "value", "value": "Modeling Economic and Climate Outcomes" }, "subtitle": { "type": "value", "value": "With Margo and Julia" }, "author": { "type": "value", "value": "Matthew Conlen" }, "authorLink": { "type": "value", "value": "https://mathisonian.com" } }, "children": [] }] }, { "id": 14, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_optimizeControls = 0;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 15, "type": "component", "name": "div", "children": [{ "id": 16, "type": "textnode", "value": "\n      Climate models can help us understand what needs to be done to avoid the worst global warming scenarios.\n    " }] }] }, { "id": 17, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 18, "type": "component", "name": "div", "children": [{ "id": 19, "type": "textnode", "value": "\n      Now with the controls optimized to keep warming under 2.5 degrees\n    " }] }] }, { "id": 20, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_optimizeControls = 1;scene_0_tempGoal = 1.5;scene_0_optimizeFor = \"adaptive_temp\"" } }, "children": [{ "id": 21, "type": "component", "name": "div", "children": [{ "id": 22, "type": "textnode", "value": "\n      Optimizing to keep warming under 1.5 degrees\n    " }] }] }] }, { "id": 23, "type": "component", "name": "Broadcaster", "properties": { "peerkey": { "type": "value", "value": "gridyll-presentation-8623" }, "__slideshowIndex": { "type": "variable", "value": "__slideshowIndex" }, "__slideshowLength": { "type": "variable", "value": "__slideshowLength" }, "scene_0_optimizeControls": { "type": "variable", "value": "scene_0_optimizeControls" }, "scene_0_tempGoal": { "type": "variable", "value": "scene_0_tempGoal" }, "scene_0_optimizeFor": { "type": "variable", "value": "scene_0_optimizeFor" } }, "children": [{ "id": 24, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-presenter-notes" } }, "children": [{ "id": 25, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 1" } }, "children": [{ "id": 26, "type": "component", "name": "p", "children": [{ "id": 27, "type": "textnode", "value": "\n        Here’s an overview of what MARGO gives us.\nThe graphs show typical metrics like greenhous gas emissions and concentration, and temperature change.\nThey also include the suggested optimal deployments of mitigation strategies, and a cost-benefit analysis.\nCurrently the graphs just show what is expected to happen if no mitigation is done.\nThat is, no mitigation strategies are deployed.\n      " }] }] }, { "id": 28, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 2" } }, "children": [{ "id": 29, "type": "component", "name": "p", "children": [{ "id": 30, "type": "textnode", "value": "\n        Now we ask MARGO what the optimal approach is to limit warming to 2.5 degrees celcius.\nNotice that overwhelmingly the algorithm suggesets that we should focus on reducing emissions, but some amount of carbon dioxide removal and geoengineering is helpful too.\n      " }] }] }, { "id": 31, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 3" } }, "children": [{ "id": 32, "type": "component", "name": "p", "children": [{ "id": 33, "type": "textnode", "value": "\n        If we want to keep warming to 1.5 degrees, the amount of emissions reduction needs to increase sharply.\n      " }] }] }] }, { "id": 34, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [{ "id": 35, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 1" } }, "children": [] }, { "id": 36, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 2" } }, "children": [] }, { "id": 37, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 3" } }, "children": [] }] }] }, { "id": 38, "type": "component", "name": "VideoStepper", "properties": { "index": { "type": "variable", "value": "__slideshowIndex" }, "length": { "type": "value", "value": 4 } }, "children": [] }, { "id": 39, "type": "component", "name": "SlideIndex", "properties": { "index": { "type": "variable", "value": "__slideshowIndex" }, "length": { "type": "variable", "value": "__slideshowLength" } }, "children": [] }] };
+module.exports = { "id": 0, "type": "component", "name": "div", "children": [{ "id": 2, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_title" }, "value": { "type": "value", "value": "Margo Climate Model" } } }, { "id": 3, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeControls" }, "value": { "type": "value", "value": 0 } } }, { "id": 4, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_tempGoal" }, "value": { "type": "value", "value": 2.5 } } }, { "id": 5, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_optimizeFor" }, "value": { "type": "value", "value": "adaptive_temp" } } }, { "id": 6, "type": "var", "properties": { "name": { "type": "value", "value": "scene_0_plot" }, "value": { "type": "value", "value": "temperatures" } } }, { "id": 7, "type": "var", "properties": { "name": { "type": "value", "value": "scene_1_title" }, "value": { "type": "value", "value": "Explore the Margo Climate Model" } } }, { "id": 8, "type": "var", "properties": { "name": { "type": "value", "value": "scene_1_subtitle" }, "value": { "type": "value", "value": "2.5 degrees" } } }, { "id": 9, "type": "var", "properties": { "name": { "type": "value", "value": "scene_1_optimizeControls" }, "value": { "type": "value", "value": 1 } } }, { "id": 10, "type": "var", "properties": { "name": { "type": "value", "value": "scene_1_tempGoal" }, "value": { "type": "value", "value": 2.5 } } }, { "id": 11, "type": "var", "properties": { "name": { "type": "value", "value": "scene_1_optimizeFor" }, "value": { "type": "value", "value": "adaptive_temp" } } }, { "id": 12, "type": "var", "properties": { "name": { "type": "value", "value": "scene_1_plot" }, "value": { "type": "value", "value": "state" } } }, { "id": 13, "type": "var", "properties": { "name": { "type": "value", "value": "scene_1_displayParameters" }, "value": { "type": "value", "value": true } } }, { "id": 14, "type": "var", "properties": { "name": { "type": "value", "value": "__slideshowIndex" }, "value": { "type": "value", "value": 0 } } }, { "id": 15, "type": "var", "properties": { "name": { "type": "value", "value": "__slideshowLength" }, "value": { "type": "value", "value": 0 } } }, { "id": 16, "type": "meta", "properties": { "title": { "type": "value", "value": "Modeling Economic and Climate Outcomes" }, "description": { "type": "value", "value": "With Margo and Julia" } } }, { "id": 17, "type": "component", "name": "Slideshow", "properties": { "currentSlide": { "type": "variable", "value": "__slideshowIndex" }, "numSlides": { "type": "variable", "value": "__slideshowLength" } }, "children": [{ "id": 18, "type": "component", "name": "Graphic", "children": [{ "id": 19, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex >= 1 && __slideshowIndex < 8" } }, "children": [{ "id": 20, "type": "component", "name": "Graphic", "properties": { "displayParameters": { "type": "value", "value": false }, "title": { "type": "variable", "value": "scene_0_title" }, "optimizeControls": { "type": "variable", "value": "scene_0_optimizeControls" }, "tempGoal": { "type": "variable", "value": "scene_0_tempGoal" }, "optimizeFor": { "type": "variable", "value": "scene_0_optimizeFor" }, "plot": { "type": "variable", "value": "scene_0_plot" } }, "children": [{ "id": 21, "type": "component", "name": "img", "properties": { "data": { "type": "expression", "value": "{  }" }, "title": { "type": "variable", "value": "scene_0_title" }, "optimizeControls": { "type": "variable", "value": "scene_0_optimizeControls" }, "tempGoal": { "type": "variable", "value": "scene_0_tempGoal" }, "optimizeFor": { "type": "variable", "value": "scene_0_optimizeFor" }, "plot": { "type": "variable", "value": "scene_0_plot" }, "src": { "type": "expression", "value": "\"static/script--scripts-run-margo-jl-image-\" + \"tempGoal-\" + scene_0_tempGoal + \"-\" + \"plot-\" + scene_0_plot + \"-\" + \"optimizeFor-\" + scene_0_optimizeFor + \"-\" + \"optimizeControls-\" + scene_0_optimizeControls + \".png\"" } }, "children": [] }] }] }, { "id": 22, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex >= 8 && __slideshowIndex < 13" } }, "children": [{ "id": 23, "type": "component", "name": "Graphic", "properties": { "displayParameters": { "type": "variable", "value": "scene_1_displayParameters" }, "title": { "type": "variable", "value": "scene_1_title" }, "subtitle": { "type": "variable", "value": "scene_1_subtitle" }, "optimizeControls": { "type": "variable", "value": "scene_1_optimizeControls" }, "tempGoal": { "type": "variable", "value": "scene_1_tempGoal" }, "optimizeFor": { "type": "variable", "value": "scene_1_optimizeFor" }, "plot": { "type": "variable", "value": "scene_1_plot" } }, "children": [{ "id": 24, "type": "component", "name": "img", "properties": { "data": { "type": "expression", "value": "{  }" }, "title": { "type": "variable", "value": "scene_1_title" }, "subtitle": { "type": "variable", "value": "scene_1_subtitle" }, "optimizeControls": { "type": "variable", "value": "scene_1_optimizeControls" }, "tempGoal": { "type": "variable", "value": "scene_1_tempGoal" }, "optimizeFor": { "type": "variable", "value": "scene_1_optimizeFor" }, "plot": { "type": "variable", "value": "scene_1_plot" }, "displayParameters": { "type": "variable", "value": "scene_1_displayParameters" }, "src": { "type": "expression", "value": "\"static/script--scripts-run-margo-jl-image-\" + \"tempGoal-\" + scene_1_tempGoal + \"-\" + \"plot-\" + scene_1_plot + \"-\" + \"optimizeFor-\" + scene_1_optimizeFor + \"-\" + \"optimizeControls-\" + scene_1_optimizeControls + \"-\" + \"displayParameters-\" + scene_1_displayParameters + \".png\"" } }, "children": [] }] }] }] }, { "id": 25, "type": "component", "name": "Slide", "children": [{ "id": 26, "type": "component", "name": "Header", "properties": { "background": { "type": "value", "value": "#ffffff" }, "color": { "type": "value", "value": "#333333" }, "title": { "type": "value", "value": "Modeling Economic and Climate Outcomes" }, "subtitle": { "type": "value", "value": "With Margo and Julia" }, "author": { "type": "value", "value": "Matthew Conlen" }, "authorLink": { "type": "value", "value": "https://mathisonian.com" } }, "children": [] }] }, { "id": 27, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_title = \"Margo Climate Model\";scene_0_optimizeControls = 0;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\";scene_0_plot = \"temperatures\"" } }, "children": [{ "id": 28, "type": "component", "name": "div", "children": [{ "id": 29, "type": "textnode", "value": "\n      Climate models can help us understand what needs to be done to avoid the worst global warming scenarios.\n    " }] }] }, { "id": 30, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_title = \"Margo Climate Model\";scene_0_optimizeControls = 0;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\";scene_0_plot = \"emissions\"" } }, "children": [{ "id": 31, "type": "component", "name": "div", "children": [{ "id": 32, "type": "textnode", "value": "\n      Now with the controls optimized to keep warming under 2.5 degrees\n    " }] }] }, { "id": 33, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_title = \"Margo Climate Model\";scene_0_optimizeControls = 0;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\";scene_0_plot = \"concentrations\"" } }, "children": [{ "id": 34, "type": "component", "name": "div", "children": [{ "id": 35, "type": "textnode", "value": "\n      Now with the controls optimized to keep warming under 2.5 degrees\n    " }] }] }, { "id": 36, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_title = \"Margo Climate Model\";scene_0_optimizeControls = 1;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\";scene_0_plot = \"controls\"" } }, "children": [{ "id": 37, "type": "component", "name": "div", "children": [{ "id": 38, "type": "textnode", "value": "\n      Now with the controls optimized to keep warming under 2.5 degrees\n    " }] }] }, { "id": 39, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_title = \"Margo Climate Model\";scene_0_optimizeControls = 1;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\";scene_0_plot = \"emissions\"" } }, "children": [{ "id": 40, "type": "component", "name": "div", "children": [{ "id": 41, "type": "textnode", "value": "\n      Now with the controls optimized to keep warming under 2.5 degrees\n    " }] }] }, { "id": 42, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_title = \"Margo Climate Model\";scene_0_optimizeControls = 1;scene_0_tempGoal = 2.5;scene_0_optimizeFor = \"adaptive_temp\";scene_0_plot = \"temperatures\"" } }, "children": [{ "id": 43, "type": "component", "name": "div", "children": [{ "id": 44, "type": "textnode", "value": "\n      Now with the controls optimized to keep warming under 2.5 degrees\n    " }] }] }, { "id": 45, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_0_title = \"Margo Climate Model\";scene_0_optimizeControls = 1;scene_0_tempGoal = 1.5;scene_0_optimizeFor = \"adaptive_temp\";scene_0_plot = \"controls\"" } }, "children": [{ "id": 46, "type": "component", "name": "div", "children": [{ "id": 47, "type": "textnode", "value": "\n      Optimizing to keep warming under 1.5 degrees\n    " }] }] }, { "id": 48, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_1_title = \"Explore the Margo Climate Model\";scene_1_subtitle = \"2.5 degrees\";scene_1_optimizeControls = 1;scene_1_tempGoal = 2.5;scene_1_optimizeFor = \"adaptive_temp\";scene_1_plot = \"state\";scene_1_displayParameters = true" } }, "children": [{ "id": 49, "type": "component", "name": "div", "children": [{ "id": 50, "type": "textnode", "value": "\n      Explore the parameters\n    " }] }] }, { "id": 51, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_1_title = \"Explore the Margo Climate Model\";scene_1_subtitle = \"2.0 degrees\";scene_1_optimizeControls = 1;scene_1_tempGoal = 2;scene_1_optimizeFor = \"adaptive_temp\";scene_1_plot = \"state\";scene_1_displayParameters = true" } }, "children": [{ "id": 52, "type": "component", "name": "div", "children": [{ "id": 53, "type": "textnode", "value": "2.0 degrees\n    " }] }] }, { "id": 54, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_1_title = \"Explore the Margo Climate Model\";scene_1_subtitle = \"1.5 degrees\";scene_1_optimizeControls = 1;scene_1_tempGoal = 1.5;scene_1_optimizeFor = \"adaptive_temp\";scene_1_plot = \"state\";scene_1_displayParameters = true" } }, "children": [{ "id": 55, "type": "component", "name": "div", "children": [{ "id": 56, "type": "textnode", "value": "1.5 degrees\n    " }] }] }, { "id": 57, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_1_title = \"Explore the Margo Climate Model\";scene_1_subtitle = \"1.0 degrees\";scene_1_optimizeControls = 1;scene_1_tempGoal = 1;scene_1_optimizeFor = \"adaptive_temp\";scene_1_plot = \"state\";scene_1_displayParameters = true" } }, "children": [{ "id": 58, "type": "component", "name": "div", "children": [{ "id": 59, "type": "textnode", "value": "1.0 degrees\n    " }] }] }, { "id": 60, "type": "component", "name": "Slide", "properties": { "onEnter": { "type": "expression", "value": "scene_1_title = \"Explore the Margo Climate Model\";scene_1_subtitle = \"0.5 degrees\";scene_1_optimizeControls = 1;scene_1_tempGoal = 0.5;scene_1_optimizeFor = \"adaptive_temp\";scene_1_plot = \"state\";scene_1_displayParameters = true" } }, "children": [{ "id": 61, "type": "component", "name": "div", "children": [{ "id": 62, "type": "textnode", "value": "0.5 degrees\n    " }] }] }] }, { "id": 63, "type": "component", "name": "Broadcaster", "properties": { "peerkey": { "type": "value", "value": "gridyll-presentation-5597" }, "__slideshowIndex": { "type": "variable", "value": "__slideshowIndex" }, "__slideshowLength": { "type": "variable", "value": "__slideshowLength" }, "scene_0_title": { "type": "variable", "value": "scene_0_title" }, "scene_0_optimizeControls": { "type": "variable", "value": "scene_0_optimizeControls" }, "scene_0_tempGoal": { "type": "variable", "value": "scene_0_tempGoal" }, "scene_0_optimizeFor": { "type": "variable", "value": "scene_0_optimizeFor" }, "scene_0_plot": { "type": "variable", "value": "scene_0_plot" }, "scene_1_title": { "type": "variable", "value": "scene_1_title" }, "scene_1_subtitle": { "type": "variable", "value": "scene_1_subtitle" }, "scene_1_optimizeControls": { "type": "variable", "value": "scene_1_optimizeControls" }, "scene_1_tempGoal": { "type": "variable", "value": "scene_1_tempGoal" }, "scene_1_optimizeFor": { "type": "variable", "value": "scene_1_optimizeFor" }, "scene_1_plot": { "type": "variable", "value": "scene_1_plot" }, "scene_1_displayParameters": { "type": "variable", "value": "scene_1_displayParameters" } }, "children": [{ "id": 64, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-presenter-notes" } }, "children": [{ "id": 65, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 1" } }, "children": [{ "id": 66, "type": "component", "name": "p", "children": [{ "id": 67, "type": "textnode", "value": "\n        Here’s an overview of MARGO’s baseline scenario.\n      " }] }, { "id": 68, "type": "component", "name": "p", "children": [{ "id": 69, "type": "textnode", "value": "\n        The temperature will continue to rise…\n      " }] }] }, { "id": 70, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 2" } }, "children": [{ "id": 71, "type": "component", "name": "p", "children": [{ "id": 72, "type": "textnode", "value": "\n        …nd each year we emit more carbon until 2100 when the trend reverses.\n      " }] }] }, { "id": 73, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 3" } }, "children": [{ "id": 74, "type": "component", "name": "p", "children": [{ "id": 75, "type": "textnode", "value": "\n        As that carbon dioxide is released into the atmosphere some of it will be drawn into natural CO2 sinks, like the ocean,\nwhile the rest remains in the atmosphere.\n      " }] }, { "id": 76, "type": "component", "name": "p", "children": [{ "id": 77, "type": "textnode", "value": "\n        The overall concentration of CO2 in the atmosphere is expected to continue growing.\n      " }] }] }, { "id": 78, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 4" } }, "children": [{ "id": 79, "type": "component", "name": "p", "children": [{ "id": 80, "type": "textnode", "value": "\n        So what should we do? Margo suggests if we want to limit warming to under 2.5 degrees celsius we should\ndeploy the mitigation strategies suggested in the visualization. Most notably, and intuitively, the model\nsuggests our primary option should be mitigation, that is, not putting more CO2 into the atmposphere.\n      " }] }] }, { "id": 81, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 5" } }, "children": [{ "id": 82, "type": "component", "name": "p", "children": [{ "id": 83, "type": "textnode", "value": "\n        Here’s what the emissions curve looks like with those controls in place.\n      " }] }] }, { "id": 84, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 6" } }, "children": [{ "id": 85, "type": "component", "name": "p", "children": [{ "id": 86, "type": "textnode", "value": "\n        And the effect that each would have on the overall temperature.\n      " }] }] }, { "id": 87, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 7" } }, "children": [{ "id": 88, "type": "component", "name": "p", "children": [{ "id": 89, "type": "textnode", "value": "\n        If we want to keep warming lower, say to 1.5 degrees, the amount of emissions reduction needs to increase sharply.\n      " }] }] }, { "id": 90, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 8" } }, "children": [{ "id": 91, "type": "component", "name": "p", "children": [{ "id": 92, "type": "textnode", "value": "\n        Now, you can see the entire model output. We’ll sweep the optimized temperature goal from under 2.5 degrees of warming, to under 0.5 degrees of warming, and back.\n      " }] }] }, { "id": 93, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 9" } }, "children": [{ "id": 94, "type": "component", "name": "p", "children": [{ "id": 95, "type": "textnode", "value": "2.0 degrees\n      " }] }] }, { "id": 96, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 10" } }, "children": [{ "id": 97, "type": "component", "name": "p", "children": [{ "id": 98, "type": "textnode", "value": "1.5 degrees\n      " }] }] }, { "id": 99, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 11" } }, "children": [{ "id": 100, "type": "component", "name": "p", "children": [{ "id": 101, "type": "textnode", "value": "1.0 degrees\n      " }] }] }, { "id": 102, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex === 12" } }, "children": [{ "id": 103, "type": "component", "name": "p", "children": [{ "id": 104, "type": "textnode", "value": "0.5 degrees\n      " }] }] }] }, { "id": 105, "type": "component", "name": "div", "properties": { "className": { "type": "value", "value": "gridyll-control-container" } }, "children": [{ "id": 106, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 1" } }, "children": [] }, { "id": 107, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 2" } }, "children": [] }, { "id": 108, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 3" } }, "children": [] }, { "id": 109, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 4" } }, "children": [] }, { "id": 110, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 5" } }, "children": [] }, { "id": 111, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 6" } }, "children": [] }, { "id": 112, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 7" } }, "children": [] }, { "id": 113, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 8" } }, "children": [] }, { "id": 114, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 9" } }, "children": [] }, { "id": 115, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 10" } }, "children": [] }, { "id": 116, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 11" } }, "children": [] }, { "id": 117, "type": "component", "name": "Conditional", "properties": { "if": { "type": "expression", "value": "__slideshowIndex == 12" } }, "children": [] }] }] }, { "id": 118, "type": "component", "name": "VideoStepper", "properties": { "index": { "type": "variable", "value": "__slideshowIndex" }, "length": { "type": "value", "value": 13 } }, "children": [] }, { "id": 119, "type": "component", "name": "SlideIndex", "properties": { "index": { "type": "variable", "value": "__slideshowIndex" }, "length": { "type": "variable", "value": "__slideshowLength" } }, "children": [] }] };
 
 },{}],"__IDYLL_COMPONENTS__":[function(require,module,exports){
 'use strict';
 
 module.exports = {
+	'graphic': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/graphic.js'),
 	'conditional': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/conditional.js'),
-	'graphic': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js'),
 	'header': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js'),
 	'slide': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide.js'),
 	'slideshow': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slideshow.js'),
@@ -50929,7 +50975,7 @@ module.exports = {
 	'slide-index': require('/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide-index.js')
 };
 
-},{"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/conditional.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/conditional.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/graphic.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/broadcaster.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/broadcaster.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide-index.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide-index.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slideshow.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slideshow.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/video-stepper.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/video-stepper.js"}],"__IDYLL_CONTEXT__":[function(require,module,exports){
+},{"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/conditional.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/conditional.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/node_modules/idyll-components/dist/cjs/header.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/broadcaster.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/broadcaster.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/graphic.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/graphic.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide-index.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide-index.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slide.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slideshow.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/slideshow.js","/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/video-stepper.js":"/Users/mathisonian/projects/gridyll-examples/margo-climate-model/output/video/components/video-stepper.js"}],"__IDYLL_CONTEXT__":[function(require,module,exports){
 "use strict";
 
 module.exports = function () {};

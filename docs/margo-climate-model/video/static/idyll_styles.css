@@ -1345,19 +1345,58 @@ img {
 
 
 
+
+body, html {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-family: system-ui;
+}
+
 .article-header {
   padding-left: 0;
 }
 
 .idyll-slide-graphic img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 75vh;
+}
+
+h1.hed {
+  font-size: 45px;
+  margin: 0 calc((100vw - 700px) / 2);
+  line-height: 54px;
+}
+
+.article-header {
+  text-align: center;
+}
+h2.dek {
+  font-size: 27px;
+  line-height: 36px;
 }
 
 .idyll-slide-graphic {
   height: calc(100vh - 150px - 2em);
   width: calc(100% - 4em);
   margin: 150px 2em 2em 2em;
+}
+
+.idyll-graphic-title {
+  margin-top: 18px;
+}
+
+.idyll-graphic {
+  text-align: left;
+}
+.slide {
+  padding: 0 1em;
+  position: relative;
+}
+
+.idyll-graphic .idyll-graphic {
+  position: fixed;
+  bottom: 27px;
+  left: 18px;
+  right: 18px;
 }
 
 .control-details {
@@ -1383,6 +1422,7 @@ img {
 
 .idyll-slide-graphic > div > div {
   height: 100%;
+  flex: 1;
 }
 .idyll-slide-graphic > div > div > div {
   height: 100%;
@@ -1398,11 +1438,37 @@ img {
 .idyll-text-container {
   max-width: 100%;
   margin-right: 50px;
-  margin-top: 1em;
-  font-size: 22px;
+  margin-top: 1em;;
+  font-size: 27px;
   font-weight: 300;
+  line-height: 36px;
 }
 
 svg {
   /* display: block; */
+}
+
+input, select {
+  margin: auto;
+  height: auto;
+}
+
+body.video .gridyll-control-container {
+  display: none;
+}
+
+body.video .fidyll-animator {
+  display: none;
+}
+
+body.video .fidyll-animator {
+  display: none;
+}
+
+.idyll-root {
+  padding-top: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
