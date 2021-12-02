@@ -1,0 +1,55 @@
+1
+0:0:0,0 --> 0:0:2,400
+quantifying political ideology
+
+2
+0:0:2,400 --> 0:0:12,936
+say that we have one circle representing each member in the house of representatives. can you guess which circles represent democratic members and which circles represent republicans?
+
+3
+0:0:12,936 --> 0:0:18,384
+it's a trick question: it's impossible to say because they're positioned randomly on the screen.
+
+4
+0:0:18,384 --> 0:0:25,176
+is it any easier if we use ideological scores assigned by the nominate method to position them along a horizontal line?
+
+5
+0:0:25,176 --> 0:0:44,472
+a pattern emerges! the politicians were assigned a position based solely on their prior voting behavior. while the algorithm doesn't understand anything about democrats or republicans, two clear groups have formed. notice that there aren't any politicians directly in the middle, the parties have separated into distinct voting blocs.
+
+6
+0:0:44,472 --> 0:1:11,928
+it turns out that the politicians shown on the left are the democratic house members and the ones on the right are the republicans. it could just as easily have placed all of the republicans on the left and the democrats on the right, but we process the scores afterward to get the positions to match social convention. note that, for the politicians most toward the center (the  moderates ), they are closer ideologically to some moderate members of the other party than they are to the most outlying members of their own party.
+
+7
+0:1:11,928 --> 0:1:50,424
+there is no inherent reason that we only need to use one dimension (left-to-right). we are operating in the realm of mathematics and n-dimensional reasoning here, so we might find that a spatial model that uses more dimensions is more effective. the researchers that developed the nominate method found that their system worked best when using two dimensions. anything more than that just added more complexity without much benefit. the first dimension is typically understood to represent a politician's  economic  ideology, although it is important to note that the algorithm itself doesn't ascribe any semantic meaning to these dimensions—this is overlaid by human analysts interpreting these results.
+
+8
+0:1:50,424 --> 0:2:4,368
+once we add in the second dimension, a richer picture emerges. there is variance within both parties along both dimensions, although the thing that seems to truly separate republicans from democrats is their placement along the economic axis.
+
+9
+0:2:4,368 --> 0:2:22,344
+each of the circles you've been seeing actually represents a member of the house of representatives in the 116th united states congress. the spatial model is useful because it defines a general ideological space. not only can politicians be positioned in this space, but so can the bills they vote for!
+
+10
+0:2:22,344 --> 0:3:7,104
+when a congress member votes on a bill, they are expressing an ideological view: do they prefer a world in which the bill has passed or the status quo. imagine that each of those two possible outcomes can be placed in our two-dimensional ideological space. now, thinking geometrically, there must be a line that separates those politicians who are closer ideologically to the bill passing outcome from the status quo. that line is called a  cutting line , because it separates those members that we would expect to vote for the bill from the ones that we expect to vote against. the cutting line seen here is the cutting line for u.s. house bill 6201 (hr6201), which would provide federal aid for economic impacts from the coronavirus.
+
+11
+0:3:7,104 --> 0:3:27,888
+the bill passed 363 to 41, and led to increased federal unemployment insurance payments, and more federal money for food aid programs, among other things. the graphic shows how each member of the house voted for the bill. those shown tinted in green voted  yay , those tinted red voted  nay , and the ones shaded gray did not vote.
+
+12
+0:3:27,888 --> 0:4:8,856
+the cutting line is not perfect—some members vote against what we would have expected. in some cases this could be due to political gamesmanship, but generally it is just a byproduct of the fact that this is a messy, imperfect process. but as far as votes in the u.s. house of representatives go, hr6201 was quite popular. many are more clearly split along party lines. take u.s. house joint resolution 46 which would terminate president trump's declaration of an emergency at the u.s.-mexican border. (the emergency declaration allowed him to bypass congress and reallocate funds to build a border wall.)
+
+13
+0:4:8,856 --> 0:4:37,944
+the cutting line for this vote has a different angle compared to hr6201. the fact that this cutting line isn't quite as vertical tells us that the social dimension played a larger role in the voting outcome compared to the coronavirus relief bill. this makes sense intuitively sense the relief bill was primarily economic in nature and the border wall plays on larger social issues. the bill ultimately passed the house 245 to 182 and went on to be approved by the senate.
+
+14
+0:4:37,944 --> 0:5:2,784
+finally, let's look at one of the perfectly partisan votes that was held in the house. this vote, which took place on december 18, 2019, was simply called "on motion to adjourn" and would have let the house out of session for the remainder of the year. so why was a vote over whether the congress members could start winter holidays so contentious? later that same day the house voted to impeach donald trump for the first time.

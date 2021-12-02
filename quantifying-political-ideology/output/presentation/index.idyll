@@ -64,8 +64,7 @@
       title:"Quantifying Political Ideology"
       subtitle:"Understanding DW-Nominate's Spatial Model"
       author:"Matthew Conlen"
-      authorLink:"https://mathisonian.com"
-      classoption:"twocolumn" /]
+      authorLink:"https://mathisonian.com" /]
   [/Slide]
   [Slide
     onEnter:`scene_0_title = "Spatial Models";scene_0_subtitle = "DW-NOMINATE";scene_0_highlightParty = false;scene_0_dimensions = 0;scene_0_showEconomicAxis = false;scene_0_showSocialAxis = false`]
@@ -162,7 +161,7 @@
   [/Slide]
 [/Slideshow]
 [Broadcaster
-  peerkey:"gridyll-presentation-5612"
+  peerkey:"gridyll-presentation-3882"
   __slideshowIndex:__slideshowIndex
   __slideshowLength:__slideshowLength
   scene_0_title:scene_0_title
