@@ -70,3 +70,4 @@ editly-tmp*
 output/
 *.zip
 deploy/
+backups/

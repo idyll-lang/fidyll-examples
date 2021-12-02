@@ -2,26 +2,54 @@
   title:"Quantifying Political Ideology"
   description:"Understanding DW-Nominate's Spatial Model"
   fullWidth:true /]
+[var name:"scene_0_stage_0_title" value:"Spatial Models" /]
+[var name:"scene_0_stage_1_title" value:"Spatial Models" /]
+[var name:"scene_0_stage_2_title" value:"Spatial Models" /]
+[var name:"scene_0_stage_3_title" value:"Spatial Models" /]
+[var name:"scene_0_stage_4_title" value:"Spatial Models" /]
+[var name:"scene_0_stage_5_title" value:"NOMINATE" /]
+[var name:"scene_0_stage_6_title" value:"NOMINATE" /]
+[var name:"scene_0_stage_0_subtitle" value:"DW-NOMINATE" /]
+[var name:"scene_0_stage_1_subtitle" value:"DW-NOMINATE" /]
+[var name:"scene_0_stage_2_subtitle" value:"DW-NOMINATE" /]
+[var name:"scene_0_stage_3_subtitle" value:"DW-NOMINATE" /]
+[var name:"scene_0_stage_4_subtitle" value:"DW-NOMINATE" /]
+[var name:"scene_0_stage_5_subtitle" value:"First dimension" /]
+[var name:"scene_0_stage_6_subtitle" value:"Second dimension" /]
 [var name:"scene_0_stage_0_highlightParty" value:false /]
-[var name:"scene_0_stage_1_highlightParty" value:false /]
-[var name:"scene_0_stage_2_highlightParty" value:true /]
-[var name:"scene_0_stage_3_highlightParty" value:true /]
+[var name:"scene_0_stage_1_highlightParty" value:true /]
+[var name:"scene_0_stage_2_highlightParty" value:false /]
+[var name:"scene_0_stage_3_highlightParty" value:false /]
 [var name:"scene_0_stage_4_highlightParty" value:true /]
+[var name:"scene_0_stage_5_highlightParty" value:true /]
+[var name:"scene_0_stage_6_highlightParty" value:true /]
 [var name:"scene_0_stage_0_dimensions" value:0 /]
-[var name:"scene_0_stage_1_dimensions" value:1 /]
+[var name:"scene_0_stage_1_dimensions" value:0 /]
 [var name:"scene_0_stage_2_dimensions" value:1 /]
 [var name:"scene_0_stage_3_dimensions" value:1 /]
-[var name:"scene_0_stage_4_dimensions" value:2 /]
+[var name:"scene_0_stage_4_dimensions" value:1 /]
+[var name:"scene_0_stage_5_dimensions" value:1 /]
+[var name:"scene_0_stage_6_dimensions" value:2 /]
 [var name:"scene_0_stage_0_showEconomicAxis" value:false /]
 [var name:"scene_0_stage_1_showEconomicAxis" value:false /]
 [var name:"scene_0_stage_2_showEconomicAxis" value:false /]
-[var name:"scene_0_stage_3_showEconomicAxis" value:true /]
-[var name:"scene_0_stage_4_showEconomicAxis" value:true /]
+[var name:"scene_0_stage_3_showEconomicAxis" value:false /]
+[var name:"scene_0_stage_4_showEconomicAxis" value:false /]
+[var name:"scene_0_stage_5_showEconomicAxis" value:true /]
+[var name:"scene_0_stage_6_showEconomicAxis" value:true /]
 [var name:"scene_0_stage_0_showSocialAxis" value:false /]
 [var name:"scene_0_stage_1_showSocialAxis" value:false /]
 [var name:"scene_0_stage_2_showSocialAxis" value:false /]
 [var name:"scene_0_stage_3_showSocialAxis" value:false /]
-[var name:"scene_0_stage_4_showSocialAxis" value:true /]
+[var name:"scene_0_stage_4_showSocialAxis" value:false /]
+[var name:"scene_0_stage_5_showSocialAxis" value:false /]
+[var name:"scene_0_stage_6_showSocialAxis" value:true /]
+[var name:"scene_1_stage_0_title" value:"116th Congress" /]
+[var name:"scene_1_stage_1_title" value:"116th Congress" /]
+[var name:"scene_1_stage_2_title" value:"116th Congress" /]
+[var name:"scene_1_stage_3_title" value:"116th Congress" /]
+[var name:"scene_1_stage_4_title" value:"116th Congress" /]
+[var name:"scene_1_stage_5_title" value:"116th Congress" /]
 [var name:"scene_1_stage_0_rollnumber" value:-1 /]
 [var name:"scene_1_stage_1_rollnumber" value:801 /]
 [var name:"scene_1_stage_2_rollnumber" value:801 /]
@@ -40,50 +68,6 @@
 [var name:"scene_1_stage_3_transformCoordinates" value:false /]
 [var name:"scene_1_stage_4_transformCoordinates" value:false /]
 [var name:"scene_1_stage_5_transformCoordinates" value:false /]
-[var
-  name:"scene_2_stage_0_optimizeState"
-  value:"initialization" /]
-[var name:"scene_2_stage_1_optimizeState" value:"placeVotes" /]
-[var name:"scene_2_stage_2_optimizeState" value:"placeVotes" /]
-[var name:"scene_2_stage_3_optimizeState" value:"orderMembers" /]
-[var name:"scene_2_stage_4_optimizeState" value:"orderVotes" /]
-[var name:"scene_2_stage_5_optimizeState" value:"iterate" /]
-[var name:"scene_2_stage_6_optimizeState" value:"results" /]
-[var name:"scene_2_stage_0_rollcallFocus" value:-1 /]
-[var name:"scene_2_stage_1_rollcallFocus" value:-1 /]
-[var name:"scene_2_stage_2_rollcallFocus" value:93 /]
-[var name:"scene_2_stage_3_rollcallFocus" value:93 /]
-[var name:"scene_2_stage_4_rollcallFocus" value:93 /]
-[var name:"scene_2_stage_5_rollcallFocus" value:93 /]
-[var name:"scene_2_stage_6_rollcallFocus" value:93 /]
-[var
-  name:"scene_2_stage_0_rollcalls"
-  value:`[93,691,801,807,808]` /]
-[var
-  name:"scene_2_stage_1_rollcalls"
-  value:`[93,691,801,807,808]` /]
-[var
-  name:"scene_2_stage_2_rollcalls"
-  value:`[93,691,801,807,808]` /]
-[var
-  name:"scene_2_stage_3_rollcalls"
-  value:`[93,691,801,807,808]` /]
-[var
-  name:"scene_2_stage_4_rollcalls"
-  value:`[93,691,801,807,808]` /]
-[var
-  name:"scene_2_stage_5_rollcalls"
-  value:`[93,691,801,807,808]` /]
-[var
-  name:"scene_2_stage_6_rollcalls"
-  value:`[93,691,801,807,808]` /]
-[var name:"scene_2_stage_0_showVotes" value:false /]
-[var name:"scene_2_stage_1_showVotes" value:false /]
-[var name:"scene_2_stage_2_showVotes" value:true /]
-[var name:"scene_2_stage_3_showVotes" value:true /]
-[var name:"scene_2_stage_4_showVotes" value:true /]
-[var name:"scene_2_stage_5_showVotes" value:true /]
-[var name:"scene_2_stage_6_showVotes" value:true /]
 [Header
   color:"#333"
   background:"#fff"
@@ -132,39 +116,76 @@ The premise of a spatial model is simple: politicians are put at a particular po
 
 Say that we have one circle representing each member in the House of Representatives. Can you guess which circles represent Democratic members and which circles represent Republicans?
 
-[Graphic]
+[Graphic
+  data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+  title:scene_0_stage_0_title
+  subtitle:scene_0_stage_0_subtitle
+  highlightParty:scene_0_stage_0_highlightParty
+  dimensions:scene_0_stage_0_dimensions
+  showEconomicAxis:scene_0_stage_0_showEconomicAxis
+  showSocialAxis:scene_0_stage_0_showSocialAxis]
   [DwNominate
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_0_stage_0_title
+    subtitle:scene_0_stage_0_subtitle
     highlightParty:scene_0_stage_0_highlightParty
     dimensions:scene_0_stage_0_dimensions
     showEconomicAxis:scene_0_stage_0_showEconomicAxis
     showSocialAxis:scene_0_stage_0_showSocialAxis /]
 [/Graphic]
 
-It's a trick question: it's impossible to say because they're positioned randomly on the screen. Is it any easier if we use ideological scores assigned by the NOMINATE method to position them along a horizontal line?
+It's a trick question: it's impossible to say because they're positioned randomly on the screen.
 
 [Graphic]
   [DwNominate
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_0_stage_1_title
+    subtitle:scene_0_stage_1_subtitle
     highlightParty:scene_0_stage_1_highlightParty
     dimensions:scene_0_stage_1_dimensions
     showEconomicAxis:scene_0_stage_1_showEconomicAxis
     showSocialAxis:scene_0_stage_1_showSocialAxis /]
 [/Graphic]
 
-A pattern emerges! The politicians were assigned a position based solely on their prior voting behavior. While the algorithm doesn't understand anything about Democrats or Republicans, two clear groups have formed. Notice that there aren't any politicians directly in the middle, the parties have separated into distinct voting blocs.
-
-Note that, for the politicians most toward the center (the _moderates_), they are closer ideologically to some moderate members of the other party than they are to the most outlying members of their own party.
-
-It turns out that the politicians shown on the left are the Democratic house members and the ones on the right are the Republicans. It could just as easily have placed all of the Republicans on the left and the Democrats on the right, but we process the scores afterward to get the positions to match social convention.
+Is it any easier if we use ideological scores assigned by the NOMINATE method to position them along a horizontal line?
 
 [Graphic]
   [DwNominate
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_0_stage_2_title
+    subtitle:scene_0_stage_2_subtitle
     highlightParty:scene_0_stage_2_highlightParty
     dimensions:scene_0_stage_2_dimensions
     showEconomicAxis:scene_0_stage_2_showEconomicAxis
     showSocialAxis:scene_0_stage_2_showSocialAxis /]
+[/Graphic]
+
+A pattern emerges! The politicians were assigned a position based solely on their prior voting behavior. While the algorithm doesn't understand anything about Democrats or Republicans, two clear groups have formed. Notice that there aren't any politicians directly in the middle, the parties have separated into distinct voting blocs.
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_0_stage_3_title
+    subtitle:scene_0_stage_3_subtitle
+    highlightParty:scene_0_stage_3_highlightParty
+    dimensions:scene_0_stage_3_dimensions
+    showEconomicAxis:scene_0_stage_3_showEconomicAxis
+    showSocialAxis:scene_0_stage_3_showSocialAxis /]
+[/Graphic]
+
+It turns out that the politicians shown on the left are the Democratic house members and the ones on the right are the Republicans. It could just as easily have placed all of the Republicans on the left and the Democrats on the right, but we process the scores afterward to get the positions to match social convention.
+
+Note that, for the politicians most toward the center (the _moderates_), they are closer ideologically to some moderate members of the other party than they are to the most outlying members of their own party.
+
+[Graphic]
+  [DwNominate
+    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_0_stage_4_title
+    subtitle:scene_0_stage_4_subtitle
+    highlightParty:scene_0_stage_4_highlightParty
+    dimensions:scene_0_stage_4_dimensions
+    showEconomicAxis:scene_0_stage_4_showEconomicAxis
+    showSocialAxis:scene_0_stage_4_showSocialAxis /]
 [/Graphic]
 
 There is no inherent reason that we only need to use one dimension (left-to-right). We are operating in the realm of mathematics and n-dimensional reasoning here, so we might find that a spatial model that uses more dimensions is more effective. The researchers that developed the NOMINATE method found that their system worked best when using two dimensions. Anything more than that just added more complexity without much benefit.
@@ -174,10 +195,12 @@ The first dimension is typically understood to represent a politician's _economi
 [Graphic]
   [DwNominate
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    highlightParty:scene_0_stage_3_highlightParty
-    dimensions:scene_0_stage_3_dimensions
-    showEconomicAxis:scene_0_stage_3_showEconomicAxis
-    showSocialAxis:scene_0_stage_3_showSocialAxis /]
+    title:scene_0_stage_5_title
+    subtitle:scene_0_stage_5_subtitle
+    highlightParty:scene_0_stage_5_highlightParty
+    dimensions:scene_0_stage_5_dimensions
+    showEconomicAxis:scene_0_stage_5_showEconomicAxis
+    showSocialAxis:scene_0_stage_5_showSocialAxis /]
 [/Graphic]
 
 Once we add in the second dimension, a richer picture emerges.
@@ -188,13 +211,13 @@ separate Republicans from Democrats is their placement along the economic axis.
 [Graphic]
   [DwNominate
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    highlightParty:scene_0_stage_4_highlightParty
-    dimensions:scene_0_stage_4_dimensions
-    showEconomicAxis:scene_0_stage_4_showEconomicAxis
-    showSocialAxis:scene_0_stage_4_showSocialAxis /]
+    title:scene_0_stage_6_title
+    subtitle:scene_0_stage_6_subtitle
+    highlightParty:scene_0_stage_6_highlightParty
+    dimensions:scene_0_stage_6_dimensions
+    showEconomicAxis:scene_0_stage_6_showEconomicAxis
+    showSocialAxis:scene_0_stage_6_showSocialAxis /]
 [/Graphic]
-
-# The 116th Congress
 
 Each of the circles you've been seeing actually represents a member of the House
 of Representatives in the 116th United States Congress.
@@ -202,9 +225,15 @@ of Representatives in the 116th United States Congress.
 The spatial model is useful because it defines a general ideological space. Not only
 can politicians be positioned in this space, but so can the bills they vote for!
 
-[Graphic]
+[Graphic
+  data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+  title:scene_1_stage_0_title
+  rollnumber:scene_1_stage_0_rollnumber
+  showMemberVote:scene_1_stage_0_showMemberVote
+  transformCoordinates:scene_1_stage_0_transformCoordinates]
   [VoteExplainer
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_1_stage_0_title
     rollnumber:scene_1_stage_0_rollnumber
     showMemberVote:scene_1_stage_0_showMemberVote
     transformCoordinates:scene_1_stage_0_transformCoordinates /]
@@ -219,6 +248,7 @@ The cutting line seen here is the cutting line for U.S. House Bill 6201 (HR6201)
 [Graphic]
   [VoteExplainer
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_1_stage_1_title
     rollnumber:scene_1_stage_1_rollnumber
     showMemberVote:scene_1_stage_1_showMemberVote
     transformCoordinates:scene_1_stage_1_transformCoordinates /]
@@ -231,6 +261,7 @@ The graphic shows how each member of the House voted for the bill. Those shown t
 [Graphic]
   [VoteExplainer
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_1_stage_2_title
     rollnumber:scene_1_stage_2_rollnumber
     showMemberVote:scene_1_stage_2_showMemberVote
     transformCoordinates:scene_1_stage_2_transformCoordinates /]
@@ -245,6 +276,7 @@ Take U.S. House Joint Resolution 46 which would terminate President Trump's decl
 [Graphic]
   [VoteExplainer
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_1_stage_3_title
     rollnumber:scene_1_stage_3_rollnumber
     showMemberVote:scene_1_stage_3_showMemberVote
     transformCoordinates:scene_1_stage_3_transformCoordinates /]
@@ -258,6 +290,7 @@ The bill ultimately passed the House 245 to 182 and went on to be approved by th
 [Graphic]
   [VoteExplainer
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_1_stage_4_title
     rollnumber:scene_1_stage_4_rollnumber
     showMemberVote:scene_1_stage_4_showMemberVote
     transformCoordinates:scene_1_stage_4_transformCoordinates /]
@@ -270,6 +303,7 @@ So why was a vote over whether the congress members could start winter holidays 
 [Graphic]
   [VoteExplainer
     data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+    title:scene_1_stage_5_title
     rollnumber:scene_1_stage_5_rollnumber
     showMemberVote:scene_1_stage_5_showMemberVote
     transformCoordinates:scene_1_stage_5_transformCoordinates /]
@@ -287,125 +321,10 @@ So why was a vote over whether the congress members could start winter holidays 
   [/div]
 [/Graphic]
 
-To this point we've seen how the spatial model can be used to compare the ideologies of politicians as well as votes, but we haven't discussed how the spatial positions of the politicians are actually determined.
-
-To do so requires analyzing every vote that each member of congress has ever made, and using this data to constrain where the politicians must be located. The actual math used in full version of DW-NOMINATE is quite hairy (See Chapter 3 of [Cite
-  authors: "Keith Poole"
-  title: "Spatial Models of Parliamentary Voting"
-  id: "poole2005spatial"
-  venue: "Cambridge University Press"
-  date: "2005"
-/] for a detailed treatment), so we're going to step through a simplified example based on [i]Ideology and Congress[/i][Display value: " " /][Cite authors: "Keith Poole and Howard Rosenthal" title: "Ideology & Congress: A Political Economic History of Roll Call Voting" id: "poole2017ideology" date: "2017" venue: "Routledge" /].
-
-[Graphic]
-  [OptimizerVis
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    optimizeState:scene_2_stage_0_optimizeState
-    rollcallFocus:scene_2_stage_0_rollcallFocus
-    rollcalls:scene_2_stage_0_rollcalls
-    showVotes:scene_2_stage_0_showVotes /]
-[/Graphic]
-
-In this example, we're going to figure out the positions of the congressmembers along just a single dimension, left-to-right. We start off with them placed randomly, and through an iterative optimization process will find their "true" positions.
-
-[Graphic]
-  [OptimizerVis
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    optimizeState:scene_2_stage_1_optimizeState
-    rollcallFocus:scene_2_stage_1_rollcallFocus
-    rollcalls:scene_2_stage_1_rollcalls
-    showVotes:scene_2_stage_1_showVotes /]
-[/Graphic]
-
-Once the politicians are placed, we can then also place the votes randomly. Note that since we're doing this in one dimension there will be a _cutting point_ instad of a cutting line, that is, a congress member is expected to vote _yea_ or _nay_ depending on which side of this point they are on.
-
-At this point the locations of both the cutting points and the members of Congress are random and unlikely to be correct.
-
-[Graphic]
-  [OptimizerVis
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    optimizeState:scene_2_stage_2_optimizeState
-    rollcallFocus:scene_2_stage_2_rollcallFocus
-    rollcalls:scene_2_stage_2_rollcalls
-    showVotes:scene_2_stage_2_showVotes /]
-  [div className:"gridyll-control-container"]
-    [div]
-      rollcallFocus
-      [Select
-        value:scene_2_stage_2_rollcallFocus
-        options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
-    [/div]
-  [/div]
-[/Graphic]
-
-The first part of the iterative optimization procedure is to order the members such that they minimize the number of voting errors given the current positions of the vote cutting points.
-
-By _voting error_ I mean a case where we would have expected a congress member to vote _yea_ and they actually voted _nay_ or vice-versa.
-
-[Graphic]
-  [OptimizerVis
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    optimizeState:scene_2_stage_3_optimizeState
-    rollcallFocus:scene_2_stage_3_rollcallFocus
-    rollcalls:scene_2_stage_3_rollcalls
-    showVotes:scene_2_stage_3_showVotes /]
-  [div className:"gridyll-control-container"]
-    [div]
-      rollcallFocus
-      [Select
-        value:scene_2_stage_3_rollcallFocus
-        options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
-    [/div]
-  [/div]
-[/Graphic]
-
-One the members have been sorted, we can keep them fixed in place and do the same procedure for the votes: move the cutting points to minimize the number of errors given the ideological points of the members of Congress.
-
-[Graphic]
-  [OptimizerVis
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    optimizeState:scene_2_stage_4_optimizeState
-    rollcallFocus:scene_2_stage_4_rollcallFocus
-    rollcalls:scene_2_stage_4_rollcalls
-    showVotes:scene_2_stage_4_showVotes /]
-  [div className:"gridyll-control-container"]
-    [div]
-      rollcallFocus
-      [Select
-        value:scene_2_stage_4_rollcallFocus
-        options:`[{"label":93,"value":93},{"label":691,"value":691},{"label":801,"value":801},{"label":807,"value":807},{"label":808,"value":808}]` /]
-    [/div]
-  [/div]
-[/Graphic]
-
-The previous two steps represent the bulk of the algorithm. Now they just need to be repeated until a stable solution is found. First hold the vote cutting points constant while moving the politicians, and then hold the politicians in place and move the vote cutting points.
-
-[Graphic]
-  [OptimizerVis
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    optimizeState:scene_2_stage_5_optimizeState
-    rollcallFocus:scene_2_stage_5_rollcallFocus
-    rollcalls:scene_2_stage_5_rollcalls
-    showVotes:scene_2_stage_5_showVotes /]
-[/Graphic]
-
-Eventually this process will converge to an ordering that minimizes the number of voting errors. While this is a simplified example compared to the full DW-NOMINATE algorithm, this approach of iterative improvement is the core idea.
-
-The full algorithm operates over an arbitrary number of dimensions, and uses a probabilistic approach to ideological preference. Instead of optimizing for the minimum number of voting errors, DW-NOMINATE will optimize for the likelylihood that we would have seen the historic votes given a particular placement of ideal points and cutting lines.
-
-[Graphic]
-  [OptimizerVis
-    data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
-    optimizeState:scene_2_stage_6_optimizeState
-    rollcallFocus:scene_2_stage_6_rollcallFocus
-    rollcalls:scene_2_stage_6_rollcalls
-    showVotes:scene_2_stage_6_showVotes /]
-[/Graphic]
-
-Spatial models can be useful for understanding both how individual politicians vote as well as how politics has changed over time. In this article we walked through examples showing how to interpret the DW-Nominate algorithm, and sketched how the model was calculated in a single dimension. If you're interested, feel free to dig into the references below to get more details on this kind of model.
+Spatial models can be useful for understanding both how individual politicians vote as well as how politics has changed over time. In this article we walked through examples showing how to interpret the DW-Nominate algorithm. If you're interested, feel free to dig into the references below to get more details on this kind of model.
 
 [Cite.References /]
-[div fullWidth:true]
+[div className:"fidyll-appendix" fullWidth:true]
   [div]
 ## Appendix Scene 1
     [div className:"appendix-graphic-container"]
@@ -420,11 +339,13 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [DwNominate
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"Spatial Models"
+              subtitle:"DW-NOMINATE"
               highlightParty:false
               dimensions:0
               showEconomicAxis:false
               showSocialAxis:false
-              src:"static/script-image-showSocialAxis-false-showEconomicAxis-false-highlightParty-false-dimensions-0.png" /]
+              src:"static/script-image-title-Spatial Models-subtitle-DW-NOMINATE-showSocialAxis-false-showEconomicAxis-false-highlightParty-false-dimensions-0.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -443,11 +364,13 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [DwNominate
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"Spatial Models"
+              subtitle:"DW-NOMINATE"
               highlightParty:false
               dimensions:1
               showEconomicAxis:false
               showSocialAxis:false
-              src:"static/script-image-showSocialAxis-false-showEconomicAxis-false-highlightParty-false-dimensions-1.png" /]
+              src:"static/script-image-title-Spatial Models-subtitle-DW-NOMINATE-showSocialAxis-false-showEconomicAxis-false-highlightParty-false-dimensions-1.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -466,11 +389,13 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [DwNominate
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"Spatial Models"
+              subtitle:"DW-NOMINATE"
               highlightParty:false
               dimensions:2
               showEconomicAxis:false
               showSocialAxis:false
-              src:"static/script-image-showSocialAxis-false-showEconomicAxis-false-highlightParty-false-dimensions-2.png" /]
+              src:"static/script-image-title-Spatial Models-subtitle-DW-NOMINATE-showSocialAxis-false-showEconomicAxis-false-highlightParty-false-dimensions-2.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -489,11 +414,13 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [DwNominate
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"Spatial Models"
+              subtitle:"DW-NOMINATE"
               highlightParty:true
               dimensions:0
               showEconomicAxis:false
               showSocialAxis:false
-              src:"static/script-image-showSocialAxis-false-showEconomicAxis-false-highlightParty-true-dimensions-0.png" /]
+              src:"static/script-image-title-Spatial Models-subtitle-DW-NOMINATE-showSocialAxis-false-showEconomicAxis-false-highlightParty-true-dimensions-0.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -514,11 +441,13 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [DwNominate
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"Spatial Models"
+              subtitle:"DW-NOMINATE"
               highlightParty:true
               dimensions:1
               showEconomicAxis:false
               showSocialAxis:false
-              src:"static/script-image-showSocialAxis-false-showEconomicAxis-false-highlightParty-true-dimensions-1.png" /]
+              src:"static/script-image-title-Spatial Models-subtitle-DW-NOMINATE-showSocialAxis-false-showEconomicAxis-false-highlightParty-true-dimensions-1.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -537,11 +466,13 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [DwNominate
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"Spatial Models"
+              subtitle:"DW-NOMINATE"
               highlightParty:true
               dimensions:2
               showEconomicAxis:false
               showSocialAxis:false
-              src:"static/script-image-showSocialAxis-false-showEconomicAxis-false-highlightParty-true-dimensions-2.png" /]
+              src:"static/script-image-title-Spatial Models-subtitle-DW-NOMINATE-showSocialAxis-false-showEconomicAxis-false-highlightParty-true-dimensions-2.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -557,7 +488,7 @@ Spatial models can be useful for understanding both how individual politicians v
     [/div]
   [/div]
 [/div]
-[div fullWidth:true]
+[div className:"fidyll-appendix" fullWidth:true]
   [div]
 ## Appendix Scene 2
     [div className:"appendix-graphic-container"]
@@ -572,10 +503,11 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [VoteExplainer
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"116th Congress"
               rollnumber:93
               showMemberVote:true
               transformCoordinates:false
-              src:"static/script-image-transformCoordinates-false-showMemberVote-true-rollnumber-93.png" /]
+              src:"static/script-image-transformCoordinates-false-title-116th Congress-showMemberVote-true-rollnumber-93.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -592,10 +524,11 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [VoteExplainer
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"116th Congress"
               rollnumber:691
               showMemberVote:true
               transformCoordinates:false
-              src:"static/script-image-transformCoordinates-false-showMemberVote-true-rollnumber-691.png" /]
+              src:"static/script-image-transformCoordinates-false-title-116th Congress-showMemberVote-true-rollnumber-691.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -612,10 +545,11 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [VoteExplainer
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"116th Congress"
               rollnumber:801
               showMemberVote:true
               transformCoordinates:false
-              src:"static/script-image-transformCoordinates-false-showMemberVote-true-rollnumber-801.png" /]
+              src:"static/script-image-transformCoordinates-false-title-116th Congress-showMemberVote-true-rollnumber-801.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -632,10 +566,11 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [VoteExplainer
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"116th Congress"
               rollnumber:807
               showMemberVote:true
               transformCoordinates:false
-              src:"static/script-image-transformCoordinates-false-showMemberVote-true-rollnumber-807.png" /]
+              src:"static/script-image-transformCoordinates-false-title-116th Congress-showMemberVote-true-rollnumber-807.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'
@@ -654,10 +589,11 @@ Spatial models can be useful for understanding both how individual politicians v
                         }`]
             [VoteExplainer
               data:`{ members:members, rollcalls:rollcalls, membervotes:membervotes }`
+              title:"116th Congress"
               rollnumber:808
               showMemberVote:true
               transformCoordinates:false
-              src:"static/script-image-transformCoordinates-false-showMemberVote-true-rollnumber-808.png" /]
+              src:"static/script-image-transformCoordinates-false-title-116th Congress-showMemberVote-true-rollnumber-808.png" /]
             [div
               style:`{
                             transform: 'scale(0.666)'

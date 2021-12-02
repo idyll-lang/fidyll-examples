@@ -76,13 +76,11 @@ class VoteExplainer extends React.Component {
   render() {
     const { hasError, idyll, updateProps, ...props } = this.props;
 
-    console.log('rendering vote explainer', props.rollnumber, props.data.rollcalls.filter((d, i) => d.rollnumber === this.props.rollnumber));
     let linearTransform = (x, y) => {
       return [x, y];
     }
 
     if (props.transformCoordinates) {
-      console.log('in transform', this.props.rollnumber);
       linearTransform = (x, y, x0, y0, s1, s2) => {
         const xt = x - x0;
         const yt = y - y0;
@@ -190,8 +188,6 @@ class VoteExplainer extends React.Component {
             let [lx1t, ly1t] = linearTransform(lx1, ly1, rc.nominate_mid_1, rc.nominate_mid_2, rc.nominate_spread_1, rc.nominate_spread_2);
             let [lx2t, ly2t] = linearTransform(lx2, ly2, rc.nominate_mid_1, rc.nominate_mid_2, rc.nominate_spread_1, rc.nominate_spread_2);
 
-            console.log('line transform top left: ', lx1, ly1, lx1t, ly1t);
-            console.log('line transform bottom right: ', lx2, ly2, lx2t, ly2t);
 
             if (Number.isNaN(cuttingLineSlope)) {
               [lx1t, ly1t] = [0, -1];

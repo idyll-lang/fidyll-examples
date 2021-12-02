@@ -5,69 +5,171 @@ author: Matthew Conlen
 authorLink: https://mathisonian.com
 targets:
     - scroller
+    - static
+    - presentation
 ---
 
-This is the introduction to the Julia-based article.
-ClimateMargo is a climate-economic model that helps us understand possible pathways to limiting global warming to.
+This is the introduction to MARGO, an climate-economic model that helps us understand possible pathways to limiting global warming [Cite
+  id:"margo"
+  authors:"Drake, Henri F and Rivest, Ronald L and Deutch, John and Edelman, Alan"
+  title:"A multi-control climate policy process for a trusted decision maker"
+  date:"2020"
+  publisher:"EarthArXiv"
+/].
+
+The model is [implemented in Julia](https://github.com/ClimateMARGO/ClimateMARGO.jl), and the figures here were generated using MARGO's built-in plotting functions.
+
+Margo models the future global temperature and carbon dioxide emissions and concentration in response to various control measures that can be deployed. The controls include: mitigation of greenhouse gas emissions, adaptation to climate impacts, removal of carbon dioxide (CDR), and Geoengineering by solar radiation modification (SRM).
+
+The model optimizes the deployment of these controls given specific targets, such as keeping the global temperature to under 2.5 degrees of warming or budgetary requirements.
 
 {scene}
-title:
-summary: Climate models can help us understand what needs to be done to avoid the worst global warming scenarios.
 script: ./scripts/run-margo.jl
+summary: Climate models can help us understand what needs to be done to avoid the worst global warming scenarios.
 parameters:
+    title: Margo Climate Model
     optimizeControls: 0
     tempGoal: 2.5
-    optimizeFor: "adaptive_temp"
-appendix:
-    optimizeControls:
-        set: [1]
-    tempGoal:
-        range: [0.5, 3.5, 0.5]
-    optimizeFor:
-        set: ["adaptive_temp", "temp", "net_benefit"]
-scroller:
-    layout: fullwidth
-    graphicAnchor: bottom
+    optimizeFor: adaptive_temp
+    plot: temperatures
 
-Here's an overview of what MARGO gives us.
-The graphs show typical metrics like greenhous gas emissions and concentration, and temperature change.
-They also include the suggested optimal deployments of mitigation strategies, and a cost-benefit analysis.
 
-Currently the graphs just show what is expected to happen if no mitigation is done.
-That is, no mitigation strategies are deployed.
+Here's an overview of MARGO's baseline scenario.
+
+The temperature will continue to rise…
+
+
+{stage}
+summary: Now with the controls optimized to keep warming under 2.5 degrees
+parameters:
+    optimizeControls: 0
+    plot: emissions
+
+
+…nd each year we emit more carbon until 2100 when the trend reverses.
+
+
+{stage}
+summary: Now with the controls optimized to keep warming under 2.5 degrees
+parameters:
+    optimizeControls: 0
+    plot: concentrations
+
+As that carbon dioxide is released into the atmosphere some of it will be drawn into natural CO2 sinks, like the ocean,
+while the rest remains in the atmosphere.
+
+The overall concentration of CO2 in the atmosphere is expected to continue growing.
 
 {stage}
 summary: Now with the controls optimized to keep warming under 2.5 degrees
 parameters:
     optimizeControls: 1
-    tempGoal: 2.5
+    plot: controls
 
 
-Now we ask MARGO what the optimal approach is to limit warming to 2.5 degrees celcius.
-Notice that overwhelmingly the algorithm suggesets that we should focus on reducing emissions, but some amount of carbon dioxide removal and geoengineering is helpful too.
+So what should we do? Margo suggests if we want to limit warming to under 2.5 degrees celsius we should
+deploy the mitigation strategies suggested in the visualization. Most notably, and intuitively, the model
+suggests our primary option should be mitigation, that is, not putting more CO2 into the atmposphere.
+
+
+{stage}
+summary: Now with the controls optimized to keep warming under 2.5 degrees
+parameters:
+    optimizeControls: 1
+    plot: emissions
+
+Here's what the emissions curve looks like with those controls in place.
+
+{stage}
+summary: Now with the controls optimized to keep warming under 2.5 degrees
+parameters:
+    optimizeControls: 1
+    plot: temperatures
+
+
+And the effect that each would have on the overall temperature.
+
 
 
 {stage}
 summary: Optimizing to keep warming under 1.5 degrees
 parameters:
     tempGoal: 1.5
+    plot: controls
 
+If we want to keep warming lower, say to 1.5 degrees, the amount of emissions reduction needs to increase sharply.
 
-If we want to keep warming to 1.5 degrees, the amount of emissions reduction needs to increase sharply.
-
-{stage}
+{scene}
+script: ./scripts/run-margo.jl
 summary: Now you can control the parameters.
+parameters:
+    title: Explore the Margo Climate Model
+    optimizeControls: 1
+    tempGoal: 2.5
+    optimizeFor: adaptive_temp
+    plot: state
+    displayParameters: true
 exclude:
     - video
-parameters:
-    tempGoal: 1.5
+    - static
+
+Now, you can see the entire model output. You can also change what exactly MARGO optimizes for. Optimizing for net-benefit considers the cost-benefit analysis; optimizing for temperature is optimizing only for limiting the warming under a certain temperature, while optimizing for `adaptiv_temp` is a slightly looser constraint that allows for adaptation to higher temperature.
+
+
+{stage}
 controls:
     tempGoal:
-        range: [0.5, 3.5, 0.5]
+        range: [0.5, 2.5, 0.5]
     optimizeFor:
         set: ["adaptive_temp", "temp", "net_benefit"]
+    optimizeControls:
+        set: [0, 1]
 
 Use the controls to see what MARGO suggests is the best path to limiting warming to a specific temperature.
-You can also change what exactly MARGO optimizes for.
-Optimizing for net-benefit considers the cost-benefit analysis.
-Optimizing for temperature is optimizing only for limiting the warming under a certain temperature, while optimizing for `adaptiv_temp` is a slightly looser constraint that allows for adaptation to higher temperature.
+
+
+{scene}
+script: ./scripts/run-margo.jl
+summary: Explore the parameters
+parameters:
+    title: Explore the Margo Climate Model
+    subtitle: 2.5 degrees
+    optimizeControls: 1
+    tempGoal: 2.5
+    optimizeFor: adaptive_temp
+    plot: state
+    displayParameters: true
+include:
+    - video
+    - static
+
+Now, you can see the entire model output. We'll sweep the optimized temperature goal from under 2.5 degrees of warming, to under 0.5 degrees of warming, and back.
+
+
+{stage}
+parameters:
+    subtitle: 2.0 degrees
+    tempGoal: 2.0
+
+2.0 degrees
+
+{stage}
+parameters:
+    subtitle: 1.5 degrees
+    tempGoal: 1.5
+
+1.5 degrees
+
+{stage}
+parameters:
+    subtitle: 1.0 degrees
+    tempGoal: 1.0
+
+1.0 degrees
+
+{stage}
+parameters:
+    subtitle: 0.5 degrees
+    tempGoal: 0.5
+
+0.5 degrees

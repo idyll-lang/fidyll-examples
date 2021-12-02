@@ -16,6 +16,7 @@
     "idyll-d3-component": "^2.1.0",
     "little-loader": "^0.2.0",
     "mathjs": "^9.5.0",
-    "puppeteer-recorder": "^1.0.7"
+    "puppeteer-recorder": "^1.0.7",
+    "tween.js": "^16.6.0"
   }
 }

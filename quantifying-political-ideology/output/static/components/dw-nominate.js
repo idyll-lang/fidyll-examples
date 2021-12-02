@@ -102,10 +102,10 @@ class CustomD3Component extends D3Component {
 
 
     this.socialAxis.append('text')
-      .attr('x', 10)
+      .attr('x', 15)
       .attr('y', height / 8 + ((7 * height / 8) - height / 8) / 2)
       .attr('text-anchor', 'end')
-      .attr('transform', `rotate(-90, ${10}, ${height / 8 + ((7 * height / 8) - height / 8) / 2})`)
+      .attr('transform', `rotate(-90, ${15}, ${height / 8 + ((7 * height / 8) - height / 8) / 2})`)
       .style('font-size', '10px')
       .style('fill', '#999')
       .style('font-weight', 'bold')
@@ -113,10 +113,10 @@ class CustomD3Component extends D3Component {
       .text('Social');
 
     this.socialAxis.append('text')
-      .attr('x', 10)
+      .attr('x', 15)
       .attr('y', height / 8)
       .attr('text-anchor', 'end')
-      .attr('transform', `rotate(-90, ${10}, ${height / 8})`)
+      .attr('transform', `rotate(-90, ${15}, ${height / 8})`)
       .style('font-size', '10px')
       .style('fill', '#ccc')
       .style('font-weight', 'bold')
@@ -124,9 +124,9 @@ class CustomD3Component extends D3Component {
       .text('Conservative');
 
     this.socialAxis.append('text')
-      .attr('x', 10)
-      .attr('y', 7 * height / 8)
-      .attr('transform', `rotate(-90, ${10}, ${7 * height / 8})`)
+      .attr('x', 15)
+      .attr('y', 6 * height / 8)
+      .attr('transform', `rotate(-90, ${15}, ${6 * height / 8})`)
       .style('font-size', '10px')
       .style('fill', '#ccc')
       .style('font-weight', 'bold')
@@ -144,7 +144,6 @@ class CustomD3Component extends D3Component {
   setDimensions(dimensions, transition) {
     let selection = transition ? this.circles.transition() : this.circles;
     if (dimensions === 1) {
-      console.log('has one dimension');
       selection
         .attr('cx', d => {
           return this.xScale(d.nominate_dim1);
@@ -215,7 +214,6 @@ class CustomD3Component extends D3Component {
       }
 
       if (props.dimensions !== oldProps.dimensions) {
-        console.log('updating w dim', props.dimensions)
         this.setDimensions(props.dimensions, true);
       }
     }

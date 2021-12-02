@@ -171,7 +171,7 @@ class ErrorVisualizer extends D3Component {
 
 
       this.update = (_props, _oldProps) => { // Matt - changed this function signature slightly to work with Idyll
-          const bins = _props.bins;
+          const bins = +_props.bins;
           const grid = _props.binMethod;
           const data = _props.data[props.dataset];
 

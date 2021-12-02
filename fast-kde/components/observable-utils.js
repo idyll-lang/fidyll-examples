@@ -451,6 +451,52 @@ function drawReferenceDensity(svg, point, bandwidth, steps, xscale, yrange) {
     .attr('fill', '#ddd');
 }
 
+function drawMeasurements(svg, points, bandwidth, steps, xscale, yscale) {
+  const probes = d3.range(0, 1, .1);
+  const domain = xscale.domain();
+
+  const density = [...kde.kdeCDF1d(points, [0, 1], steps, bandwidth)].map((d, i) => {
+    return {
+      index: domain[0] + (domain[1] - domain[0]) * i / steps,
+      position: i,
+      value: d
+    }
+  });
+  console.log(density)
+  const probeDensities = [...density.filter((d, i) => {
+    return i > steps * 0 && i < steps * 1 && i % Math.floor(steps / 20) == 0;
+  })]
+
+  console.log(probeDensities);
+
+  svg.selectAll('line.probe-line')
+    .data(probeDensities)
+    .join('line')
+    .classed('probe-line', true)
+    .attr('x1', (d, i) => xscale(d.index))
+    .attr('x2', (d, i) => xscale(d.index))
+    .attr('y1', yscale(0))
+    .attr('y2', (d, i) => yscale(d.value))
+    .attr('stroke', '#333')
+    .attr('stroke-dasharray', '5,5');
+
+  console.log('probe dnsities', probeDensities);
+
+  points.forEach((p, i) => {
+    const _density = kde.kdeCDF1d([p], [0, 1], steps, bandwidth);
+    svg.selectAll(`circle.probe-circle-${i}`)
+    .data(probeDensities)
+    .join('circle')
+    .classed(`probe-circle-${i}`, true)
+    .attr('r', 3)
+    .attr('opacity', 0.6)
+    .attr('cx', (d) => xscale(d.index))
+    .attr('cy', (d) => yscale(_density[d.position]))
+    .attr('fill', '#333');
+  })
+
+}
+
 const domain =  [0, 1];
 const points = [0.18, 0.52, 0.57, 0.68];
 const width = 800;
@@ -494,5 +540,6 @@ export {
   drawBinDensity,
   drawBoxSubplot,
   drawPointDensities,
-  drawReferenceDensity
+  drawReferenceDensity,
+  drawMeasurements
 }

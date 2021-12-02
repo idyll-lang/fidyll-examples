@@ -1,0 +1,51 @@
+1
+0:0:0,0 --> 0:0:2,712
+modeling economic and climate outcomes
+
+2
+0:0:2,712 --> 0:0:8,136
+here's an overview of margo's baseline scenario. the temperature will continue to rise…
+
+3
+0:0:8,136 --> 0:0:13,704
+…nd each year we emit more carbon until 2100 when the trend reverses.
+
+4
+0:0:13,704 --> 0:0:28,128
+as that carbon dioxide is released into the atmosphere some of it will be drawn into natural co2 sinks, like the ocean, while the rest remains in the atmosphere. the overall concentration of co2 in the atmosphere is expected to continue growing.
+
+5
+0:0:28,128 --> 0:0:47,808
+so what should we do? margo suggests if we want to limit warming to under 2.5 degrees celsius we should deploy the mitigation strategies suggested in the visualization. most notably, and intuitively, the model suggests our primary option should be mitigation, that is, not putting more co2 into the atmposphere.
+
+6
+0:0:47,808 --> 0:0:51,792
+here's what the emissions curve looks like with those controls in place.
+
+7
+0:0:51,792 --> 0:0:54,816
+and the effect that each would have on the overall temperature.
+
+8
+0:0:54,816 --> 0:1:2,112
+if we want to keep warming lower, say to 1.5 degrees, the amount of emissions reduction needs to increase sharply.
+
+9
+0:1:2,112 --> 0:1:12,816
+now, you can see the entire model output. we'll sweep the optimized temperature goal from under 2.5 degrees of warming, to under 0.5 degrees of warming, and back.
+
+10
+0:1:12,816 --> 0:1:14,400
+2.0 degrees
+
+11
+0:1:14,400 --> 0:1:16,152
+1.5 degrees
+
+12
+0:1:16,152 --> 0:1:17,784
+1.0 degrees
+
+13
+0:1:17,784 --> 0:1:19,680
+0.5 degrees

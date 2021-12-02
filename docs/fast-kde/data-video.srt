@@ -1,0 +1,211 @@
+1
+0:0:0,0 --> 0:0:3,672
+fast & accurate guassian kernel density estimation
+
+2
+0:0:3,672 --> 0:0:5,760
+for a set of input data points…
+
+3
+0:0:5,760 --> 0:0:8,448
+…we represent each point with a kernel function.
+
+4
+0:0:8,448 --> 0:0:16,608
+we then sum the kernels to form a continuous density estimate. here we focus on gaussian kernels which are commonly used in practice.
+
+5
+0:0:16,608 --> 0:0:23,520
+the spread of the kernels is determined by a bandwidth parameter for gaussian kernels this is just the standard deviation.
+
+6
+0:0:23,520 --> 0:0:33,696
+unfortunately direct calculation is expensive. for each of m measurement points we must sum the contributions of the n data points resulting in quadratic complexity.
+
+7
+0:0:33,696 --> 0:0:47,472
+so how might we achieve fast yet accurate approximate estimates? one approach is to discretize the problem by binning the data. kde of n data points then reduces to a signal processing task smoothing a grid of m bins.
+
+8
+0:0:47,472 --> 0:0:56,784
+with simple binning the weight of a data point is assigned to the nearest bin. if we perturb the points we can see how the weight is reassigned across bin boundaries
+
+9
+0:0:56,784 --> 0:1:6,264
+alternatively we can linearly interpolate weight across bins the weight is assigned proportionally providing some smoothing. we evaluate both of these binning methods.
+
+10
+0:1:6,264 --> 0:1:10,920
+now, a number of gaussian smoothing approaches exist for binned data.
+
+11
+0:1:10,920 --> 0:1:21,216
+we focus on linear time methods that first bin the data, an o(n) step, and then make a bounded number of passes over the binned grid, an o(m) step.
+
+12
+0:1:21,216 --> 0:1:29,496
+the first method we'll consider is box filtering which approximates gaussian smoothing by iteratively applying a uniform or box filter .
+
+13
+0:1:29,496 --> 0:1:34,968
+we sum and scale the input values in the filter window to produce an output bin value.
+
+14
+0:1:34,968 --> 0:1:40,104
+we apply this running sum across the input grid writing results into an output grid.
+
+15
+0:1:40,104 --> 0:1:46,512
+to perform another iteration we first swap the input and output grids and then apply the box filter again.
+
+16
+0:1:46,512 --> 0:1:57,336
+but note that the box filters can blur weight outside our original grid extent. box filter methods require grids with extra padding, which may increase memory use and running time.
+
+17
+0:1:57,336 --> 0:1:59,472
+we perform our second iteration…
+
+18
+0:1:59,472 --> 0:2:4,972
+…swap the grids again perform a third iteration…
+
+19
+0:2:4,972 --> 0:2:12,148
+…and arrive at our density estimate. box filters are fast and easy to implement but they do have important nuances.
+
+20
+0:2:12,148 --> 0:2:30,676
+we already saw how we must add padding to the grid, but in addition the filter width, which is a function of bandwidth, they can suffer from quantization error. here bandwidths of 0.1 and 0.15 both map to a box filter of width 3. the box filter results for the two will be indistinguishable.
+
+21
+0:2:30,676 --> 0:2:37,660
+similarly here we get a filter width of 5 bins for bandwidths of both 0.2 and 0.25
+
+22
+0:2:37,660 --> 0:2:43,828
+to address this, the extended box filter method adds fractional weight to the ends of the filter window .
+
+23
+0:2:43,828 --> 0:2:49,156
+as the bandwidth varies the extended box varies the filter response more smoothly.
+
+24
+0:2:49,156 --> 0:3:1,924
+finally let's consider an approximation developed in the early 90s by deriche , published in the signal processing literature. this method seems to have been overlooked by statistics and visualization researchers.
+
+25
+0:3:1,924 --> 0:3:9,532
+deriche derived a recursive filter approximation for the right half of a gaussian with parameters he determined via optimization.
+
+26
+0:3:9,532 --> 0:3:15,628
+we can reverse the equation to model the left half of a gaussian and then sum the two filter responses.
+
+27
+0:3:15,628 --> 0:3:21,316
+the method runs in linear time but does involve more arithmetic operations than box filters.
+
+28
+0:3:21,316 --> 0:3:26,332
+so now let's evaluate how these linear time methods fare in terms of accuracy.
+
+29
+0:3:26,332 --> 0:3:32,836
+we’ll start with an impulse test involving a single data point, corresponding to a single gaussian density.
+
+30
+0:3:32,836 --> 0:3:36,220
+we can compare direct calculation with box filters…
+
+31
+0:3:36,220 --> 0:3:44,140
+…and extended box filters. we see that both methods lead to underestimation of the peak and poor fit to the tails of the distribution.
+
+32
+0:3:44,140 --> 0:3:47,620
+meanwhile, the deriche method achieves high accuracy.
+
+33
+0:3:47,620 --> 0:3:53,620
+we must also inspect other bandwidth values…
+
+34
+0:3:53,620 --> 0:3:59,620
+…to more systematically measure the error.
+
+35
+0:3:59,620 --> 0:4:11,92
+for each kde method we measure the maximum pixel error for a 100 pixel tall density chart, plotting the results on a logarithmic scale. we do this across a range of bandwidths.
+
+36
+0:4:11,92 --> 0:4:30,652
+here are the error curves for simple binning on a 256 bin grid. we see oscillation in the box method due to filter quantization. the extended box method smooths this out. deriche's method outperforms the others and, at high bandwidth, it's over an order of magnitude better with a maximum error around one pixel.
+
+37
+0:4:30,652 --> 0:4:37,156
+switching to linear binning the deriche method improves with subpixel accuracy for most tested bandwidths
+
+38
+0:4:37,156 --> 0:4:45,868
+if we double the number of bins deriche improves further to near pixel perfect accuracy almost two orders of magnitude better than box filter methods.
+
+39
+0:4:45,868 --> 0:4:54,508
+ultimately we care about real world data, so here's an excerpt from the palmer penguins data set showing an estimated density of penguin body mass.
+
+40
+0:4:54,508 --> 0:4:59,236
+at bandwidth 200, all methods appear to perform reasonably well.
+
+41
+0:4:59,236 --> 0:5:14,764
+however at lower bandwidths we see some significant discrepancies. the box filter methods may misestimate peaks or erode local optima and in the language of algebraic vis these are hallucinators that is our choice of technique may mislead us with inaccurate visual features .
+
+42
+0:5:14,764 --> 0:5:23,716
+looking across bandwidths, here are the results for simple binning with 256 bins. again the deriche method provides the best performance.
+
+43
+0:5:23,716 --> 0:5:26,236
+accuracy improves with linear binning…
+
+44
+0:5:26,236 --> 0:5:29,860
+and the performance gap widens when doubling the number of bins.
+
+45
+0:5:29,860 --> 0:5:39,4
+so finally let's examine 2d density estimation for heat maps and contour plots we'll look at mileage versus horsepower in the classic cars data set.
+
+46
+0:5:39,4 --> 0:5:46,684
+using direct calculation as a baseline we can visualize the difference in estimates when using box and extended box filtering.
+
+47
+0:5:46,684 --> 0:5:52,804
+we again see that these methods tend to underestimate peaks yet overestimate the size of a distribution.
+
+48
+0:5:52,804 --> 0:5:57,748
+errors from the deriche method however are imperceptibly low on this color scale.
+
+49
+0:5:57,748 --> 0:6:3,364
+now if we overlay contours from all three methods we'll find that deriche matches the ground truth…
+
+50
+0:6:3,364 --> 0:6:9,844
+…while the box filter methods can incur missing contours missed estimated peaks and again other hallucinators.
+
+51
+0:6:9,844 --> 0:6:13,924
+across bandwidths we see that the deriche method is consistently better.
+
+52
+0:6:13,924 --> 0:6:17,332
+once again this further improves by using linear binning…
+
+53
+0:6:17,332 --> 0:6:19,276
+…and increasing the grid size.

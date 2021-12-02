@@ -115,7 +115,6 @@ class OptimizerVis extends React.Component {
             let minClassificationErrors = Number.POSITIVE_INFINITY;
             let minClassificationX = -1;
 
-            console.log('Optimizing position of member ', icpsr);
             Object.keys(this.state.rollcallXs).forEach((rollnumber, rollIdx) => {
               const rollcallX = this.state.rollcallXs[rollnumber];
 
@@ -135,8 +134,6 @@ class OptimizerVis extends React.Component {
                   }
                   return memo;
                 }, 0);
-
-                console.log(classificationErrors, ' errors putting the member before rollnumber ', rollnumber);
 
                 if (classificationErrors < minClassificationErrors) {
                   minClassificationX = rollcallX - optimizerDelta - Math.random() / 100;
@@ -162,7 +159,6 @@ class OptimizerVis extends React.Component {
                 return memo;
               }, 0);
 
-              console.log(classificationErrors, ' errors putting the member after rollnumber ', rollnumber);
               if (classificationErrors < minClassificationErrors) {
                 minClassificationX = rollcallX + optimizerDelta + Math.random() / 100;
                 minClassificationErrors = classificationErrors;
@@ -172,7 +168,6 @@ class OptimizerVis extends React.Component {
 
             });
 
-            console.log('minimum classifiication errors was ', minClassificationErrors);
 
             return [icpsr, minClassificationX];
           }));
@@ -219,7 +214,6 @@ class OptimizerVis extends React.Component {
                   return memo;
                 }, 0);
 
-                console.log(classificationErrors, ' errors putting the vote before member ', _icpsr);
                 if (classificationErrors < minClassificationErrors) {
                   minClassificationX = memberX - optimizerDelta - Math.random() / 100;
                   minClassificationErrors = classificationErrors;
@@ -243,7 +237,6 @@ class OptimizerVis extends React.Component {
                   return memo;
                 }, 0);
 
-                console.log(classificationErrors, ' errors putting the vote after member ', _icpsr);
                 if (classificationErrors < minClassificationErrors) {
                   minClassificationX = memberX + optimizerDelta + Math.random() / 100;
                   minClassificationErrors = classificationErrors;

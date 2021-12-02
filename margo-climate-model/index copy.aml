@@ -1,0 +1,75 @@
+---
+title: Modeling Economic and Climate Outcomes
+subtitle: With Margo and Julia
+author: Matthew Conlen
+authorLink: https://mathisonian.com
+targets:
+    - scroller
+---
+
+This is the introduction to the Julia-based article.
+ClimateMargo is a climate-economic model that helps us understand possible pathways to limiting global warming to.
+
+{scene}
+title:
+summary: Climate models can help us understand what needs to be done to avoid the worst global warming scenarios.
+script: ./scripts/run-margo.jl
+parameters:
+    optimizeControls: 0
+    tempGoal: 2.5
+    optimizeFor: adaptive_temp
+    plot: state
+appendix:
+    optimizeControls:
+        set: [1]
+    tempGoal:
+        range: [0.5, 3.5, 0.5]
+    optimizeFor:
+        set: ["adaptive_temp", "temp", "net_benefit"]
+scroller:
+    layout: fullwidth
+    graphicAnchor: bottom
+
+Here's an overview of what MARGO gives us.
+The graphs show typical metrics like greenhous gas emissions and concentration, and temperature change.
+They also include the suggested optimal deployments of mitigation strategies, and a cost-benefit analysis.
+
+Currently the graphs just show what is expected to happen if no mitigation is done.
+That is, no mitigation strategies are deployed.
+
+{stage}
+summary: Now with the controls optimized to keep warming under 2.5 degrees
+parameters:
+    optimizeControls: 1
+    tempGoal: 2.5
+    plot: controls
+
+
+Now we ask MARGO what the optimal approach is to limit warming to 2.5 degrees celcius.
+Notice that overwhelmingly the algorithm suggesets that we should focus on reducing emissions, but some amount of carbon dioxide removal and geoengineering is helpful too.
+
+
+{stage}
+summary: Optimizing to keep warming under 1.5 degrees
+parameters:
+    tempGoal: 1.5
+    plot: state
+
+If we want to keep warming to 1.5 degrees, the amount of emissions reduction needs to increase sharply.
+
+{stage}
+summary: Now you can control the parameters.
+exclude:
+    - video
+parameters:
+    tempGoal: 1.5
+controls:
+    tempGoal:
+        range: [0.5, 3.5, 0.5]
+    optimizeFor:
+        set: ["adaptive_temp", "temp", "net_benefit"]
+
+Use the controls to see what MARGO suggests is the best path to limiting warming to a specific temperature.
+You can also change what exactly MARGO optimizes for.
+Optimizing for net-benefit considers the cost-benefit analysis.
+Optimizing for temperature is optimizing only for limiting the warming under a certain temperature, while optimizing for `adaptiv_temp` is a slightly looser constraint that allows for adaptation to higher temperature.

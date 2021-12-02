@@ -3,7 +3,7 @@ const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = Object.assign({}, require("d3"), require("d3-transition"), require("d3-selection"));
 
-const { height, domain, width, steps, margin, drawDataPoints, kde, drawPointDensities, drawDomainLine } = require('./observable-utils');
+const { height, domain, width, steps, margin, drawDataPoints, drawMeasurements, kde, drawPointDensities, drawDomainLine } = require('./observable-utils');
 
 // scales
 const ydomain = [0, 0.035];
@@ -18,13 +18,16 @@ const area = d3.area()
 
 const kdeIntro = (el, props) => {
 
-  const { points, bandwidth, showDensities, showKernels } = props;
+  const { points, bandwidth, showDensities, showKernels, showMeasurement } = props;
+
+  // const viewBox = showMeasurement ? `${width / 2} ${height / 2} ${width / 2 + width / 4} ${height / 2 + height / 4}` : `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`;
+  const viewBox = false ? `${width / 2} ${height / 2} ${width / 2 + width / 4} ${height / 2 + height / 4}` : `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`;
 
   // container
   const svg = d3.select(el)
     .html('')
     .append('svg')
-    .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`) // Matt - changed to use viewBox instead of explicit width/height
+    .attr('viewBox', viewBox) // Matt - changed to use viewBox instead of explicit width/height
     .attr('width', '100%')
     .attr('height', 'auto')
     .style('overflow', 'visible')
@@ -44,6 +47,10 @@ const kdeIntro = (el, props) => {
   }
   if (showKernels) {
     drawPointDensities(svg, points, bandwidth, 800, xscale, ydomain);
+  }
+
+  if (showMeasurement) {
+    drawMeasurements(svg, points, bandwidth, 800, xscale, yscale);
   }
 
   drawDomainLine(svg);
