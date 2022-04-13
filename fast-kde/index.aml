@@ -1,11 +1,12 @@
 ---
-title: Fast & Accurate Guassian Kernel Density Estimation
+title: Fast & Accurate Gaussian Kernel Density Estimation
 author: Jeffrey Heer
 authorLink: https://idl.cs.washington.edu
 targets:
     - scroller
     - static
     - presentation
+    - video
 data:
    err1dimpulse: err1d_impulse.json
    err1dpenguins: err1d_penguins.json
